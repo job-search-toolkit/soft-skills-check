@@ -39,3 +39,9 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 wingfinder-research.html
+
+# Screenshots
+*.png
+
+# Playwright MCP logs
+.playwright-mcp/
