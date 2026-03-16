@@ -131,10 +131,10 @@ export default function ResultsPage() {
     <div className="max-w-4xl mx-auto px-4 py-8 md:py-12">
       <div className="mb-8 animate-fade-in-up">
         <h1 className="text-2xl md:text-3xl font-bold text-white mb-2">
-          Результаты
+          Твой профиль
         </h1>
         <p className="text-slate-400">
-          Ваш профиль soft skills на основе самооценки
+          Вот как выглядят твои soft skills сейчас
         </p>
       </div>
 
@@ -242,6 +242,52 @@ export default function ResultsPage() {
           )}
         </div>
       )}
+
+      {/* Share / Save */}
+      <div className="bg-slate-900 border border-slate-800 rounded-2xl p-6 mb-6 animate-fade-in-up">
+        <div className="flex flex-wrap gap-3 justify-center">
+          <button
+            onClick={() => {
+              const text = [
+                `Soft Skills Check — мой результат: ${analysis.overallScore}/5`,
+                '',
+                ...analysis.dimensionScores.map(d => `${d.name}: ${d.score}/5`),
+                '',
+                analysis.summary,
+                '',
+                'Пройти: https://soft-skills.chillai.space',
+              ].join('\n');
+              navigator.clipboard.writeText(text).then(() => {
+                const btn = document.getElementById('copy-btn');
+                if (btn) { btn.textContent = 'Скопировано!'; setTimeout(() => { btn.textContent = 'Скопировать результат'; }, 2000); }
+              });
+            }}
+            id="copy-btn"
+            className="inline-flex items-center gap-2 px-4 py-2.5 bg-slate-800 hover:bg-slate-700 text-slate-300 text-sm font-medium rounded-xl transition-colors border border-slate-700"
+          >
+            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+            </svg>
+            Скопировать результат
+          </button>
+          <button
+            onClick={() => {
+              const text = `Мой результат Soft Skills Check: ${analysis.overallScore}/5. Пройти: https://soft-skills.chillai.space`;
+              if (navigator.share) {
+                navigator.share({ title: 'Soft Skills Check', text });
+              } else {
+                window.open(`https://t.me/share/url?url=${encodeURIComponent('https://soft-skills.chillai.space')}&text=${encodeURIComponent(`Мой результат: ${analysis.overallScore}/5`)}`, '_blank');
+              }
+            }}
+            className="inline-flex items-center gap-2 px-4 py-2.5 bg-slate-800 hover:bg-slate-700 text-slate-300 text-sm font-medium rounded-xl transition-colors border border-slate-700"
+          >
+            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z" />
+            </svg>
+            Поделиться
+          </button>
+        </div>
+      </div>
 
       {/* Next steps */}
       <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up">

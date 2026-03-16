@@ -87,9 +87,9 @@ export default function TestPage() {
   return (
     <div className="max-w-4xl mx-auto px-4 py-8 md:py-12">
       <div className="mb-8">
-        <h1 className="text-2xl font-bold text-white mb-2">Самооценка</h1>
+        <h1 className="text-2xl font-bold text-white mb-2">Разминка</h1>
         <p className="text-slate-400 text-sm">
-          Оцените, насколько каждое утверждение описывает вас. Отвечайте честно —
+          Насколько каждая ситуация описывает тебя? Отвечай честно —
           правильных и неправильных ответов нет.
         </p>
       </div>

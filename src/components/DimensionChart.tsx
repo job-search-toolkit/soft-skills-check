@@ -18,7 +18,7 @@ const SHORT_NAMES: Record<string, string> = {
 
 export default function DimensionChart({
   scores,
-  size = 300,
+  size = 320,
 }: DimensionChartProps) {
   const center = size / 2;
   const radius = size * 0.35;
