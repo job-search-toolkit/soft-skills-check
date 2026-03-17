@@ -1,13 +1,15 @@
 "use client";
 
 import { DimensionScore } from "@/types/assessment";
+import { Lang } from "@/lib/LangContext";
 
 interface DimensionChartProps {
   scores: DimensionScore[];
   size?: number;
+  lang?: Lang;
 }
 
-const SHORT_NAMES: Record<string, string> = {
+const SHORT_NAMES_RU: Record<string, string> = {
   critical_thinking: "Критическое\nмышление",
   communication: "Коммуникация",
   adaptability: "Адаптивность",
@@ -16,10 +18,21 @@ const SHORT_NAMES: Record<string, string> = {
   collaboration: "Коллаборация",
 };
 
+const SHORT_NAMES_EN: Record<string, string> = {
+  critical_thinking: "Critical\nThinking",
+  communication: "Communication",
+  adaptability: "Adaptability",
+  self_organization: "Self-\nOrganization",
+  product_thinking: "Product\nThinking",
+  collaboration: "Collaboration",
+};
+
 export default function DimensionChart({
   scores,
   size = 320,
+  lang = "ru",
 }: DimensionChartProps) {
+  const SHORT_NAMES = lang === "en" ? SHORT_NAMES_EN : SHORT_NAMES_RU;
   const center = size / 2;
   const radius = size * 0.35;
   const labelRadius = size * 0.48;

@@ -2,11 +2,15 @@
 
 import { useState, useCallback, useRef, useEffect } from "react";
 import { useRouter } from "next/navigation";
+import { useLang } from "@/lib/LangContext";
+import { ui } from "@/lib/i18n";
 
 type Tab = "upload" | "paste";
 
 export default function ContextPage() {
   const router = useRouter();
+  const { lang } = useLang();
+  const t = ui[lang];
   const [activeTab, setActiveTab] = useState<Tab>("upload");
   const [resumeText, setResumeText] = useState("");
   const [jobDescription, setJobDescription] = useState("");
@@ -52,7 +56,7 @@ export default function ContextPage() {
 
       const fullText = pages.join("\n\n").trim();
       if (!fullText) {
-        setParseError("PDF не содержит текста. Попробуйте вставить текст вручную.");
+        setParseError(t.contextPdfEmpty);
         setActiveTab("paste");
       } else {
         setResumeText(fullText);
@@ -60,12 +64,12 @@ export default function ContextPage() {
       }
     } catch (err) {
       console.error("PDF parse error:", err);
-      setParseError("Не удалось прочитать PDF. Попробуйте вставить текст вручную.");
+      setParseError(t.contextPdfError);
       setActiveTab("paste");
     } finally {
       setParsing(false);
     }
-  }, []);
+  }, [t]);
 
   const handleDrop = useCallback(
     (e: React.DragEvent) => {
@@ -77,10 +81,10 @@ export default function ContextPage() {
       if (file && file.type === "application/pdf") {
         extractTextFromPdf(file);
       } else {
-        setParseError("Пожалуйста, загрузите PDF-файл.");
+        setParseError(t.contextPdfWrongType);
       }
     },
-    [extractTextFromPdf]
+    [extractTextFromPdf, t]
   );
 
   const handleDragOver = useCallback((e: React.DragEvent) => {
@@ -128,21 +132,20 @@ export default function ContextPage() {
     <div className="max-w-4xl mx-auto px-4 py-8 md:py-12">
       <div className="mb-8 animate-fade-in-up">
         <div className="inline-block px-4 py-1.5 bg-violet-500/10 border border-violet-500/20 rounded-full text-violet-400 text-sm font-medium mb-4">
-          Необязательный шаг
+          {t.contextBadge}
         </div>
         <h1 className="text-2xl md:text-3xl font-bold text-white mb-2">
-          Контекст для персонализации
+          {t.contextTitle}
         </h1>
         <p className="text-slate-400 leading-relaxed">
-          Загрузите резюме и/или описание вакансии, чтобы получить более точный анализ
-          и рекомендации, привязанные к вашему опыту и целевой роли. Можно пропустить.
+          {t.contextSubtitle}
         </p>
       </div>
 
       {/* Resume section */}
       <div className="bg-slate-900 border border-slate-800 rounded-2xl p-6 md:p-8 mb-6 animate-fade-in-up">
         <h2 className="text-lg font-semibold text-white mb-4">
-          Резюме
+          {t.contextResumeTitle}
         </h2>
 
         {/* Tabs */}
@@ -155,7 +158,7 @@ export default function ContextPage() {
                 : "text-slate-400 hover:text-slate-300"
             }`}
           >
-            Загрузить файл
+            {t.contextTabUpload}
           </button>
           <button
             onClick={() => setActiveTab("paste")}
@@ -165,7 +168,7 @@ export default function ContextPage() {
                 : "text-slate-400 hover:text-slate-300"
             }`}
           >
-            Вставить текст
+            {t.contextTabPaste}
           </button>
         </div>
 
@@ -200,7 +203,7 @@ export default function ContextPage() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" />
                     </svg>
                   </div>
-                  <p className="text-sm text-slate-300">Читаем PDF...</p>
+                  <p className="text-sm text-slate-300">{t.contextParsing}</p>
                 </div>
               ) : fileName ? (
                 <div className="flex flex-col items-center">
@@ -211,7 +214,7 @@ export default function ContextPage() {
                   </div>
                   <p className="text-sm text-white font-medium mb-1">{fileName}</p>
                   <p className="text-xs text-slate-400">
-                    {resumeText.length} символов извлечено. Нажмите, чтобы заменить.
+                    {resumeText.length} {t.contextCharsExtracted}
                   </p>
                 </div>
               ) : (
@@ -222,10 +225,10 @@ export default function ContextPage() {
                     </svg>
                   </div>
                   <p className="text-sm text-slate-300 mb-1">
-                    Перетащите PDF или нажмите для выбора
+                    {t.contextDropHint}
                   </p>
                   <p className="text-xs text-slate-500">
-                    Только PDF. Текст извлекается на вашем устройстве.
+                    {t.contextDropNote}
                   </p>
                 </div>
               )}
@@ -243,14 +246,14 @@ export default function ContextPage() {
           <textarea
             value={resumeText}
             onChange={(e) => setResumeText(e.target.value)}
-            placeholder="Вставьте текст резюме здесь..."
+            placeholder={t.contextPasteHint}
             className="w-full h-48 bg-slate-800/50 border border-slate-700 rounded-xl px-4 py-3 text-sm text-slate-200 placeholder-slate-500 focus:outline-none focus:border-violet-500/50 focus:ring-1 focus:ring-violet-500/20 resize-y transition-colors"
           />
         )}
 
         {hasResume && activeTab === "paste" && (
           <p className="mt-2 text-xs text-slate-500">
-            {resumeText.trim().length} символов
+            {resumeText.trim().length} {t.contextChars}
           </p>
         )}
       </div>
@@ -258,20 +261,20 @@ export default function ContextPage() {
       {/* Job description section */}
       <div className="bg-slate-900 border border-slate-800 rounded-2xl p-6 md:p-8 mb-8 animate-fade-in-up">
         <h2 className="text-lg font-semibold text-white mb-2">
-          Описание вакансии
+          {t.contextJobTitle}
         </h2>
         <p className="text-sm text-slate-400 mb-4">
-          Необязательно. Если указать, рекомендации будут привязаны к требованиям роли.
+          {t.contextJobNote}
         </p>
         <textarea
           value={jobDescription}
           onChange={(e) => setJobDescription(e.target.value)}
-          placeholder="Вставьте описание вакансии или роли..."
+          placeholder={t.contextJobPlaceholder}
           className="w-full h-36 bg-slate-800/50 border border-slate-700 rounded-xl px-4 py-3 text-sm text-slate-200 placeholder-slate-500 focus:outline-none focus:border-violet-500/50 focus:ring-1 focus:ring-violet-500/20 resize-y transition-colors"
         />
         {hasJob && (
           <p className="mt-2 text-xs text-slate-500">
-            {jobDescription.trim().length} символов
+            {jobDescription.trim().length} {t.contextChars}
           </p>
         )}
       </div>
@@ -287,7 +290,7 @@ export default function ContextPage() {
               : "bg-slate-800 text-slate-500 cursor-not-allowed"
           }`}
         >
-          Продолжить с контекстом
+          {t.contextContinue}
           <svg
             className="w-5 h-5"
             fill="none"
@@ -306,7 +309,7 @@ export default function ContextPage() {
           onClick={handleSkip}
           className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-slate-800 hover:bg-slate-700 text-slate-200 font-medium rounded-xl transition-colors border border-slate-700"
         >
-          Пропустить
+          {t.contextSkip}
         </button>
       </div>
     </div>

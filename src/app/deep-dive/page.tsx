@@ -4,11 +4,17 @@ import { useState, useEffect, useCallback } from "react";
 import { useRouter } from "next/navigation";
 import { AnalysisResult, DeepDiveQuestion, DeepDiveAnswer } from "@/types/assessment";
 import { dimensionMap } from "@/lib/questions";
-import { scaleLabels } from "@/lib/questions";
+import { scaleLabels, scaleLabelsEn } from "@/lib/questions";
 import ProgressBar from "@/components/ProgressBar";
+import { useLang } from "@/lib/LangContext";
+import { ui } from "@/lib/i18n";
 
 export default function DeepDivePage() {
   const router = useRouter();
+  const { lang } = useLang();
+  const t = ui[lang];
+  const currentScaleLabels = lang === "en" ? scaleLabelsEn : scaleLabels;
+
   const [analysis, setAnalysis] = useState<AnalysisResult | null>(null);
   const [questions, setQuestions] = useState<DeepDiveQuestion[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -46,6 +52,9 @@ export default function DeepDivePage() {
       }
     }
 
+    // Read current lang from localStorage
+    const currentLang = localStorage.getItem("lang") || "ru";
+
     // Generate deep-dive questions
     fetch("/api/generate-test", {
       method: "POST",
@@ -55,12 +64,13 @@ export default function DeepDivePage() {
         dimensionScores: result.dimensionScores,
         resume,
         jobDescription,
+        lang: currentLang,
       }),
     })
       .then(async (res) => {
         if (!res.ok) {
           const data = await res.json().catch(() => ({}));
-          throw new Error(data.error || "Ошибка генерации вопросов");
+          throw new Error(data.error || "Error generating questions");
         }
         return res.json();
       })
@@ -137,10 +147,10 @@ export default function DeepDivePage() {
             </svg>
           </div>
           <h2 className="text-xl font-semibold text-white mb-2">
-            AI генерирует вопросы
+            {t.deepDiveLoadingTitle}
           </h2>
           <p className="text-slate-400 text-sm">
-            Формируем углублённый тест на основе ваших слабых зон...
+            {t.deepDiveLoadingSubtitle}
           </p>
           <div className="flex gap-1.5 mt-6">
             <div className="w-2 h-2 rounded-full bg-violet-500 loading-dot" />
@@ -156,20 +166,20 @@ export default function DeepDivePage() {
     return (
       <div className="max-w-4xl mx-auto px-4 py-16 text-center">
         <div className="bg-red-500/10 border border-red-500/20 rounded-xl p-6 max-w-md mx-auto">
-          <h2 className="text-lg font-semibold text-red-400 mb-2">Ошибка</h2>
+          <h2 className="text-lg font-semibold text-red-400 mb-2">{t.deepDiveError}</h2>
           <p className="text-slate-400 text-sm mb-4">{error}</p>
           <div className="flex gap-3 justify-center">
             <button
               onClick={() => window.location.reload()}
               className="px-4 py-2 bg-violet-600 hover:bg-violet-500 text-white rounded-lg transition-colors text-sm"
             >
-              Попробовать снова
+              {t.deepDiveRetry}
             </button>
             <button
               onClick={() => router.push("/recommendations")}
               className="px-4 py-2 bg-slate-800 hover:bg-slate-700 text-slate-200 rounded-lg transition-colors text-sm"
             >
-              Перейти к рекомендациям
+              {t.deepDiveToRecommendations}
             </button>
           </div>
         </div>
@@ -180,12 +190,12 @@ export default function DeepDivePage() {
   if (questions.length === 0) {
     return (
       <div className="max-w-4xl mx-auto px-4 py-16 text-center">
-        <p className="text-slate-400">Нет вопросов для углублённой диагностики.</p>
+        <p className="text-slate-400">{t.deepDiveNoQuestions}</p>
         <button
           onClick={() => router.push("/recommendations")}
           className="mt-4 px-4 py-2 bg-slate-800 hover:bg-slate-700 text-slate-200 rounded-lg transition-colors text-sm"
         >
-          Перейти к рекомендациям
+          {t.deepDiveToRecommendations}
         </button>
       </div>
     );
@@ -193,20 +203,28 @@ export default function DeepDivePage() {
 
   const currentQuestion = questions[currentIndex];
   const existingAnswer = answers.find((a) => a.questionId === currentQuestion.id);
+  const dimName = lang === "en"
+    ? (dimensionMap[currentQuestion.dimension]?.nameEn || currentQuestion.dimension)
+    : (dimensionMap[currentQuestion.dimension]?.name || currentQuestion.dimension);
 
   return (
     <div className="max-w-4xl mx-auto px-4 py-8 md:py-12">
       <div className="mb-8">
         <h1 className="text-2xl font-bold text-white mb-2">
-          Углублённая диагностика
+          {t.deepDiveTitle}
         </h1>
         <p className="text-slate-400 text-sm">
-          Дополнительные вопросы, сфокусированные на ваших зонах роста
+          {t.deepDiveSubtitle}
         </p>
       </div>
 
       <div className="mb-8">
-        <ProgressBar current={currentIndex + 1} total={questions.length} />
+        <ProgressBar
+          current={currentIndex + 1}
+          total={questions.length}
+          questionLabel={t.progressQuestion}
+          ofLabel={t.progressOf}
+        />
       </div>
 
       <div
@@ -217,7 +235,7 @@ export default function DeepDivePage() {
         <div className="bg-slate-900 border border-slate-800 rounded-2xl p-6 md:p-8 max-w-2xl mx-auto">
           <div className="mb-6">
             <span className="inline-block px-3 py-1 bg-violet-500/10 text-violet-400 text-xs font-medium rounded-full mb-4">
-              {dimensionMap[currentQuestion.dimension]?.name || currentQuestion.dimension}
+              {dimName}
             </span>
             <p className="text-lg md:text-xl text-slate-100 leading-relaxed">
               {currentQuestion.text}
@@ -244,7 +262,7 @@ export default function DeepDivePage() {
                 >
                   {value}
                 </span>
-                <span className="text-sm md:text-base">{scaleLabels[value]}</span>
+                <span className="text-sm md:text-base">{currentScaleLabels[value]}</span>
               </button>
             ))}
           </div>
@@ -274,7 +292,7 @@ export default function DeepDivePage() {
               d="M15 19l-7-7 7-7"
             />
           </svg>
-          Назад
+          {t.deepDiveBack}
         </button>
         <span className="text-sm text-slate-500">
           {currentIndex + 1} / {questions.length}

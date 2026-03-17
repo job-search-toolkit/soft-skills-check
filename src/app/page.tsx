@@ -1,28 +1,34 @@
+"use client";
+
 import Link from "next/link";
+import { useLang } from "@/lib/LangContext";
+import { ui } from "@/lib/i18n";
 
 export default function Home() {
+  const { lang } = useLang();
+  const t = ui[lang];
+
   return (
     <div className="max-w-4xl mx-auto px-4 py-16 md:py-24">
       <div className="text-center mb-16 animate-fade-in-up">
         <div className="inline-block px-4 py-1.5 bg-violet-500/10 border border-violet-500/20 rounded-full text-violet-400 text-sm font-medium mb-6">
-          Бесплатный open-source тренажёр
+          {t.landingBadge}
         </div>
         <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
-          Тренажёр
+          {t.landingTitle1}
           <br />
           <span className="bg-gradient-to-r from-violet-400 to-indigo-400 bg-clip-text text-transparent">
-            soft skills
+            {t.landingTitle2}
           </span>
         </h1>
         <p className="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto mb-8 leading-relaxed">
-          Пойми, как ты работаешь с AI и в команде. Получи честный анализ
-          и персональный план роста — с конкретными шагами.
+          {t.landingSubtitle}
         </p>
         <Link
           href="/context"
           className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-violet-600 to-indigo-600 hover:from-violet-500 hover:to-indigo-500 text-white font-semibold rounded-xl transition-all duration-200 shadow-lg shadow-violet-500/20 hover:shadow-violet-500/30 hover:scale-105"
         >
-          Начать тренировку
+          {t.landingCta}
           <svg
             className="w-5 h-5"
             fill="none"
@@ -43,22 +49,19 @@ export default function Home() {
       <div className="grid md:grid-cols-3 gap-6 mb-16">
         {[
           {
-            step: "01",
-            title: "Разминка",
-            description:
-              "30 ситуаций из реальной работы. Отвечаешь честно — без правильных и неправильных ответов. Это не экзамен, а зеркало.",
+            step: t.landingStep01,
+            title: t.landingStep01Title,
+            description: t.landingStep01Desc,
           },
           {
-            step: "02",
-            title: "AI-разбор",
-            description:
-              "Claude строит твой профиль, находит точки роста и генерирует дополнительные вопросы — чтобы копнуть глубже именно там, где есть потенциал.",
+            step: t.landingStep02,
+            title: t.landingStep02Title,
+            description: t.landingStep02Desc,
           },
           {
-            step: "03",
-            title: "План роста",
-            description:
-              "Не абстрактные советы, а конкретные шаги: что делать каждый день, какие привычки формировать, на что обратить внимание.",
+            step: t.landingStep03,
+            title: t.landingStep03Title,
+            description: t.landingStep03Desc,
           },
         ].map((item) => (
           <div
@@ -81,39 +84,39 @@ export default function Home() {
       {/* Dimensions preview */}
       <div className="bg-slate-900 border border-slate-800 rounded-2xl p-6 md:p-8">
         <h2 className="text-xl font-semibold text-slate-100 mb-6">
-          6 направлений роста
+          {t.landingDimensionsTitle}
         </h2>
         <div className="grid sm:grid-cols-2 gap-4">
           {[
             {
               icon: "🔍",
-              name: "Критическое мышление",
-              desc: "Умение проверять, сомневаться, видеть ошибки",
+              name: t.landingDimCritical,
+              desc: t.landingDimCriticalDesc,
             },
             {
               icon: "💬",
-              name: "Коммуникация",
-              desc: "Чёткость в постановке задач и общении с людьми",
+              name: t.landingDimComm,
+              desc: t.landingDimCommDesc,
             },
             {
               icon: "⚡",
-              name: "Адаптивность",
-              desc: "Скорость обучения, гибкость, работа с неизвестным",
+              name: t.landingDimAdapt,
+              desc: t.landingDimAdaptDesc,
             },
             {
               icon: "📋",
-              name: "Самоорганизация",
-              desc: "Планирование, дисциплина, контроль качества",
+              name: t.landingDimOrg,
+              desc: t.landingDimOrgDesc,
             },
             {
               icon: "🎯",
-              name: "Продуктовое мышление",
-              desc: "Фокус на пользователе и результате",
+              name: t.landingDimProduct,
+              desc: t.landingDimProductDesc,
             },
             {
               icon: "🤝",
-              name: "Коллаборация",
-              desc: "Командная работа, обратная связь, открытость",
+              name: t.landingDimCollab,
+              desc: t.landingDimCollabDesc,
             },
           ].map((dim) => (
             <div
@@ -135,13 +138,13 @@ export default function Home() {
       {/* CTA */}
       <div className="text-center mt-12">
         <p className="text-slate-500 text-sm mb-4">
-          10-15 минут. Данные остаются только у тебя.
+          {t.landingFooterNote}
         </p>
         <Link
           href="/context"
           className="inline-flex items-center gap-2 px-6 py-3 bg-slate-800 hover:bg-slate-700 text-slate-200 font-medium rounded-xl transition-colors border border-slate-700"
         >
-          Начать
+          {t.landingFooterCta}
         </Link>
       </div>
     </div>

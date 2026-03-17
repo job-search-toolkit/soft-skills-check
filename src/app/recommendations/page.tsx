@@ -4,9 +4,13 @@ import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { AnalysisResult, DeepDiveAnswer, RecommendationResult } from "@/types/assessment";
 import RecommendationCard from "@/components/RecommendationCard";
+import { useLang } from "@/lib/LangContext";
+import { ui } from "@/lib/i18n";
 
 export default function RecommendationsPage() {
   const router = useRouter();
+  const { lang } = useLang();
+  const t = ui[lang];
   const [result, setResult] = useState<RecommendationResult | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -38,6 +42,9 @@ export default function RecommendationsPage() {
       }
     }
 
+    // Read current lang from localStorage
+    const currentLang = localStorage.getItem("lang") || "ru";
+
     fetch("/api/recommend", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -46,12 +53,13 @@ export default function RecommendationsPage() {
         deepDiveAnswers,
         resume,
         jobDescription,
+        lang: currentLang,
       }),
     })
       .then(async (res) => {
         if (!res.ok) {
           const data = await res.json().catch(() => ({}));
-          throw new Error(data.error || "Ошибка генерации рекомендаций");
+          throw new Error(data.error || "Error generating recommendations");
         }
         return res.json();
       })
@@ -85,10 +93,10 @@ export default function RecommendationsPage() {
             </svg>
           </div>
           <h2 className="text-xl font-semibold text-white mb-2">
-            Готовим персональный план
+            {t.recsLoadingTitle}
           </h2>
           <p className="text-slate-400 text-sm">
-            AI составляет рекомендации на основе вашего профиля...
+            {t.recsLoadingSubtitle}
           </p>
           <div className="flex gap-1.5 mt-6">
             <div className="w-2 h-2 rounded-full bg-violet-500 loading-dot" />
@@ -104,20 +112,20 @@ export default function RecommendationsPage() {
     return (
       <div className="max-w-4xl mx-auto px-4 py-16 text-center">
         <div className="bg-red-500/10 border border-red-500/20 rounded-xl p-6 max-w-md mx-auto">
-          <h2 className="text-lg font-semibold text-red-400 mb-2">Ошибка</h2>
+          <h2 className="text-lg font-semibold text-red-400 mb-2">{t.recsError}</h2>
           <p className="text-slate-400 text-sm mb-4">{error}</p>
           <div className="flex gap-3 justify-center">
             <button
               onClick={() => window.location.reload()}
               className="px-4 py-2 bg-violet-600 hover:bg-violet-500 text-white rounded-lg transition-colors text-sm"
             >
-              Попробовать снова
+              {t.recsRetry}
             </button>
             <button
               onClick={() => router.push("/results")}
               className="px-4 py-2 bg-slate-800 hover:bg-slate-700 text-slate-200 rounded-lg transition-colors text-sm"
             >
-              Назад к результатам
+              {t.recsBackToResults}
             </button>
           </div>
         </div>
@@ -131,7 +139,7 @@ export default function RecommendationsPage() {
     <div className="max-w-4xl mx-auto px-4 py-8 md:py-12">
       <div className="mb-8 animate-fade-in-up">
         <h1 className="text-2xl md:text-3xl font-bold text-white mb-2">
-          Персональные рекомендации
+          {t.recsTitle}
         </h1>
         <p className="text-slate-400">{result.summary}</p>
       </div>
@@ -139,7 +147,13 @@ export default function RecommendationsPage() {
       {/* Recommendations per dimension */}
       <div className="space-y-6 mb-8">
         {result.recommendations.map((rec, i) => (
-          <RecommendationCard key={rec.dimension} recommendation={rec} index={i} />
+          <RecommendationCard
+            key={rec.dimension}
+            recommendation={rec}
+            index={i}
+            actionStepsLabel={t.recsActionSteps}
+            resourcesLabel={t.recsResources}
+          />
         ))}
       </div>
 
@@ -147,7 +161,7 @@ export default function RecommendationsPage() {
       {result.dailyHabits.length > 0 && (
         <div className="bg-slate-900 border border-slate-800 rounded-2xl p-6 md:p-8 mb-6 animate-fade-in-up">
           <h2 className="text-lg font-semibold text-violet-400 mb-4">
-            Ежедневные привычки
+            {t.recsDailyHabits}
           </h2>
           <ul className="space-y-3">
             {result.dailyHabits.map((habit, i) => (
@@ -169,7 +183,7 @@ export default function RecommendationsPage() {
       {result.weeklyGoals.length > 0 && (
         <div className="bg-slate-900 border border-slate-800 rounded-2xl p-6 md:p-8 mb-8 animate-fade-in-up">
           <h2 className="text-lg font-semibold text-indigo-400 mb-4">
-            Цели на неделю
+            {t.recsWeeklyGoals}
           </h2>
           <ul className="space-y-3">
             {result.weeklyGoals.map((goal, i) => (
@@ -196,13 +210,13 @@ export default function RecommendationsPage() {
           }}
           className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-gradient-to-r from-violet-600 to-indigo-600 hover:from-violet-500 hover:to-indigo-500 text-white font-semibold rounded-xl transition-all duration-200 shadow-lg shadow-violet-500/20"
         >
-          Пройти заново
+          {t.recsStartOver}
         </button>
         <button
           onClick={() => router.push("/results")}
           className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-slate-800 hover:bg-slate-700 text-slate-200 font-medium rounded-xl transition-colors border border-slate-700"
         >
-          Вернуться к результатам
+          {t.recsBackBtn}
         </button>
       </div>
     </div>

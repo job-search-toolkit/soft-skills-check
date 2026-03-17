@@ -8,5 +8,11 @@
     "directory": ".open-next/assets",
     "binding": "ASSETS"
   },
+  "kv_namespaces": [
+    {
+      "binding": "ANALYTICS",
+      "id": "230f2d10b26c41a8bf6eba43f0a45426"
+    }
+  ],
   "vars": {}
 }

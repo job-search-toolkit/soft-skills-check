@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useRouter } from "next/navigation";
 import { Answer, AnalysisResult } from "@/types/assessment";
 import DimensionChart from "@/components/DimensionChart";
@@ -8,13 +8,27 @@ import {
   calculateDimensionScores,
   calculateOverallScore,
 } from "@/lib/scoring";
+import { dimensionMap } from "@/lib/questions";
+import { useLang } from "@/lib/LangContext";
+import { ui } from "@/lib/i18n";
+import { DimensionKey } from "@/types/assessment";
+
+interface BenchmarkData {
+  totalCompleted: number;
+  averages: Record<string, number>;
+  overallAverage: number;
+}
 
 export default function ResultsPage() {
   const router = useRouter();
+  const { lang } = useLang();
+  const t = ui[lang];
   const [answers, setAnswers] = useState<Answer[] | null>(null);
   const [analysis, setAnalysis] = useState<AnalysisResult | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const [benchmark, setBenchmark] = useState<BenchmarkData | null>(null);
+  const analyticsPosted = useRef(false);
 
   useEffect(() => {
     const stored = sessionStorage.getItem("testAnswers");
@@ -44,16 +58,20 @@ export default function ResultsPage() {
       }
     }
 
+    // Read current lang from localStorage (useEffect runs once)
+    const currentLang = (localStorage.getItem("lang") || "ru") as "ru" | "en";
+    const strings = ui[currentLang];
+
     // Call AI analysis
     fetch("/api/analyze", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ answers: parsedAnswers, resume, jobDescription }),
+      body: JSON.stringify({ answers: parsedAnswers, resume, jobDescription, lang: currentLang }),
     })
       .then(async (res) => {
         if (!res.ok) {
           const data = await res.json().catch(() => ({}));
-          throw new Error(data.error || "Ошибка при анализе");
+          throw new Error(data.error || strings.resultsAnalysisError);
         }
         return res.json();
       })
@@ -69,7 +87,7 @@ export default function ResultsPage() {
           overallScore,
           strengths: [],
           weaknesses: [],
-          summary: "Не удалось получить AI-анализ. Показываем результаты на основе ваших ответов.",
+          summary: strings.resultsFallbackSummary,
           weakDimensions: dimensionScores
             .sort((a, b) => a.score - b.score)
             .slice(0, 3)
@@ -82,6 +100,39 @@ export default function ResultsPage() {
         setLoading(false);
       });
   }, [router]);
+
+  // Post analytics and fetch benchmark when analysis is ready
+  useEffect(() => {
+    if (!analysis || analyticsPosted.current) return;
+    analyticsPosted.current = true;
+
+    // POST scores to analytics (fire-and-forget)
+    fetch("/api/analytics", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        dimensionScores: analysis.dimensionScores.map((d) => ({
+          dimension: d.dimension,
+          score: d.score,
+        })),
+        overallScore: analysis.overallScore,
+      }),
+    })
+      .then(() => {
+        // After posting, fetch benchmark data
+        return fetch("/api/analytics");
+      })
+      .then((res) => {
+        if (!res.ok) throw new Error("Benchmark unavailable");
+        return res.json();
+      })
+      .then((data: BenchmarkData) => {
+        setBenchmark(data);
+      })
+      .catch(() => {
+        // Silently ignore — benchmark is optional
+      });
+  }, [analysis]);
 
   if (loading) {
     return (
@@ -103,10 +154,10 @@ export default function ResultsPage() {
             </svg>
           </div>
           <h2 className="text-xl font-semibold text-white mb-2">
-            AI анализирует ваши ответы
+            {t.resultsLoadingTitle}
           </h2>
           <p className="text-slate-400 text-sm">
-            Это займёт несколько секунд...
+            {t.resultsLoadingSubtitle}
           </p>
           <div className="flex gap-1.5 mt-6">
             <div className="w-2 h-2 rounded-full bg-violet-500 loading-dot" />
@@ -131,16 +182,16 @@ export default function ResultsPage() {
     <div className="max-w-4xl mx-auto px-4 py-8 md:py-12">
       <div className="mb-8 animate-fade-in-up">
         <h1 className="text-2xl md:text-3xl font-bold text-white mb-2">
-          Твой профиль
+          {t.resultsTitle}
         </h1>
         <p className="text-slate-400">
-          Вот как выглядят твои soft skills сейчас
+          {t.resultsSubtitle}
         </p>
       </div>
 
       {error && (
         <div className="bg-yellow-500/10 border border-yellow-500/20 rounded-xl p-4 mb-6 text-sm text-yellow-300">
-          {error}. Показываем базовые результаты без AI-интерпретации.
+          {error}{t.resultsErrorSuffix}
         </div>
       )}
 
@@ -156,7 +207,7 @@ export default function ResultsPage() {
           </div>
           <div className="text-center md:text-left">
             <h2 className="text-xl font-semibold text-white mb-2">
-              Общий балл: {analysis.overallScore} из 5
+              {t.resultsOverallLabel} {analysis.overallScore} {t.resultsOutOf}
             </h2>
             <p className="text-slate-400 text-sm leading-relaxed">
               {analysis.summary}
@@ -168,15 +219,15 @@ export default function ResultsPage() {
       {/* Radar chart */}
       <div className="bg-slate-900 border border-slate-800 rounded-2xl p-6 md:p-8 mb-6 animate-fade-in-up">
         <h2 className="text-lg font-semibold text-white mb-6 text-center">
-          Профиль по измерениям
+          {t.resultsChartTitle}
         </h2>
-        <DimensionChart scores={analysis.dimensionScores} size={350} />
+        <DimensionChart scores={analysis.dimensionScores} size={350} lang={lang} />
       </div>
 
       {/* Dimension scores list */}
       <div className="bg-slate-900 border border-slate-800 rounded-2xl p-6 md:p-8 mb-6 animate-fade-in-up">
         <h2 className="text-lg font-semibold text-white mb-4">
-          Детализация по измерениям
+          {t.resultsDetailTitle}
         </h2>
         <div className="space-y-4">
           {analysis.dimensionScores
@@ -184,7 +235,7 @@ export default function ResultsPage() {
             .map((dim) => (
               <div key={dim.dimension}>
                 <div className="flex justify-between items-center mb-1.5">
-                  <span className="text-sm text-slate-300">{dim.name}</span>
+                  <span className="text-sm text-slate-300">{lang === "en" ? (dimensionMap[dim.dimension as DimensionKey]?.nameEn || dim.name) : dim.name}</span>
                   <span className={`text-sm font-semibold ${scoreColor(dim.score)}`}>
                     {dim.score} / 5
                   </span>
@@ -206,7 +257,7 @@ export default function ResultsPage() {
           {analysis.strengths.length > 0 && (
             <div className="bg-slate-900 border border-slate-800 rounded-2xl p-6 animate-fade-in-up">
               <h3 className="text-lg font-semibold text-green-400 mb-3">
-                Сильные стороны
+                {t.resultsStrengths}
               </h3>
               <ul className="space-y-2">
                 {analysis.strengths.map((s, i) => (
@@ -225,7 +276,7 @@ export default function ResultsPage() {
           {analysis.weaknesses.length > 0 && (
             <div className="bg-slate-900 border border-slate-800 rounded-2xl p-6 animate-fade-in-up">
               <h3 className="text-lg font-semibold text-orange-400 mb-3">
-                Зоны роста
+                {t.resultsWeaknesses}
               </h3>
               <ul className="space-y-2">
                 {analysis.weaknesses.map((w, i) => (
@@ -249,17 +300,17 @@ export default function ResultsPage() {
           <button
             onClick={() => {
               const text = [
-                `Soft Skills Check — мой результат: ${analysis.overallScore}/5`,
+                `Soft Skills Check — ${t.resultsShareText} ${analysis.overallScore}/5`,
                 '',
                 ...analysis.dimensionScores.map(d => `${d.name}: ${d.score}/5`),
                 '',
                 analysis.summary,
                 '',
-                'Пройти: https://soft-skills.chillai.space',
+                `${t.resultsShareCta} https://soft-skills.chillai.space`,
               ].join('\n');
               navigator.clipboard.writeText(text).then(() => {
                 const btn = document.getElementById('copy-btn');
-                if (btn) { btn.textContent = 'Скопировано!'; setTimeout(() => { btn.textContent = 'Скопировать результат'; }, 2000); }
+                if (btn) { btn.textContent = t.resultsCopied; setTimeout(() => { btn.textContent = t.resultsCopyBtn; }, 2000); }
               });
             }}
             id="copy-btn"
@@ -268,15 +319,15 @@ export default function ResultsPage() {
             <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
             </svg>
-            Скопировать результат
+            {t.resultsCopyBtn}
           </button>
           <button
             onClick={() => {
-              const text = `Мой результат Soft Skills Check: ${analysis.overallScore}/5. Пройти: https://soft-skills.chillai.space`;
+              const text = `${t.resultsShareText} ${analysis.overallScore}/5. ${t.resultsShareCta} https://soft-skills.chillai.space`;
               if (navigator.share) {
                 navigator.share({ title: 'Soft Skills Check', text });
               } else {
-                window.open(`https://t.me/share/url?url=${encodeURIComponent('https://soft-skills.chillai.space')}&text=${encodeURIComponent(`Мой результат: ${analysis.overallScore}/5`)}`, '_blank');
+                window.open(`https://t.me/share/url?url=${encodeURIComponent('https://soft-skills.chillai.space')}&text=${encodeURIComponent(`${t.resultsShareText} ${analysis.overallScore}/5`)}`, '_blank');
               }
             }}
             className="inline-flex items-center gap-2 px-4 py-2.5 bg-slate-800 hover:bg-slate-700 text-slate-300 text-sm font-medium rounded-xl transition-colors border border-slate-700"
@@ -284,7 +335,7 @@ export default function ResultsPage() {
             <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z" />
             </svg>
-            Поделиться
+            {t.resultsShareBtn}
           </button>
         </div>
       </div>
@@ -296,7 +347,7 @@ export default function ResultsPage() {
             onClick={() => router.push("/deep-dive")}
             className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-gradient-to-r from-violet-600 to-indigo-600 hover:from-violet-500 hover:to-indigo-500 text-white font-semibold rounded-xl transition-all duration-200 shadow-lg shadow-violet-500/20"
           >
-            Углублённая диагностика
+            {t.resultsDeepDive}
             <svg
               className="w-4 h-4"
               fill="none"
@@ -316,7 +367,7 @@ export default function ResultsPage() {
           onClick={() => router.push("/recommendations")}
           className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-slate-800 hover:bg-slate-700 text-slate-200 font-medium rounded-xl transition-colors border border-slate-700"
         >
-          Сразу к рекомендациям
+          {t.resultsToRecommendations}
         </button>
       </div>
     </div>

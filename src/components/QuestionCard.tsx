@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { scaleLabels } from "@/lib/questions";
 
 interface QuestionCardProps {
   questionNumber: number;
@@ -10,6 +9,7 @@ interface QuestionCardProps {
   dimensionName: string;
   onAnswer: (value: number) => void;
   initialValue?: number;
+  scaleLabelsMap: Record<number, string>;
 }
 
 export default function QuestionCard({
@@ -19,6 +19,7 @@ export default function QuestionCard({
   dimensionName,
   onAnswer,
   initialValue,
+  scaleLabelsMap,
 }: QuestionCardProps) {
   const [selected, setSelected] = useState<number | null>(initialValue ?? null);
   const [isAnimating, setIsAnimating] = useState(true);
@@ -74,7 +75,7 @@ export default function QuestionCard({
               >
                 {value}
               </span>
-              <span className="text-sm md:text-base">{scaleLabels[value]}</span>
+              <span className="text-sm md:text-base">{scaleLabelsMap[value]}</span>
             </button>
           ))}
         </div>

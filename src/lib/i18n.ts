@@ -1,0 +1,242 @@
+export const ui = {
+  ru: {
+    // Landing page
+    landingBadge: "Бесплатный open-source тренажёр",
+    landingTitle1: "Тренажёр",
+    landingTitle2: "soft skills",
+    landingSubtitle:
+      "Пойми, как ты работаешь с AI и в команде. Получи честный анализ и персональный план роста — с конкретными шагами.",
+    landingCta: "Начать тренировку",
+    landingStep01: "01",
+    landingStep01Title: "Разминка",
+    landingStep01Desc:
+      "30 ситуаций из реальной работы. Отвечаешь честно — без правильных и неправильных ответов. Это не экзамен, а зеркало.",
+    landingStep02: "02",
+    landingStep02Title: "AI-разбор",
+    landingStep02Desc:
+      "Claude строит твой профиль, находит точки роста и генерирует дополнительные вопросы — чтобы копнуть глубже именно там, где есть потенциал.",
+    landingStep03: "03",
+    landingStep03Title: "План роста",
+    landingStep03Desc:
+      "Не абстрактные советы, а конкретные шаги: что делать каждый день, какие привычки формировать, на что обратить внимание.",
+    landingDimensionsTitle: "6 направлений роста",
+    landingDimCritical: "Критическое мышление",
+    landingDimCriticalDesc: "Умение проверять, сомневаться, видеть ошибки",
+    landingDimComm: "Коммуникация",
+    landingDimCommDesc: "Чёткость в постановке задач и общении с людьми",
+    landingDimAdapt: "Адаптивность",
+    landingDimAdaptDesc: "Скорость обучения, гибкость, работа с неизвестным",
+    landingDimOrg: "Самоорганизация",
+    landingDimOrgDesc: "Планирование, дисциплина, контроль качества",
+    landingDimProduct: "Продуктовое мышление",
+    landingDimProductDesc: "Фокус на пользователе и результате",
+    landingDimCollab: "Коллаборация",
+    landingDimCollabDesc: "Командная работа, обратная связь, открытость",
+    landingFooterNote: "10-15 минут. Данные остаются только у тебя.",
+    landingFooterCta: "Начать",
+
+    // Context page
+    contextBadge: "Необязательный шаг",
+    contextTitle: "Контекст для персонализации",
+    contextSubtitle:
+      "Загрузите резюме и/или описание вакансии, чтобы получить более точный анализ и рекомендации, привязанные к вашему опыту и целевой роли. Можно пропустить.",
+    contextResumeTitle: "Резюме",
+    contextTabUpload: "Загрузить файл",
+    contextTabPaste: "Вставить текст",
+    contextParsing: "Читаем PDF...",
+    contextCharsExtracted: "символов извлечено. Нажмите, чтобы заменить.",
+    contextDropHint: "Перетащите PDF или нажмите для выбора",
+    contextDropNote: "Только PDF. Текст извлекается на вашем устройстве.",
+    contextPdfEmpty: "PDF не содержит текста. Попробуйте вставить текст вручную.",
+    contextPdfError: "Не удалось прочитать PDF. Попробуйте вставить текст вручную.",
+    contextPdfWrongType: "Пожалуйста, загрузите PDF-файл.",
+    contextPasteHint: "Вставьте текст резюме здесь...",
+    contextChars: "символов",
+    contextJobTitle: "Описание вакансии",
+    contextJobNote: "Необязательно. Если указать, рекомендации будут привязаны к требованиям роли.",
+    contextJobPlaceholder: "Вставьте описание вакансии или роли...",
+    contextContinue: "Продолжить с контекстом",
+    contextSkip: "Пропустить",
+
+    // Test page
+    testTitle: "Разминка",
+    testSubtitle:
+      "Насколько каждая ситуация описывает тебя? Отвечай честно — правильных и неправильных ответов нет.",
+    testBack: "Назад",
+
+    // Progress bar
+    progressQuestion: "Вопрос",
+    progressOf: "из",
+
+    // Results page
+    resultsTitle: "Твой профиль",
+    resultsSubtitle: "Вот как выглядят твои soft skills сейчас",
+    resultsErrorSuffix: ". Показываем базовые результаты без AI-интерпретации.",
+    resultsFallbackSummary: "Не удалось получить AI-анализ. Показываем результаты на основе ваших ответов.",
+    resultsOverallLabel: "Общий балл:",
+    resultsOutOf: "из 5",
+    resultsChartTitle: "Профиль по измерениям",
+    resultsDetailTitle: "Детализация по измерениям",
+    resultsStrengths: "Сильные стороны",
+    resultsWeaknesses: "Зоны роста",
+    resultsCopyBtn: "Скопировать результат",
+    resultsCopied: "Скопировано!",
+    resultsShareBtn: "Поделиться",
+    resultsShareText: "Мой результат Soft Skills Check:",
+    resultsShareCta: "Пройти:",
+    resultsDeepDive: "Углублённая диагностика",
+    resultsToRecommendations: "Сразу к рекомендациям",
+    resultsLoadingTitle: "AI анализирует ваши ответы",
+    resultsLoadingSubtitle: "Это займёт несколько секунд...",
+    resultsAnalysisError: "Ошибка при анализе",
+
+    // Deep-dive page
+    deepDiveTitle: "Углублённая диагностика",
+    deepDiveSubtitle: "Дополнительные вопросы, сфокусированные на ваших зонах роста",
+    deepDiveLoadingTitle: "AI генерирует вопросы",
+    deepDiveLoadingSubtitle: "Формируем углублённый тест на основе ваших слабых зон...",
+    deepDiveError: "Ошибка",
+    deepDiveRetry: "Попробовать снова",
+    deepDiveToRecommendations: "Перейти к рекомендациям",
+    deepDiveNoQuestions: "Нет вопросов для углублённой диагностики.",
+    deepDiveBack: "Назад",
+
+    // Recommendations page
+    recsTitle: "Персональные рекомендации",
+    recsLoadingTitle: "Готовим персональный план",
+    recsLoadingSubtitle: "AI составляет рекомендации на основе вашего профиля...",
+    recsError: "Ошибка",
+    recsRetry: "Попробовать снова",
+    recsBackToResults: "Назад к результатам",
+    recsDailyHabits: "Ежедневные привычки",
+    recsWeeklyGoals: "Цели на неделю",
+    recsStartOver: "Пройти заново",
+    recsBackBtn: "Вернуться к результатам",
+    recsActionSteps: "Конкретные шаги:",
+    recsResources: "Полезные ресурсы:",
+
+    // Footer
+    footerText: "Open source project. MIT License.",
+  },
+  en: {
+    // Landing page
+    landingBadge: "Free open-source assessment",
+    landingTitle1: "Soft Skills",
+    landingTitle2: "Assessment",
+    landingSubtitle:
+      "Understand how you work with AI and your team. Get an honest analysis and a personal growth plan with concrete steps.",
+    landingCta: "Start assessment",
+    landingStep01: "01",
+    landingStep01Title: "Warm-up",
+    landingStep01Desc:
+      "30 real-world work situations. Answer honestly \u2014 no right or wrong answers. It's a mirror, not an exam.",
+    landingStep02: "02",
+    landingStep02Title: "AI Analysis",
+    landingStep02Desc:
+      "Claude builds your profile, finds growth areas, and generates follow-up questions \u2014 to dig deeper where there's potential.",
+    landingStep03: "03",
+    landingStep03Title: "Growth Plan",
+    landingStep03Desc:
+      "Not vague advice but concrete steps: what to do daily, which habits to build, what to pay attention to.",
+    landingDimensionsTitle: "6 growth dimensions",
+    landingDimCritical: "Critical Thinking",
+    landingDimCriticalDesc: "Ability to verify, question, and spot errors",
+    landingDimComm: "Communication",
+    landingDimCommDesc: "Clarity in task formulation and talking to people",
+    landingDimAdapt: "Adaptability",
+    landingDimAdaptDesc: "Learning speed, flexibility, dealing with the unknown",
+    landingDimOrg: "Self-Organization",
+    landingDimOrgDesc: "Planning, discipline, quality control",
+    landingDimProduct: "Product Thinking",
+    landingDimProductDesc: "Focus on the user and the outcome",
+    landingDimCollab: "Collaboration",
+    landingDimCollabDesc: "Teamwork, feedback, openness",
+    landingFooterNote: "10-15 minutes. Your data stays with you.",
+    landingFooterCta: "Start",
+
+    // Context page
+    contextBadge: "Optional step",
+    contextTitle: "Context for personalization",
+    contextSubtitle:
+      "Upload your resume and/or job description to get a more accurate analysis and recommendations tied to your experience and target role. You can skip this.",
+    contextResumeTitle: "Resume",
+    contextTabUpload: "Upload file",
+    contextTabPaste: "Paste text",
+    contextParsing: "Reading PDF...",
+    contextCharsExtracted: "characters extracted. Click to replace.",
+    contextDropHint: "Drop a PDF or click to select",
+    contextDropNote: "PDF only. Text is extracted on your device.",
+    contextPdfEmpty: "PDF contains no text. Try pasting text manually.",
+    contextPdfError: "Could not read PDF. Try pasting text manually.",
+    contextPdfWrongType: "Please upload a PDF file.",
+    contextPasteHint: "Paste your resume text here...",
+    contextChars: "characters",
+    contextJobTitle: "Job Description",
+    contextJobNote: "Optional. If provided, recommendations will be tied to the role requirements.",
+    contextJobPlaceholder: "Paste the job description or role here...",
+    contextContinue: "Continue with context",
+    contextSkip: "Skip",
+
+    // Test page
+    testTitle: "Warm-up",
+    testSubtitle:
+      "How well does each situation describe you? Answer honestly \u2014 there are no right or wrong answers.",
+    testBack: "Back",
+
+    // Progress bar
+    progressQuestion: "Question",
+    progressOf: "of",
+
+    // Results page
+    resultsTitle: "Your Profile",
+    resultsSubtitle: "Here's how your soft skills look right now",
+    resultsErrorSuffix: ". Showing basic results without AI interpretation.",
+    resultsFallbackSummary: "Could not get AI analysis. Showing results based on your answers.",
+    resultsOverallLabel: "Overall score:",
+    resultsOutOf: "out of 5",
+    resultsChartTitle: "Profile by dimensions",
+    resultsDetailTitle: "Breakdown by dimensions",
+    resultsStrengths: "Strengths",
+    resultsWeaknesses: "Growth areas",
+    resultsCopyBtn: "Copy results",
+    resultsCopied: "Copied!",
+    resultsShareBtn: "Share",
+    resultsShareText: "My Soft Skills Check result:",
+    resultsShareCta: "Take it:",
+    resultsDeepDive: "Deep-dive assessment",
+    resultsToRecommendations: "Skip to recommendations",
+    resultsLoadingTitle: "AI is analyzing your answers",
+    resultsLoadingSubtitle: "This will take a few seconds...",
+    resultsAnalysisError: "Analysis error",
+
+    // Deep-dive page
+    deepDiveTitle: "Deep-Dive Assessment",
+    deepDiveSubtitle: "Follow-up questions focused on your growth areas",
+    deepDiveLoadingTitle: "AI is generating questions",
+    deepDiveLoadingSubtitle: "Building a deeper test based on your weak areas...",
+    deepDiveError: "Error",
+    deepDiveRetry: "Try again",
+    deepDiveToRecommendations: "Go to recommendations",
+    deepDiveNoQuestions: "No questions for deep-dive assessment.",
+    deepDiveBack: "Back",
+
+    // Recommendations page
+    recsTitle: "Personal Recommendations",
+    recsLoadingTitle: "Preparing your personal plan",
+    recsLoadingSubtitle: "AI is building recommendations based on your profile...",
+    recsError: "Error",
+    recsRetry: "Try again",
+    recsBackToResults: "Back to results",
+    recsDailyHabits: "Daily habits",
+    recsWeeklyGoals: "Weekly goals",
+    recsStartOver: "Start over",
+    recsBackBtn: "Back to results",
+    recsActionSteps: "Action steps:",
+    recsResources: "Useful resources:",
+
+    // Footer
+    footerText: "Open source project. MIT License.",
+  },
+} as const;
+
+export type UIStrings = typeof ui.ru;

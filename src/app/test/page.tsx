@@ -2,14 +2,20 @@
 
 import { useState, useCallback, useEffect } from "react";
 import { useRouter } from "next/navigation";
-import { questions } from "@/lib/questions";
+import { questions, scaleLabels, scaleLabelsEn } from "@/lib/questions";
 import { dimensionMap } from "@/lib/questions";
 import { Answer } from "@/types/assessment";
 import QuestionCard from "@/components/QuestionCard";
 import ProgressBar from "@/components/ProgressBar";
+import { useLang } from "@/lib/LangContext";
+import { ui } from "@/lib/i18n";
 
 export default function TestPage() {
   const router = useRouter();
+  const { lang } = useLang();
+  const t = ui[lang];
+  const currentScaleLabels = lang === "en" ? scaleLabelsEn : scaleLabels;
+
   const [currentIndex, setCurrentIndex] = useState(() => {
     if (typeof window !== "undefined") {
       const saved = sessionStorage.getItem("test_current_index");
@@ -84,28 +90,38 @@ export default function TestPage() {
     (a) => a.questionId === currentQuestion.id
   );
 
+  const questionText = lang === "en" ? currentQuestion.textEn : currentQuestion.text;
+  const dimensionName = lang === "en"
+    ? dimensionMap[currentQuestion.dimension].nameEn
+    : dimensionMap[currentQuestion.dimension].name;
+
   return (
     <div className="max-w-4xl mx-auto px-4 py-8 md:py-12">
       <div className="mb-8">
-        <h1 className="text-2xl font-bold text-white mb-2">Разминка</h1>
+        <h1 className="text-2xl font-bold text-white mb-2">{t.testTitle}</h1>
         <p className="text-slate-400 text-sm">
-          Насколько каждая ситуация описывает тебя? Отвечай честно —
-          правильных и неправильных ответов нет.
+          {t.testSubtitle}
         </p>
       </div>
 
       <div className="mb-8">
-        <ProgressBar current={currentIndex + 1} total={questions.length} />
+        <ProgressBar
+          current={currentIndex + 1}
+          total={questions.length}
+          questionLabel={t.progressQuestion}
+          ofLabel={t.progressOf}
+        />
       </div>
 
       <QuestionCard
         key={currentQuestion.id}
         questionNumber={currentIndex + 1}
         totalQuestions={questions.length}
-        questionText={currentQuestion.text}
-        dimensionName={dimensionMap[currentQuestion.dimension].name}
+        questionText={questionText}
+        dimensionName={dimensionName}
         onAnswer={handleAnswer}
         initialValue={existingAnswer?.value}
+        scaleLabelsMap={currentScaleLabels}
       />
 
       <div className="flex justify-between items-center mt-6 max-w-2xl mx-auto">
@@ -131,7 +147,7 @@ export default function TestPage() {
               d="M15 19l-7-7 7-7"
             />
           </svg>
-          Назад
+          {t.testBack}
         </button>
 
         <span className="text-sm text-slate-500">

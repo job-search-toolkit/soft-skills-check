@@ -5,11 +5,15 @@ import { Recommendation } from "@/types/assessment";
 interface RecommendationCardProps {
   recommendation: Recommendation;
   index: number;
+  actionStepsLabel?: string;
+  resourcesLabel?: string;
 }
 
 export default function RecommendationCard({
   recommendation,
   index,
+  actionStepsLabel = "Конкретные шаги:",
+  resourcesLabel = "Полезные ресурсы:",
 }: RecommendationCardProps) {
   const scoreColor =
     recommendation.score >= 4
@@ -44,7 +48,7 @@ export default function RecommendationCard({
       {recommendation.actions.length > 0 && (
         <div className="mb-4">
           <h4 className="text-sm font-medium text-violet-400 mb-2">
-            Конкретные шаги:
+            {actionStepsLabel}
           </h4>
           <ul className="space-y-1.5">
             {recommendation.actions.map((action, i) => (
@@ -60,7 +64,7 @@ export default function RecommendationCard({
       {recommendation.resources.length > 0 && (
         <div>
           <h4 className="text-sm font-medium text-indigo-400 mb-2">
-            Полезные ресурсы:
+            {resourcesLabel}
           </h4>
           <ul className="space-y-1.5">
             {recommendation.resources.map((resource, i) => (

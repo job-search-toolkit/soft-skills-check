@@ -10,13 +10,16 @@ export interface Question {
   id: string;
   dimension: DimensionKey;
   text: string;
+  textEn: string;
   reverse: boolean;
 }
 
 export interface DimensionInfo {
   key: DimensionKey;
   name: string;
+  nameEn: string;
   description: string;
+  descriptionEn: string;
 }
 
 export interface Answer {

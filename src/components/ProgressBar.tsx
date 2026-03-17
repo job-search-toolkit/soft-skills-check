@@ -3,16 +3,23 @@
 interface ProgressBarProps {
   current: number;
   total: number;
+  questionLabel?: string;
+  ofLabel?: string;
 }
 
-export default function ProgressBar({ current, total }: ProgressBarProps) {
+export default function ProgressBar({
+  current,
+  total,
+  questionLabel = "Вопрос",
+  ofLabel = "из",
+}: ProgressBarProps) {
   const percentage = Math.round((current / total) * 100);
 
   return (
     <div className="w-full">
       <div className="flex justify-between items-center mb-2">
         <span className="text-sm text-slate-400">
-          Вопрос {current} из {total}
+          {questionLabel} {current} {ofLabel} {total}
         </span>
         <span className="text-sm text-slate-400">{percentage}%</span>
       </div>
