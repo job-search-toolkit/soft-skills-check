@@ -454,15 +454,6 @@ export default function ResultsPage() {
           </div>
         </div>
 
-        {/* Subtle report link */}
-        <div className="text-center mb-4 animate-fade-in-up">
-          <button
-            onClick={() => router.push("/report")}
-            className="text-xs text-slate-600 hover:text-slate-400 underline underline-offset-2 transition-colors"
-          >
-            {t.resultsOpenReport}
-          </button>
-        </div>
         </>
       )}
 
