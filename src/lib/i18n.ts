@@ -59,10 +59,10 @@ export const ui = {
     topicsStartBtn: "Начать",
 
     // Context page
-    contextBadge: "Необязательный шаг",
-    contextTitle: "Контекст для персонализации",
+    contextBadge: "Расскажи о себе",
+    contextTitle: "Настроим под тебя",
     contextSubtitle:
-      "Загрузите резюме и/или описание вакансии, чтобы получить более точный анализ и рекомендации, привязанные к вашему опыту и целевой роли. Можно пропустить.",
+      "Выбери свою сферу, загрузи резюме или вставь вакансию — тогда вопросы и рекомендации будут про твою реальность. Или просто пропусти.",
     contextResumeTitle: "Резюме",
     contextTabUpload: "Загрузить файл",
     contextTabPaste: "Вставить текст",
@@ -201,10 +201,10 @@ export const ui = {
     topicsStartBtn: "Start",
 
     // Context page
-    contextBadge: "Optional step",
-    contextTitle: "Context for personalization",
+    contextBadge: "Tell us about yourself",
+    contextTitle: "Let\u2019s personalize",
     contextSubtitle:
-      "Upload your resume and/or job description to get a more accurate analysis and recommendations tied to your experience and target role. You can skip this.",
+      "Pick your field, upload a resume, or paste a job description \u2014 so questions and recommendations match your reality. Or just skip.",
     contextResumeTitle: "Resume",
     contextTabUpload: "Upload file",
     contextTabPaste: "Paste text",

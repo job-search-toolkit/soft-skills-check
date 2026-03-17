@@ -7,6 +7,25 @@ import { ui } from "@/lib/i18n";
 
 type Tab = "upload" | "paste";
 
+const PROFESSIONS = [
+  { id: "software_dev", ru: "Разработка", en: "Software Development" },
+  { id: "product", ru: "Продукт", en: "Product Management" },
+  { id: "design", ru: "Дизайн", en: "Design" },
+  { id: "recruitment", ru: "Рекрутмент", en: "Recruitment" },
+  { id: "hr", ru: "HR", en: "HR" },
+  { id: "marketing", ru: "Маркетинг", en: "Marketing" },
+  { id: "sales", ru: "Продажи", en: "Sales" },
+  { id: "analytics", ru: "Аналитика", en: "Analytics" },
+  { id: "finance", ru: "Финансы", en: "Finance" },
+  { id: "operations", ru: "Операции", en: "Operations" },
+  { id: "management", ru: "Менеджмент", en: "Management" },
+  { id: "support", ru: "Поддержка", en: "Support" },
+  { id: "content", ru: "Контент", en: "Content" },
+  { id: "legal", ru: "Юриспруденция", en: "Legal" },
+  { id: "education", ru: "Образование", en: "Education" },
+  { id: "construction", ru: "Строительство", en: "Construction" },
+];
+
 export default function ContextPage() {
   const router = useRouter();
   const { lang } = useLang();
@@ -14,11 +33,18 @@ export default function ContextPage() {
   const [activeTab, setActiveTab] = useState<Tab>("upload");
   const [resumeText, setResumeText] = useState("");
   const [jobDescription, setJobDescription] = useState("");
+  const [selectedProfessions, setSelectedProfessions] = useState<string[]>([]);
   const [fileName, setFileName] = useState<string | null>(null);
   const [dragActive, setDragActive] = useState(false);
   const [parsing, setParsing] = useState(false);
   const [parseError, setParseError] = useState<string | null>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
+
+  const toggleProfession = (id: string) => {
+    setSelectedProfessions(prev =>
+      prev.includes(id) ? prev.filter(p => p !== id) : [...prev, id]
+    );
+  };
 
   // Restore context from sessionStorage if returning to this page
   useEffect(() => {
@@ -28,6 +54,7 @@ export default function ContextPage() {
         const ctx = JSON.parse(stored);
         if (ctx.resume) setResumeText(ctx.resume);
         if (ctx.jobDescription) setJobDescription(ctx.jobDescription);
+        if (ctx.professions) setSelectedProfessions(ctx.professions);
       } catch {
         // ignore
       }
@@ -106,20 +133,21 @@ export default function ContextPage() {
     const context = {
       resume: resumeText.trim() || undefined,
       jobDescription: jobDescription.trim() || undefined,
+      professions: selectedProfessions.length > 0 ? selectedProfessions : undefined,
     };
     sessionStorage.setItem("assessment_context", JSON.stringify(context));
     router.push("/topics");
   };
 
   const handleSkip = () => {
-    // Clear any previous context
     sessionStorage.removeItem("assessment_context");
     router.push("/topics");
   };
 
   const hasResume = resumeText.trim().length > 0;
   const hasJob = jobDescription.trim().length > 0;
-  const hasAnyContext = hasResume || hasJob;
+  const hasProfessions = selectedProfessions.length > 0;
+  const hasAnyContext = hasResume || hasJob || hasProfessions;
 
   return (
     <div className="max-w-4xl mx-auto px-4 py-8 md:py-12">
@@ -270,6 +298,37 @@ export default function ContextPage() {
             {jobDescription.trim().length} {t.contextChars}
           </p>
         )}
+      </div>
+
+      {/* Profession tags */}
+      <div className="bg-slate-900 border border-slate-800 rounded-2xl p-6 md:p-8 mb-8 animate-fade-in-up">
+        <h2 className="text-lg font-semibold text-white mb-2">
+          {lang === "ru" ? "Твоя сфера" : "Your field"}
+        </h2>
+        <p className="text-sm text-slate-400 mb-4">
+          {lang === "ru"
+            ? "Выбери одну или несколько — это поможет адаптировать вопросы и рекомендации под твой контекст."
+            : "Pick one or more — this helps tailor questions and recommendations to your context."}
+        </p>
+        <div className="flex flex-wrap gap-2">
+          {PROFESSIONS.map((p) => {
+            const isSelected = selectedProfessions.includes(p.id);
+            return (
+              <button
+                key={p.id}
+                onClick={() => toggleProfession(p.id)}
+                className={`px-3.5 py-1.5 rounded-full text-sm font-medium transition-all duration-200 border ${
+                  isSelected
+                    ? "bg-violet-500/20 border-violet-500/50 text-violet-300"
+                    : "bg-slate-800/50 border-slate-700 text-slate-400 hover:border-slate-600 hover:text-slate-300"
+                }`}
+              >
+                {isSelected && <span className="mr-1">✓</span>}
+                {lang === "ru" ? p.ru : p.en}
+              </button>
+            );
+          })}
+        </div>
       </div>
 
       {/* Actions */}
