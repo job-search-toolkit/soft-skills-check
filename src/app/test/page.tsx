@@ -1,10 +1,10 @@
 "use client";
 
-import { useState, useCallback, useEffect, useMemo } from "react";
+import { useState, useCallback, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { questions as allQuestions, scaleLabels, scaleLabelsEn } from "@/lib/questions";
 import { dimensionMap } from "@/lib/questions";
-import { Answer } from "@/types/assessment";
+import { Question, Answer } from "@/types/assessment";
 import QuestionCard from "@/components/QuestionCard";
 import ProgressBar from "@/components/ProgressBar";
 import { useLang } from "@/lib/LangContext";
@@ -16,18 +16,25 @@ export default function TestPage() {
   const t = ui[lang];
   const currentScaleLabels = lang === "en" ? scaleLabelsEn : scaleLabels;
 
-  // Filter questions by selected topics
-  const questions = useMemo(() => {
-    if (typeof window === "undefined") return allQuestions;
+  // Filter questions by selected topics (client-side only)
+  const [questions, setQuestions] = useState<Question[]>([]);
+
+  useEffect(() => {
     const stored = sessionStorage.getItem("selected_topics");
-    if (!stored) return allQuestions;
+    if (!stored) {
+      setQuestions(allQuestions);
+      return;
+    }
     try {
       const selectedTopics: string[] = JSON.parse(stored);
-      if (!Array.isArray(selectedTopics) || selectedTopics.length === 0)
-        return allQuestions;
-      return allQuestions.filter((q) => selectedTopics.includes(q.dimension));
+      if (!Array.isArray(selectedTopics) || selectedTopics.length === 0) {
+        setQuestions(allQuestions);
+        return;
+      }
+      const filtered = allQuestions.filter((q) => selectedTopics.includes(q.dimension));
+      setQuestions(filtered.length > 0 ? filtered : allQuestions);
     } catch {
-      return allQuestions;
+      setQuestions(allQuestions);
     }
   }, []);
 
@@ -58,10 +65,11 @@ export default function TestPage() {
     }
   }, [answers]);
 
-  const currentQuestion = questions[currentIndex];
+  const currentQuestion = questions.length > 0 ? questions[currentIndex] : null;
 
   const handleAnswer = useCallback(
     (value: number) => {
+      if (!currentQuestion) return;
       const newAnswers = [...answers];
       const existingIndex = newAnswers.findIndex(
         (a) => a.questionId === currentQuestion.id
@@ -101,7 +109,13 @@ export default function TestPage() {
     }
   };
 
-  if (!currentQuestion) return null;
+  if (!currentQuestion) {
+    return (
+      <div className="max-w-4xl mx-auto px-4 py-16 text-center">
+        <div className="w-8 h-8 rounded-full border-2 border-violet-500 border-t-transparent animate-spin mx-auto" />
+      </div>
+    );
+  }
 
   const existingAnswer = answers.find(
     (a) => a.questionId === currentQuestion.id
