@@ -2,8 +2,15 @@
 
 import { useState, useCallback, useEffect } from "react";
 import { useRouter } from "next/navigation";
-import { questions as allQuestions, scaleLabels, scaleLabelsEn } from "@/lib/questions";
+import { questions as coreQuestions, scaleLabels, scaleLabelsEn } from "@/lib/questions";
 import { dimensionMap } from "@/lib/questions";
+import { extendedQuestions } from "@/lib/questions-pool";
+
+// Merge core + extended pool, dedup by ID
+const allQuestionsMap = new Map<string, typeof coreQuestions[0]>();
+for (const q of coreQuestions) allQuestionsMap.set(q.id, q);
+for (const q of extendedQuestions) { if (!allQuestionsMap.has(q.id)) allQuestionsMap.set(q.id, q); }
+const allQuestions = Array.from(allQuestionsMap.values());
 import { Question, Answer } from "@/types/assessment";
 import QuestionCard, { QuestionRating } from "@/components/QuestionCard";
 import ProgressBar from "@/components/ProgressBar";
@@ -24,7 +31,16 @@ export default function TestPage() {
 
   // Load questions, restore progress — once on mount
   useEffect(() => {
-    // 1. Determine questions from selected topics
+    // 1. Check if this is a fresh start (from topics page) or a resume
+    const freshStart = sessionStorage.getItem("test_fresh_start");
+    if (freshStart) {
+      sessionStorage.removeItem("test_fresh_start");
+      sessionStorage.removeItem("test_answers");
+      sessionStorage.removeItem("test_current_index");
+      sessionStorage.removeItem("questionRatings");
+    }
+
+    // 2. Determine questions from selected topics
     let qs = allQuestions;
     const topicsStored = sessionStorage.getItem("selected_topics");
     if (topicsStored) {
@@ -32,23 +48,32 @@ export default function TestPage() {
         const selectedTopics: string[] = JSON.parse(topicsStored);
         if (Array.isArray(selectedTopics) && selectedTopics.length > 0) {
           const filtered = allQuestions.filter((q) => selectedTopics.includes(q.dimension));
-          if (filtered.length > 0) qs = filtered;
+          if (filtered.length > 0) {
+            // Randomize: shuffle within each topic, pick 5 per topic
+            const randomized: typeof filtered = [];
+            for (const topic of selectedTopics) {
+              const topicQs = filtered.filter((q) => q.dimension === topic);
+              const shuffled = [...topicQs].sort(() => Math.random() - 0.5);
+              randomized.push(...shuffled.slice(0, 5));
+            }
+            qs = randomized;
+          }
         }
       } catch { /* ignore */ }
     }
     setQuestions(qs);
 
-    // 2. Restore saved answers
-    const savedAnswers = sessionStorage.getItem("test_answers");
-    if (savedAnswers) {
-      try { setAnswers(JSON.parse(savedAnswers)); } catch { /* ignore */ }
-    }
-
-    // 3. Restore index, clamped to valid range
-    const savedIndex = sessionStorage.getItem("test_current_index");
-    if (savedIndex) {
-      const idx = parseInt(savedIndex, 10);
-      setCurrentIndex(Math.min(idx, qs.length - 1));
+    // 3. Restore saved answers (only if not fresh start)
+    if (!freshStart) {
+      const savedAnswers = sessionStorage.getItem("test_answers");
+      if (savedAnswers) {
+        try { setAnswers(JSON.parse(savedAnswers)); } catch { /* ignore */ }
+      }
+      const savedIndex = sessionStorage.getItem("test_current_index");
+      if (savedIndex) {
+        const idx = parseInt(savedIndex, 10);
+        setCurrentIndex(Math.min(idx, qs.length - 1));
+      }
     }
   }, []);
 

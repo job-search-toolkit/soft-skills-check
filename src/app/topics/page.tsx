@@ -73,6 +73,7 @@ export default function TopicsPage() {
 
   const handleStart = () => {
     sessionStorage.setItem("selected_topics", JSON.stringify(selected));
+    sessionStorage.setItem("test_fresh_start", "1");
     router.push("/test");
   };
 
