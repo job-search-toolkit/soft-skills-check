@@ -108,13 +108,13 @@ export default function ContextPage() {
       jobDescription: jobDescription.trim() || undefined,
     };
     sessionStorage.setItem("assessment_context", JSON.stringify(context));
-    router.push("/test");
+    router.push("/topics");
   };
 
   const handleSkip = () => {
     // Clear any previous context
     sessionStorage.removeItem("assessment_context");
-    router.push("/test");
+    router.push("/topics");
   };
 
   const hasResume = resumeText.trim().length > 0;

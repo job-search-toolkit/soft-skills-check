@@ -13,24 +13,21 @@ function getAdjustedScore(questionId: string, value: number): number {
 
 /**
  * Calculate dimension scores from raw answers.
+ * Dynamically builds dimensions from the actual answered questions.
  */
 export function calculateDimensionScores(
   answers: Answer[]
 ): DimensionScore[] {
-  const dimensionAnswers: Record<DimensionKey, number[]> = {
-    critical_thinking: [],
-    communication: [],
-    adaptability: [],
-    self_organization: [],
-    product_thinking: [],
-    collaboration: [],
-  };
+  const dimensionAnswers: Record<string, number[]> = {};
 
   for (const answer of answers) {
     const question = questions.find((q) => q.id === answer.questionId);
     if (!question) continue;
 
     const adjustedScore = getAdjustedScore(answer.questionId, answer.value);
+    if (!dimensionAnswers[question.dimension]) {
+      dimensionAnswers[question.dimension] = [];
+    }
     dimensionAnswers[question.dimension].push(adjustedScore);
   }
 
@@ -40,12 +37,13 @@ export function calculateDimensionScores(
     const dimKey = key as DimensionKey;
     if (values.length === 0) continue;
 
+    const dimInfo = dimensionMap[dimKey];
     const avg = values.reduce((a, b) => a + b, 0) / values.length;
     const percentage = ((avg - 1) / 4) * 100;
 
     scores.push({
       dimension: dimKey,
-      name: dimensionMap[dimKey].name,
+      name: dimInfo ? dimInfo.name : dimKey,
       score: Math.round(avg * 10) / 10,
       percentage: Math.round(percentage),
     });

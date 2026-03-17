@@ -65,7 +65,7 @@ export async function POST(request: NextRequest) {
 
     const systemPrompt = isEn
       ? `You are an expert in soft skills for developers who work with AI tools (vibe coders).
-You are given self-assessment test results across 6 dimensions. Each dimension is scored on a 1-5 scale.
+You are given self-assessment test results across multiple dimensions. Each dimension is scored on a 1-5 scale.
 Reverse questions are already recalculated — a high score always means high skill level.
 
 Your task is to provide an honest, constructive analysis. Don't flatter, but don't demotivate either.
@@ -75,7 +75,7 @@ ${jobDescription ? "\nIf a job description is provided — relate results to the
 
 IMPORTANT: Respond ONLY with valid JSON without markdown formatting. No \`\`\`json blocks.`
       : `Ты — эксперт по soft skills для разработчиков, работающих с AI-инструментами (вайб-кодеров).
-Тебе даны результаты теста самооценки по 6 измерениям. Каждое измерение оценивается по шкале 1-5.
+Тебе даны результаты теста самооценки по нескольким измерениям. Каждое измерение оценивается по шкале 1-5.
 Reverse-вопросы уже пересчитаны — высокий балл везде означает высокий навык.
 
 Твоя задача — дать честный, конструктивный анализ. Не льсти, но и не демотивируй.

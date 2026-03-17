@@ -55,6 +55,42 @@ export const dimensions: DimensionInfo[] = [
     descriptionEn:
       "Teamwork skills, openness to feedback, willingness to share knowledge",
   },
+  {
+    key: "leadership",
+    name: "Лидерство и инициатива",
+    nameEn: "Leadership & Initiative",
+    description:
+      "Способность брать на себя ответственность, мотивировать команду и предлагать улучшения",
+    descriptionEn:
+      "Ability to take responsibility, motivate the team, and propose improvements",
+  },
+  {
+    key: "conflict_resolution",
+    name: "Управление конфликтами",
+    nameEn: "Conflict Resolution",
+    description:
+      "Умение разрешать разногласия, давать и принимать обратную связь конструктивно",
+    descriptionEn:
+      "Ability to resolve disagreements, give and receive feedback constructively",
+  },
+  {
+    key: "emotional_intelligence",
+    name: "Эмоциональный интеллект",
+    nameEn: "Emotional Intelligence",
+    description:
+      "Понимание эмоций — своих и чужих, умение регулировать состояние и поддерживать атмосферу",
+    descriptionEn:
+      "Understanding emotions — yours and others', ability to regulate state and maintain atmosphere",
+  },
+  {
+    key: "time_management",
+    name: "Управление временем",
+    nameEn: "Time Management",
+    description:
+      "Оценка сроков, приоритизация задач, умение говорить «нет» и не тонуть в перфекционизме",
+    descriptionEn:
+      "Estimating timelines, prioritizing tasks, saying 'no', and avoiding perfectionism traps",
+  },
 ];
 
 export const dimensionMap: Record<DimensionKey, DimensionInfo> =
@@ -287,6 +323,154 @@ export const questions: Question[] = [
     text: "Когда я нахожу удачный промпт, workflow или приём работы с AI — я делюсь этим с командой, даже если никто не просил.",
     textEn: "When I find a good prompt, workflow, or AI technique, I share it with the team even if nobody asked.",
     reverse: false,
+  },
+
+  // Leadership (ld)
+  {
+    id: "ld_1",
+    dimension: "leadership",
+    text: "Если я вижу, что задача зависла и никто не берёт на себя ответственность — я беру инициативу, даже если это не моя зона.",
+    textEn: "If I see a task stuck with nobody taking responsibility, I take initiative even if it's not my area.",
+    reverse: false,
+  },
+  {
+    id: "ld_2",
+    dimension: "leadership",
+    text: "Мне проще подождать, пока кто-то примет решение, чем взять ответственность на себя — особенно если последствия неясны.",
+    textEn: "I'd rather wait for someone else to decide than take responsibility myself — especially when consequences are unclear.",
+    reverse: true,
+  },
+  {
+    id: "ld_3",
+    dimension: "leadership",
+    text: "Я могу мотивировать команду в трудный момент — подбодрить, предложить план, помочь людям не застрять.",
+    textEn: "I can motivate the team in tough moments — encourage, suggest a plan, help people not get stuck.",
+    reverse: false,
+  },
+  {
+    id: "ld_4",
+    dimension: "leadership",
+    text: "Мне комфортнее быть исполнителем с чётким ТЗ, чем лидером, который определяет направление.",
+    textEn: "I'm more comfortable as an executor with a clear spec than as a leader who sets direction.",
+    reverse: true,
+  },
+  {
+    id: "ld_5",
+    dimension: "leadership",
+    text: "Когда я вижу возможность улучшить процесс в команде, я предлагаю это — даже если никто не просил.",
+    textEn: "When I see a chance to improve a team process, I suggest it — even if nobody asked.",
+    reverse: false,
+  },
+
+  // Conflict Resolution (cr)
+  {
+    id: "cr_1",
+    dimension: "conflict_resolution",
+    text: "Если в команде возник конфликт, я стараюсь разобраться в позициях обеих сторон, прежде чем высказать своё мнение.",
+    textEn: "When there's a team conflict, I try to understand both sides before sharing my opinion.",
+    reverse: false,
+  },
+  {
+    id: "cr_2",
+    dimension: "conflict_resolution",
+    text: "Мне некомфортно вступать в сложные разговоры — я обычно избегаю конфронтации, даже если проблема нарастает.",
+    textEn: "I'm uncomfortable with difficult conversations — I usually avoid confrontation even when the problem is growing.",
+    reverse: true,
+  },
+  {
+    id: "cr_3",
+    dimension: "conflict_resolution",
+    text: "Я умею давать обратную связь так, чтобы человек не чувствовал себя атакованным — фокусируюсь на поведении, не на личности.",
+    textEn: "I can give feedback so the person doesn't feel attacked — I focus on behavior, not personality.",
+    reverse: false,
+  },
+  {
+    id: "cr_4",
+    dimension: "conflict_resolution",
+    text: "Когда мне дают критический фидбек, моя первая реакция — защищаться, а не слушать.",
+    textEn: "When I receive critical feedback, my first reaction is to defend myself rather than listen.",
+    reverse: true,
+  },
+  {
+    id: "cr_5",
+    dimension: "conflict_resolution",
+    text: "Я способен признать свою ошибку перед командой — мне не нужно быть правым в каждом споре.",
+    textEn: "I can admit my mistake to the team — I don't need to be right in every argument.",
+    reverse: false,
+  },
+
+  // Emotional Intelligence (ei)
+  {
+    id: "ei_1",
+    dimension: "emotional_intelligence",
+    text: "Я хорошо чувствую настроение собеседника — по тону голоса, скорости ответов, выбору слов.",
+    textEn: "I'm good at sensing someone's mood — from tone of voice, response speed, word choice.",
+    reverse: false,
+  },
+  {
+    id: "ei_2",
+    dimension: "emotional_intelligence",
+    text: "Мне бывает сложно понять, почему коллега расстроен — я фокусируюсь на задаче и иногда не замечаю эмоциональный фон.",
+    textEn: "I sometimes struggle to understand why a colleague is upset — I focus on the task and miss the emotional context.",
+    reverse: true,
+  },
+  {
+    id: "ei_3",
+    dimension: "emotional_intelligence",
+    text: "Я умею регулировать своё состояние — если чувствую раздражение или стресс, могу сделать паузу и не выплёскивать это на других.",
+    textEn: "I can regulate my emotional state — if I feel irritated or stressed, I can pause and not take it out on others.",
+    reverse: false,
+  },
+  {
+    id: "ei_4",
+    dimension: "emotional_intelligence",
+    text: "Когда в команде напряжённая атмосфера, я замечаю это и стараюсь разрядить — шуткой, поддержкой или просто спросив, как дела.",
+    textEn: "When the team atmosphere is tense, I notice and try to defuse it — with humor, support, or just asking how people are doing.",
+    reverse: false,
+  },
+  {
+    id: "ei_5",
+    dimension: "emotional_intelligence",
+    text: "Честно говоря, мне проще работать с данными и кодом, чем с людьми и их эмоциями.",
+    textEn: "Honestly, I find it easier to work with data and code than with people and their emotions.",
+    reverse: true,
+  },
+
+  // Time Management (tm)
+  {
+    id: "tm_1",
+    dimension: "time_management",
+    text: "Я умею оценивать, сколько времени займёт задача — и мои оценки обычно близки к реальности.",
+    textEn: "I can estimate how long a task will take — and my estimates are usually close to reality.",
+    reverse: false,
+  },
+  {
+    id: "tm_2",
+    dimension: "time_management",
+    text: "Я часто недооцениваю время на задачу, а потом работаю в авральном режиме перед дедлайном.",
+    textEn: "I often underestimate task time, then work in crisis mode before the deadline.",
+    reverse: true,
+  },
+  {
+    id: "tm_3",
+    dimension: "time_management",
+    text: "Я чётко приоритизирую задачи — сначала важное и срочное, а не то, что интереснее или проще.",
+    textEn: "I clearly prioritize tasks — important and urgent first, not what's more interesting or easier.",
+    reverse: false,
+  },
+  {
+    id: "tm_4",
+    dimension: "time_management",
+    text: "Я умею говорить 'нет' или 'не сейчас', когда на меня пытаются повесить задачу, которая не в приоритете.",
+    textEn: "I can say 'no' or 'not now' when someone tries to assign me a task that's not a priority.",
+    reverse: false,
+  },
+  {
+    id: "tm_5",
+    dimension: "time_management",
+    text: "Я иногда трачу много времени на перфекционизм в деталях, которые не влияют на результат.",
+    textEn: "I sometimes spend too much time perfecting details that don't affect the outcome.",
+    reverse: true,
   },
 ];
 

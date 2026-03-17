@@ -16,6 +16,10 @@ const SHORT_NAMES_RU: Record<string, string> = {
   self_organization: "Самоорганизация",
   product_thinking: "Продуктовое\nмышление",
   collaboration: "Коллаборация",
+  leadership: "Лидерство",
+  conflict_resolution: "Управление\nконфликтами",
+  emotional_intelligence: "Эмоциональный\nинтеллект",
+  time_management: "Управление\nвременем",
 };
 
 const SHORT_NAMES_EN: Record<string, string> = {
@@ -25,6 +29,10 @@ const SHORT_NAMES_EN: Record<string, string> = {
   self_organization: "Self-\nOrganization",
   product_thinking: "Product\nThinking",
   collaboration: "Collaboration",
+  leadership: "Leadership",
+  conflict_resolution: "Conflict\nResolution",
+  emotional_intelligence: "Emotional\nIntelligence",
+  time_management: "Time\nManagement",
 };
 
 export default function DimensionChart({

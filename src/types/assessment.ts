@@ -1,10 +1,4 @@
-export type DimensionKey =
-  | "critical_thinking"
-  | "communication"
-  | "adaptability"
-  | "self_organization"
-  | "product_thinking"
-  | "collaboration";
+export type DimensionKey = string;
 
 export interface Question {
   id: string;

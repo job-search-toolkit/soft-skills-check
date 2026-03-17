@@ -89,34 +89,54 @@ export default function Home() {
         <div className="grid sm:grid-cols-2 gap-4">
           {[
             {
-              icon: "🔍",
+              icon: "\uD83D\uDD0D",
               name: t.landingDimCritical,
               desc: t.landingDimCriticalDesc,
             },
             {
-              icon: "💬",
+              icon: "\uD83D\uDCAC",
               name: t.landingDimComm,
               desc: t.landingDimCommDesc,
             },
             {
-              icon: "⚡",
+              icon: "\u26A1",
               name: t.landingDimAdapt,
               desc: t.landingDimAdaptDesc,
             },
             {
-              icon: "📋",
+              icon: "\uD83D\uDCCB",
               name: t.landingDimOrg,
               desc: t.landingDimOrgDesc,
             },
             {
-              icon: "🎯",
+              icon: "\uD83C\uDFAF",
               name: t.landingDimProduct,
               desc: t.landingDimProductDesc,
             },
             {
-              icon: "🤝",
+              icon: "\uD83E\uDD1D",
               name: t.landingDimCollab,
               desc: t.landingDimCollabDesc,
+            },
+            {
+              icon: "\uD83D\uDE80",
+              name: t.landingDimLeadership,
+              desc: t.landingDimLeadershipDesc,
+            },
+            {
+              icon: "\uD83E\uDDD1\u200D\u2696\uFE0F",
+              name: t.landingDimConflict,
+              desc: t.landingDimConflictDesc,
+            },
+            {
+              icon: "\uD83D\uDCA1",
+              name: t.landingDimEI,
+              desc: t.landingDimEIDesc,
+            },
+            {
+              icon: "\u23F1\uFE0F",
+              name: t.landingDimTime,
+              desc: t.landingDimTimeDesc,
             },
           ].map((dim) => (
             <div

@@ -1,8 +1,8 @@
 "use client";
 
-import { useState, useCallback, useEffect } from "react";
+import { useState, useCallback, useEffect, useMemo } from "react";
 import { useRouter } from "next/navigation";
-import { questions, scaleLabels, scaleLabelsEn } from "@/lib/questions";
+import { questions as allQuestions, scaleLabels, scaleLabelsEn } from "@/lib/questions";
 import { dimensionMap } from "@/lib/questions";
 import { Answer } from "@/types/assessment";
 import QuestionCard from "@/components/QuestionCard";
@@ -15,6 +15,21 @@ export default function TestPage() {
   const { lang } = useLang();
   const t = ui[lang];
   const currentScaleLabels = lang === "en" ? scaleLabelsEn : scaleLabels;
+
+  // Filter questions by selected topics
+  const questions = useMemo(() => {
+    if (typeof window === "undefined") return allQuestions;
+    const stored = sessionStorage.getItem("selected_topics");
+    if (!stored) return allQuestions;
+    try {
+      const selectedTopics: string[] = JSON.parse(stored);
+      if (!Array.isArray(selectedTopics) || selectedTopics.length === 0)
+        return allQuestions;
+      return allQuestions.filter((q) => selectedTopics.includes(q.dimension));
+    } catch {
+      return allQuestions;
+    }
+  }, []);
 
   const [currentIndex, setCurrentIndex] = useState(() => {
     if (typeof window !== "undefined") {
@@ -77,7 +92,7 @@ export default function TestPage() {
         router.push("/results");
       }
     },
-    [answers, currentIndex, currentQuestion, router]
+    [answers, currentIndex, currentQuestion, questions, router]
   );
 
   const handleBack = () => {
@@ -86,14 +101,19 @@ export default function TestPage() {
     }
   };
 
+  if (!currentQuestion) return null;
+
   const existingAnswer = answers.find(
     (a) => a.questionId === currentQuestion.id
   );
 
   const questionText = lang === "en" ? currentQuestion.textEn : currentQuestion.text;
-  const dimensionName = lang === "en"
-    ? dimensionMap[currentQuestion.dimension].nameEn
-    : dimensionMap[currentQuestion.dimension].name;
+  const dimInfo = dimensionMap[currentQuestion.dimension];
+  const dimensionName = dimInfo
+    ? lang === "en"
+      ? dimInfo.nameEn
+      : dimInfo.name
+    : currentQuestion.dimension;
 
   return (
     <div className="max-w-4xl mx-auto px-4 py-8 md:py-12">

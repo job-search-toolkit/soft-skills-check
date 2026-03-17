@@ -10,7 +10,7 @@ export const ui = {
     landingStep01: "01",
     landingStep01Title: "Разминка",
     landingStep01Desc:
-      "30 ситуаций из реальной работы. Отвечаешь честно — без правильных и неправильных ответов. Это не экзамен, а зеркало.",
+      "Выбери интересные темы, ответь на ситуации из реальной работы. Честно — без правильных и неправильных ответов. Это не экзамен, а зеркало.",
     landingStep02: "02",
     landingStep02Title: "AI-разбор",
     landingStep02Desc:
@@ -19,7 +19,7 @@ export const ui = {
     landingStep03Title: "План роста",
     landingStep03Desc:
       "Не абстрактные советы, а конкретные шаги: что делать каждый день, какие привычки формировать, на что обратить внимание.",
-    landingDimensionsTitle: "6 направлений роста",
+    landingDimensionsTitle: "10 направлений роста",
     landingDimCritical: "Критическое мышление",
     landingDimCriticalDesc: "Умение проверять, сомневаться, видеть ошибки",
     landingDimComm: "Коммуникация",
@@ -32,8 +32,31 @@ export const ui = {
     landingDimProductDesc: "Фокус на пользователе и результате",
     landingDimCollab: "Коллаборация",
     landingDimCollabDesc: "Командная работа, обратная связь, открытость",
-    landingFooterNote: "10-15 минут. Данные остаются только у тебя.",
+    landingDimLeadership: "Лидерство",
+    landingDimLeadershipDesc: "Инициатива, ответственность, мотивация команды",
+    landingDimConflict: "Управление конфликтами",
+    landingDimConflictDesc: "Разрешение разногласий, конструктивный фидбек",
+    landingDimEI: "Эмоциональный интеллект",
+    landingDimEIDesc: "Понимание эмоций, саморегуляция, эмпатия",
+    landingDimTime: "Управление временем",
+    landingDimTimeDesc: "Оценка сроков, приоритеты, борьба с перфекционизмом",
+    landingFooterNote: "5-20 минут в зависимости от выбранных тем. Данные остаются только у тебя.",
     landingFooterCta: "Начать",
+
+    // Topic picker page
+    topicsBadge: "Шаг 1 из 3",
+    topicsTitle: "Выбери темы для тренировки",
+    topicsSubtitle:
+      "Выбери хотя бы одну тему. Каждая — это 5 вопросов и ~2 минуты.",
+    topicsLoadingRecs: "AI анализирует вакансию и подбирает темы...",
+    topicsRecommendedNote:
+      "AI рекомендовал темы на основе вакансии. Можешь изменить выбор.",
+    topicsRecommendedBadge: "Рекомендовано",
+    topicsSelectedCount: "тем выбрано",
+    topicsQuestions: "вопросов",
+    topicsMinutes: "мин",
+    topicsSelectAtLeastOne: "Выбери хотя бы одну тему",
+    topicsStartBtn: "Начать",
 
     // Context page
     contextBadge: "Необязательный шаг",
@@ -129,7 +152,7 @@ export const ui = {
     landingStep01: "01",
     landingStep01Title: "Warm-up",
     landingStep01Desc:
-      "30 real-world work situations. Answer honestly \u2014 no right or wrong answers. It's a mirror, not an exam.",
+      "Pick the topics you care about, answer real-world work situations. Honestly \u2014 no right or wrong answers. It's a mirror, not an exam.",
     landingStep02: "02",
     landingStep02Title: "AI Analysis",
     landingStep02Desc:
@@ -138,7 +161,7 @@ export const ui = {
     landingStep03Title: "Growth Plan",
     landingStep03Desc:
       "Not vague advice but concrete steps: what to do daily, which habits to build, what to pay attention to.",
-    landingDimensionsTitle: "6 growth dimensions",
+    landingDimensionsTitle: "10 growth dimensions",
     landingDimCritical: "Critical Thinking",
     landingDimCriticalDesc: "Ability to verify, question, and spot errors",
     landingDimComm: "Communication",
@@ -151,8 +174,31 @@ export const ui = {
     landingDimProductDesc: "Focus on the user and the outcome",
     landingDimCollab: "Collaboration",
     landingDimCollabDesc: "Teamwork, feedback, openness",
-    landingFooterNote: "10-15 minutes. Your data stays with you.",
+    landingDimLeadership: "Leadership",
+    landingDimLeadershipDesc: "Initiative, responsibility, team motivation",
+    landingDimConflict: "Conflict Resolution",
+    landingDimConflictDesc: "Resolving disagreements, constructive feedback",
+    landingDimEI: "Emotional Intelligence",
+    landingDimEIDesc: "Understanding emotions, self-regulation, empathy",
+    landingDimTime: "Time Management",
+    landingDimTimeDesc: "Estimating timelines, priorities, avoiding perfectionism",
+    landingFooterNote: "5-20 minutes depending on topics chosen. Your data stays with you.",
     landingFooterCta: "Start",
+
+    // Topic picker page
+    topicsBadge: "Step 1 of 3",
+    topicsTitle: "Choose topics to train",
+    topicsSubtitle:
+      "Pick at least one topic. Each is 5 questions and ~2 minutes.",
+    topicsLoadingRecs: "AI is analyzing the job description and selecting topics...",
+    topicsRecommendedNote:
+      "AI recommended topics based on the job description. You can change the selection.",
+    topicsRecommendedBadge: "Recommended",
+    topicsSelectedCount: "topics selected",
+    topicsQuestions: "questions",
+    topicsMinutes: "min",
+    topicsSelectAtLeastOne: "Select at least one topic",
+    topicsStartBtn: "Start",
 
     // Context page
     contextBadge: "Optional step",
