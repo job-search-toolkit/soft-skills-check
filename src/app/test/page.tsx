@@ -49,12 +49,15 @@ export default function TestPage() {
         if (Array.isArray(selectedTopics) && selectedTopics.length > 0) {
           const filtered = allQuestions.filter((q) => selectedTopics.includes(q.dimension));
           if (filtered.length > 0) {
-            // Randomize: shuffle within each topic, pick 5 per topic
+            // Determine questions per topic based on mode
+            const testMode = sessionStorage.getItem("test_mode");
+            const perTopic = testMode === "deep" ? 10 : 5;
+            // Randomize: shuffle within each topic, pick perTopic per topic
             const randomized: typeof filtered = [];
             for (const topic of selectedTopics) {
               const topicQs = filtered.filter((q) => q.dimension === topic);
               const shuffled = [...topicQs].sort(() => Math.random() - 0.5);
-              randomized.push(...shuffled.slice(0, 5));
+              randomized.push(...shuffled.slice(0, perTopic));
             }
             qs = randomized;
           }
@@ -121,6 +124,9 @@ export default function TestPage() {
         // All questions answered — save and navigate to results
         sessionStorage.setItem("testAnswers", JSON.stringify(newAnswers));
         sessionStorage.setItem("questionRatings", JSON.stringify(ratings));
+        // Persist mode so results page can read it
+        const currentMode = sessionStorage.getItem("test_mode") || "express";
+        sessionStorage.setItem("test_mode", currentMode);
         // Fire-and-forget: send ratings to analytics
         fetch("/api/analytics", {
           method: "POST",

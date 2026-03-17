@@ -26,6 +26,13 @@ export default function TopicsPage() {
   const [selected, setSelected] = useState<string[]>([]);
   const [recommended, setRecommended] = useState<string[]>([]);
   const [loadingRecs, setLoadingRecs] = useState(false);
+  const [mode, setMode] = useState<"express" | "deep">("express");
+
+  // Load mode from sessionStorage on mount (in case returning from results)
+  useEffect(() => {
+    const savedMode = sessionStorage.getItem("test_mode");
+    if (savedMode === "deep") setMode("deep");
+  }, []);
 
   // Load recommendations based on job description
   useEffect(() => {
@@ -73,11 +80,15 @@ export default function TopicsPage() {
 
   const handleStart = () => {
     sessionStorage.setItem("selected_topics", JSON.stringify(selected));
+    sessionStorage.setItem("test_mode", mode);
     sessionStorage.setItem("test_fresh_start", "1");
     router.push("/test");
   };
 
-  const estimatedMinutes = selected.length * 2;
+  const questionsPerTopic = mode === "deep" ? 10 : 5;
+  const minutesPerTopic = mode === "deep" ? 2 : 1;
+  const estimatedQuestions = selected.length * questionsPerTopic;
+  const estimatedMinutes = selected.length * minutesPerTopic;
 
   return (
     <div className="max-w-4xl mx-auto px-4 py-8 md:py-12">
@@ -167,6 +178,41 @@ export default function TopicsPage() {
         })}
       </div>
 
+      {/* Mode selector */}
+      <div className="mb-8 animate-fade-in-up">
+        <h3 className="text-sm font-medium text-slate-300 mb-3">{t.modeTitle}</h3>
+        <div className="flex gap-3">
+          <button
+            onClick={() => setMode("express")}
+            className={`flex-1 px-4 py-3 rounded-xl border-2 transition-all duration-200 text-left ${
+              mode === "express"
+                ? "border-violet-500 bg-violet-500/10"
+                : "border-slate-800 bg-slate-900 hover:border-slate-700"
+            }`}
+          >
+            <span className="text-lg mr-2">&#9889;</span>
+            <span className={`font-semibold text-sm ${mode === "express" ? "text-violet-300" : "text-slate-300"}`}>
+              {t.modeExpress}
+            </span>
+            <p className="text-xs text-slate-400 mt-1">{t.modeExpressDesc}</p>
+          </button>
+          <button
+            onClick={() => setMode("deep")}
+            className={`flex-1 px-4 py-3 rounded-xl border-2 transition-all duration-200 text-left ${
+              mode === "deep"
+                ? "border-violet-500 bg-violet-500/10"
+                : "border-slate-800 bg-slate-900 hover:border-slate-700"
+            }`}
+          >
+            <span className="text-lg mr-2">&#128300;</span>
+            <span className={`font-semibold text-sm ${mode === "deep" ? "text-violet-300" : "text-slate-300"}`}>
+              {t.modeDeep}
+            </span>
+            <p className="text-xs text-slate-400 mt-1">{t.modeDeepDesc}</p>
+          </button>
+        </div>
+      </div>
+
       {/* Bottom bar */}
       <div className="sticky bottom-0 bg-slate-950/90 backdrop-blur-sm border-t border-slate-800 -mx-4 px-4 py-4 mt-4">
         <div className="max-w-4xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
@@ -176,7 +222,7 @@ export default function TopicsPage() {
                 <span className="text-violet-400 font-semibold">
                   {selected.length}
                 </span>{" "}
-                {t.topicsSelectedCount} &middot; {selected.length * 5}{" "}
+                {t.topicsSelectedCount} &middot; {estimatedQuestions}{" "}
                 {t.topicsQuestions} &middot; ~{estimatedMinutes}{" "}
                 {t.topicsMinutes}
               </>

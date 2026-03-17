@@ -171,6 +171,33 @@ export default function ResultsPage() {
 
   if (!analysis) return null;
 
+  // Determine test mode
+  const testMode = (typeof window !== "undefined" && sessionStorage.getItem("test_mode")) || "express";
+
+  // Related dimension mapping
+  const RELATED_DIMENSIONS: Record<string, string> = {
+    conflict_resolution: "emotional_intelligence",
+    leadership: "collaboration",
+    communication: "product_thinking",
+    adaptability: "self_organization",
+    critical_thinking: "adaptability",
+    time_management: "self_organization",
+    self_organization: "time_management",
+    product_thinking: "communication",
+    collaboration: "leadership",
+    emotional_intelligence: "conflict_resolution",
+  };
+
+  // Compute weak and related dimensions
+  const weakDims = analysis.weakDimensions || [];
+  const relatedDims = Array.from(
+    new Set(
+      weakDims
+        .map((d) => RELATED_DIMENSIONS[d])
+        .filter((d): d is string => !!d && !weakDims.includes(d))
+    )
+  );
+
   const scoreColor = (score: number) =>
     score >= 4
       ? "text-green-400"
@@ -294,54 +321,124 @@ export default function ResultsPage() {
         </div>
       )}
 
-      {/* What's next — sell the quiz */}
-      <div className="bg-gradient-to-br from-violet-500/5 to-indigo-500/5 border border-violet-500/20 rounded-2xl p-6 md:p-8 mb-6 animate-fade-in-up">
-        <h2 className="text-lg font-semibold text-white mb-3">
-          {lang === "ru" ? "Это пока только самооценка" : "This is just a self-assessment so far"}
-        </h2>
-        <p className="text-sm text-slate-400 leading-relaxed mb-4">
-          {lang === "ru"
-            ? "Ты рассказал, как видишь себя. Но знаешь ли ты теорию, которая стоит за этими навыками? В квизе — реальные фреймворки, модели и кейсы. Каждый вопрос с объяснением и источником."
-            : "You shared how you see yourself. But do you know the theory behind these skills? The quiz has real frameworks, models, and cases. Every question comes with an explanation and source."}
-        </p>
-        <div className="grid sm:grid-cols-3 gap-3 mb-6">
-          <div className="bg-slate-900/50 rounded-xl p-3 text-center">
-            <span className="text-2xl mb-1 block">🧠</span>
-            <span className="text-xs text-slate-400">
-              {lang === "ru" ? "Квиз на знания" : "Knowledge quiz"}
-            </span>
+      {/* Mode-dependent CTA */}
+      {testMode === "deep" ? (
+        /* Deep mode — full report ready */
+        <div className="bg-gradient-to-br from-violet-500/5 to-indigo-500/5 border border-violet-500/20 rounded-2xl p-6 md:p-8 mb-6 animate-fade-in-up">
+          <div className="flex items-center gap-3 mb-3">
+            <span className="text-3xl">&#128202;</span>
+            <h2 className="text-lg font-semibold text-white">
+              {t.resultsFullReportReady}
+            </h2>
           </div>
-          <div className="bg-slate-900/50 rounded-xl p-3 text-center">
-            <span className="text-2xl mb-1 block">📊</span>
-            <span className="text-xs text-slate-400">
-              {lang === "ru" ? "Gap: уверенность vs знания" : "Gap: confidence vs knowledge"}
-            </span>
-          </div>
-          <div className="bg-slate-900/50 rounded-xl p-3 text-center">
-            <span className="text-2xl mb-1 block">📝</span>
-            <span className="text-xs text-slate-400">
-              {lang === "ru" ? "Персональная домашка" : "Personal homework"}
-            </span>
+          <p className="text-sm text-slate-400 leading-relaxed mb-6">
+            {t.resultsFullReportText}
+          </p>
+          <div className="flex flex-col sm:flex-row gap-3">
+            <button
+              onClick={() => router.push("/report")}
+              className="flex-1 inline-flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-violet-600 to-indigo-600 hover:from-violet-500 hover:to-indigo-500 text-white font-semibold rounded-xl transition-all duration-200 shadow-lg shadow-violet-500/20 hover:shadow-violet-500/30 hover:scale-[1.02]"
+            >
+              {t.resultsOpenFullReport}
+              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+              </svg>
+            </button>
+            <button
+              onClick={() => router.push("/quiz")}
+              className="flex-1 inline-flex items-center justify-center gap-2 px-8 py-4 border border-violet-500/30 text-violet-300 font-semibold rounded-xl transition-all duration-200 hover:bg-violet-500/10"
+            >
+              {t.resultsTakeQuiz}
+            </button>
           </div>
         </div>
-        <button
-          onClick={() => router.push("/quiz")}
-          className="w-full inline-flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-violet-600 to-indigo-600 hover:from-violet-500 hover:to-indigo-500 text-white font-semibold rounded-xl transition-all duration-200 shadow-lg shadow-violet-500/20 hover:shadow-violet-500/30 hover:scale-[1.02]"
-        >
-          {lang === "ru" ? "Проверить знания в квизе" : "Test your knowledge in the quiz"}
-          <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-          </svg>
-        </button>
-      </div>
+      ) : (
+        /* Express mode — upsell deep test */
+        <div className="bg-gradient-to-br from-violet-500/5 to-indigo-500/5 border border-violet-500/20 rounded-2xl p-6 md:p-8 mb-6 animate-fade-in-up">
+          <div className="flex items-center gap-3 mb-3">
+            <span className="text-3xl">&#128300;</span>
+            <h2 className="text-lg font-semibold text-white">
+              {t.resultsWantDeeper}
+            </h2>
+          </div>
+          <p className="text-sm text-slate-400 leading-relaxed mb-4">
+            {t.resultsWantDeeperText}
+          </p>
 
-      {/* Subtle exit — not a button, just a link */}
+          {/* Weak dimensions */}
+          {weakDims.length > 0 && (
+            <div className="mb-3">
+              <span className="text-xs font-medium text-slate-500 uppercase tracking-wide">{t.resultsWeakDimensions}</span>
+              <div className="flex flex-wrap gap-2 mt-1.5">
+                {weakDims.map((dim) => {
+                  const info = dimensionMap[dim as DimensionKey];
+                  const name = info ? (lang === "en" ? info.nameEn : info.name) : dim;
+                  return (
+                    <span key={dim} className="px-3 py-1 rounded-full text-xs bg-orange-500/10 text-orange-300 border border-orange-500/20">
+                      {name}
+                    </span>
+                  );
+                })}
+              </div>
+            </div>
+          )}
+
+          {/* Related dimensions */}
+          {relatedDims.length > 0 && (
+            <div className="mb-6">
+              <span className="text-xs font-medium text-slate-500 uppercase tracking-wide">{t.resultsRelatedDimensions}</span>
+              <div className="flex flex-wrap gap-2 mt-1.5">
+                {relatedDims.map((dim) => {
+                  const info = dimensionMap[dim as DimensionKey];
+                  const name = info ? (lang === "en" ? info.nameEn : info.name) : dim;
+                  return (
+                    <span key={dim} className="px-3 py-1 rounded-full text-xs bg-violet-500/10 text-violet-300 border border-violet-500/20">
+                      {name}
+                    </span>
+                  );
+                })}
+              </div>
+            </div>
+          )}
+
+          <div className="flex flex-col sm:flex-row gap-3 mb-4">
+            <button
+              onClick={() => {
+                // Pre-select weak + related topics for deep test
+                const deepTopics = [...new Set([...weakDims, ...relatedDims])];
+                sessionStorage.setItem("selected_topics", JSON.stringify(deepTopics));
+                sessionStorage.setItem("test_mode", "deep");
+                sessionStorage.setItem("test_fresh_start", "1");
+                router.push("/test");
+              }}
+              className="flex-1 inline-flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-violet-600 to-indigo-600 hover:from-violet-500 hover:to-indigo-500 text-white font-semibold rounded-xl transition-all duration-200 shadow-lg shadow-violet-500/20 hover:shadow-violet-500/30 hover:scale-[1.02]"
+            >
+              {t.resultsTakeDeepTest}
+              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+              </svg>
+            </button>
+            <button
+              onClick={() => router.push("/quiz")}
+              className="flex-1 inline-flex items-center justify-center gap-2 px-8 py-4 border border-violet-500/30 text-violet-300 font-semibold rounded-xl transition-all duration-200 hover:bg-violet-500/10"
+            >
+              {t.resultsTakeQuiz}
+            </button>
+          </div>
+
+          <div className="text-center">
+            <button
+              onClick={() => router.push("/report")}
+              className="text-xs text-slate-500 hover:text-slate-400 underline underline-offset-2 transition-colors"
+            >
+              {t.resultsOpenReport}
+            </button>
+          </div>
+        </div>
+      )}
+
+      {/* Subtle exit — copy/share */}
       <div className="text-center animate-fade-in-up">
-        <p className="text-xs text-slate-600 mb-2">
-          {lang === "ru"
-            ? "Если пока не хотите продолжать — можно сохранить предварительный результат"
-            : "If you don't want to continue yet — you can save your preliminary results"}
-        </p>
         <div className="flex items-center justify-center gap-4">
           <button
             onClick={() => {

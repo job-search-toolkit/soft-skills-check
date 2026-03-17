@@ -212,6 +212,39 @@ export const ui = {
     hwChangeEmail: "Изменить email",
     hwContinue: "Продолжить",
 
+    // Mode selector
+    modeTitle: "Режим теста",
+    modeExpress: "Экспресс",
+    modeExpressDesc: "5 вопросов на тему, ~3 мин",
+    modeDeep: "Глубокий",
+    modeDeepDesc: "10 вопросов на тему, ~7 мин",
+
+    // Results — mode-dependent CTAs
+    resultsWantDeeper: "Хочешь глубже?",
+    resultsWantDeeperText: "У тебя есть потенциал для роста в этих направлениях. Глубокий тест: 10 вопросов с фокусом на слабых местах + смежные темы.",
+    resultsWeakDimensions: "Зоны роста:",
+    resultsRelatedDimensions: "Смежные темы:",
+    resultsTakeDeepTest: "Пройти глубокий тест",
+    resultsTakeQuiz: "Пройти квиз",
+    resultsOpenReport: "Открыть предварительный отчёт",
+    resultsFullReportReady: "Полный отчёт готов!",
+    resultsFullReportText: "Ты прошёл глубокую диагностику. Можешь посмотреть детальный отчёт или закрепить знания в квизе.",
+    resultsOpenFullReport: "Открыть отчёт",
+
+    // Report page
+    reportTitle: "Отчёт Soft Skills Check",
+    reportDate: "Дата",
+    reportOverall: "Общий балл",
+    reportOutOf: "из 5",
+    reportRadarTitle: "Профиль по измерениям",
+    reportDimensionsTitle: "Детализация по измерениям",
+    reportStrengths: "Сильные стороны",
+    reportWeaknesses: "Зоны роста",
+    reportAiSummary: "AI-анализ",
+    reportQuizCta: "Пройти квиз-тренажёр",
+    reportHomeworkCta: "Получить домашнее задание",
+    reportNoData: "Нет данных. Сначала пройди тест.",
+
     // Footer
     footerText: "Open source project. MIT License.",
   },
@@ -427,6 +460,39 @@ export const ui = {
     hwResendCode: "Resend code",
     hwChangeEmail: "Change email",
     hwContinue: "Continue",
+
+    // Mode selector
+    modeTitle: "Test mode",
+    modeExpress: "Express",
+    modeExpressDesc: "5 questions per topic, ~3 min",
+    modeDeep: "Deep",
+    modeDeepDesc: "10 questions per topic, ~7 min",
+
+    // Results — mode-dependent CTAs
+    resultsWantDeeper: "Want to go deeper?",
+    resultsWantDeeperText: "You have growth potential in these areas. Deep test: 10 questions focused on weak spots + related topics.",
+    resultsWeakDimensions: "Growth areas:",
+    resultsRelatedDimensions: "Related topics:",
+    resultsTakeDeepTest: "Take the deep test",
+    resultsTakeQuiz: "Take the quiz",
+    resultsOpenReport: "Open preliminary report",
+    resultsFullReportReady: "Full report is ready!",
+    resultsFullReportText: "You completed the deep assessment. View the detailed report or reinforce your knowledge with the quiz.",
+    resultsOpenFullReport: "Open report",
+
+    // Report page
+    reportTitle: "Soft Skills Check Report",
+    reportDate: "Date",
+    reportOverall: "Overall score",
+    reportOutOf: "out of 5",
+    reportRadarTitle: "Profile by dimensions",
+    reportDimensionsTitle: "Breakdown by dimensions",
+    reportStrengths: "Strengths",
+    reportWeaknesses: "Growth areas",
+    reportAiSummary: "AI Analysis",
+    reportQuizCta: "Take the quiz trainer",
+    reportHomeworkCta: "Get homework",
+    reportNoData: "No data. Take the test first.",
 
     // Footer
     footerText: "Open source project. MIT License.",
