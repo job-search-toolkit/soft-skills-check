@@ -28,14 +28,36 @@ const timeOptions = [
   { key: "1week", emoji: "\uD83D\uDCC6", labelRu: "1 неделя — челлендж", labelEn: "1 week — challenge" },
 ];
 
-const contextOptions = [
-  { key: "alone_offline", emoji: "\uD83E\uDDD8", labelRu: "Один, без интернета (в дороге, на природе)", labelEn: "Alone, no internet (traveling, outdoors)" },
-  { key: "alone_computer", emoji: "\uD83D\uDCBB", labelRu: "Один, с компьютером", labelEn: "Alone, with a computer" },
-  { key: "team_inperson", emoji: "\uD83D\uDC65", labelRu: "С командой — вживую", labelEn: "With team — in person" },
-  { key: "team_online", emoji: "\uD83D\uDCF9", labelRu: "С командой — онлайн/видео", labelEn: "With team — online/video" },
-  { key: "family_inperson", emoji: "\uD83D\uDC68\u200D\uD83D\uDC69\u200D\uD83D\uDC67", labelRu: "С семьёй/друзьями — вживую", labelEn: "With family/friends — in person" },
-  { key: "family_online", emoji: "\uD83D\uDCF1", labelRu: "С семьёй/друзьями — по видео", labelEn: "With family/friends — video call" },
+const whoOptions = [
+  { key: "alone", emoji: "\uD83E\uDDD8", labelRu: "Один", labelEn: "Alone" },
+  { key: "team", emoji: "\uD83D\uDC65", labelRu: "С командой", labelEn: "With team" },
+  { key: "family", emoji: "\uD83D\uDC68\u200D\uD83D\uDC69\u200D\uD83D\uDC67", labelRu: "С семьёй / партнёром", labelEn: "With family / partner" },
+  { key: "child", emoji: "\uD83D\uDC67", labelRu: "С ребёнком", labelEn: "With a child" },
+  { key: "friend", emoji: "\uD83E\uDDD1\u200D\uD83E\uDD1D\u200D\uD83E\uDDD1", labelRu: "С другом", labelEn: "With a friend" },
 ];
+
+const howOptions: Record<string, { key: string; emoji: string; labelRu: string; labelEn: string }[]> = {
+  alone: [
+    { key: "offline", emoji: "\uD83D\uDEB6", labelRu: "Без интернета (прогулка, дорога)", labelEn: "Offline (walk, commute)" },
+    { key: "computer", emoji: "\uD83D\uDCBB", labelRu: "С компьютером", labelEn: "With a computer" },
+  ],
+  team: [
+    { key: "inperson", emoji: "\uD83E\uDD1D", labelRu: "Вживую", labelEn: "In person" },
+    { key: "online", emoji: "\uD83D\uDCF9", labelRu: "По видео", labelEn: "Video call" },
+  ],
+  family: [
+    { key: "inperson", emoji: "\uD83E\uDD1D", labelRu: "Вживую", labelEn: "In person" },
+    { key: "online", emoji: "\uD83D\uDCF9", labelRu: "По видео", labelEn: "Video call" },
+  ],
+  child: [
+    { key: "inperson", emoji: "\uD83E\uDD1D", labelRu: "Вживую", labelEn: "In person" },
+    { key: "online", emoji: "\uD83D\uDCF9", labelRu: "По видео", labelEn: "Video call" },
+  ],
+  friend: [
+    { key: "inperson", emoji: "\uD83E\uDD1D", labelRu: "Вживую", labelEn: "In person" },
+    { key: "online", emoji: "\uD83D\uDCF9", labelRu: "По видео", labelEn: "Video call" },
+  ],
+};
 
 function generateCode(): string {
   return String(Math.floor(100000 + Math.random() * 900000));
@@ -50,7 +72,10 @@ export default function HomeworkPage() {
   const [analysis, setAnalysis] = useState<AnalysisResult | null>(null);
   const [selectedTopics, setSelectedTopics] = useState<string[]>([]);
   const [timeFormat, setTimeFormat] = useState("1hour");
-  const [context, setContext] = useState("alone_computer");
+  const [who, setWho] = useState("alone");
+  const [how, setHow] = useState("computer");
+  // Combined context string for API
+  const context = who === "alone" ? `alone_${how}` : `${who}_${how}`;
   const [homework, setHomework] = useState<HomeworkResult | null>(null);
   const [error, setError] = useState<string | null>(null);
 
@@ -618,27 +643,48 @@ export default function HomeworkPage() {
         </div>
       </div>
 
-      {/* Context */}
+      {/* Who */}
       <div className="bg-slate-900 border border-slate-800 rounded-2xl p-6 mb-6 animate-fade-in-up">
-        <h2 className="text-lg font-semibold text-white mb-4">{t.hwContextLabel}</h2>
-        <div className="space-y-2">
-          {contextOptions.map((opt) => (
+        <h2 className="text-lg font-semibold text-white mb-4">
+          {lang === "ru" ? "С кем" : "With whom"}
+        </h2>
+        <div className="flex flex-wrap gap-2">
+          {whoOptions.map((opt) => (
             <button
               key={opt.key}
-              onClick={() => setContext(opt.key)}
-              className={`w-full flex items-center gap-3 p-3 rounded-xl border text-left transition-all duration-200 ${
-                context === opt.key
+              onClick={() => { setWho(opt.key); setHow(howOptions[opt.key]?.[0]?.key || "inperson"); }}
+              className={`flex items-center gap-2 px-4 py-2.5 rounded-xl border transition-all duration-200 ${
+                who === opt.key
                   ? "border-violet-500/50 bg-violet-500/10 text-white"
                   : "border-slate-700 bg-slate-800/50 text-slate-400 hover:border-slate-600"
               }`}
             >
-              <span
-                className={`w-8 h-8 rounded-lg flex items-center justify-center text-base flex-shrink-0 ${
-                  context === opt.key ? "bg-violet-500/20" : "bg-slate-700"
-                }`}
-              >
-                {opt.emoji}
+              <span className="text-lg">{opt.emoji}</span>
+              <span className="text-sm font-medium">
+                {lang === "en" ? opt.labelEn : opt.labelRu}
               </span>
+            </button>
+          ))}
+        </div>
+      </div>
+
+      {/* How */}
+      <div className="bg-slate-900 border border-slate-800 rounded-2xl p-6 mb-6 animate-fade-in-up">
+        <h2 className="text-lg font-semibold text-white mb-4">
+          {lang === "ru" ? "Как" : "How"}
+        </h2>
+        <div className="flex flex-wrap gap-2">
+          {(howOptions[who] || howOptions.alone).map((opt) => (
+            <button
+              key={opt.key}
+              onClick={() => setHow(opt.key)}
+              className={`flex items-center gap-2 px-4 py-2.5 rounded-xl border transition-all duration-200 ${
+                how === opt.key
+                  ? "border-violet-500/50 bg-violet-500/10 text-white"
+                  : "border-slate-700 bg-slate-800/50 text-slate-400 hover:border-slate-600"
+              }`}
+            >
+              <span className="text-lg">{opt.emoji}</span>
               <span className="text-sm font-medium">
                 {lang === "en" ? opt.labelEn : opt.labelRu}
               </span>

@@ -26,6 +26,11 @@ const contextLabels: Record<string, { ru: string; en: string }> = {
   team_online: { ru: "С командой — онлайн/видео", en: "With team — online/video call" },
   family_inperson: { ru: "С семьёй/друзьями — вживую", en: "With family/friends — in person" },
   family_online: { ru: "С семьёй/друзьями — по видео", en: "With family/friends — video call" },
+  child_inperson: { ru: "С ребёнком — вживую", en: "With a child — in person" },
+  child_online: { ru: "С ребёнком — по видео", en: "With a child — video call" },
+  friend_inperson: { ru: "С другом — вживую", en: "With a friend — in person" },
+  friend_online: { ru: "С другом — по видео", en: "With a friend — video call" },
+  // Legacy
   team: { ru: "С командой/коллегами", en: "With team/colleagues" },
   family: { ru: "С семьёй/друзьями", en: "With family/friends" },
 };
@@ -53,7 +58,7 @@ Exercise formats (pick ONE that fits the topic, time, and context):
 - CHALLENGE: set a specific constraint for a defined period (e.g., "1 hour without interrupting anyone")
 - CASE ANALYSIS: take a real situation (yours or given) and analyze it through a framework`;
 
-function buildSystemPrompt(isEn: boolean, isWithOthers: boolean, isOnline: boolean, isOffline: boolean, level: string): string {
+function buildSystemPrompt(isEn: boolean, isWithOthers: boolean, isWithChild: boolean, isOnline: boolean, isOffline: boolean, level: string): string {
   if (isEn) {
     return `You are a world-class soft skills coach. Generate a homework assignment that people will ACTUALLY want to do.
 
@@ -76,6 +81,11 @@ ${isWithOthers ? `- Involves other people. ALWAYS include:
   1. How to invite them ("Say: 'I'm doing a soft skills exercise, would you be willing to help me for ~X minutes? Here's what we'll do...'")
   2. Brief explanation of the exercise for participants
   3. A graceful exit if they say no` : ""}
+${isWithChild ? `- WITH A CHILD (~10-14 years old). The exercise must be:
+  - Fun and game-like, not lecturing
+  - Age-appropriate (no heavy workplace scenarios)
+  - Educational for both parent and child
+  - Frame it as "let's play a game" not "I need to practice"` : ""}
 ${!isWithOthers && !isOffline ? "- Person is alone with a computer. Can use apps, write, watch videos, record themselves, etc." : ""}
 
 Quality rules:
@@ -108,6 +118,11 @@ ${isWithOthers ? `- С другими людьми. ОБЯЗАТЕЛЬНО вк�
   1. Как их пригласить ("Скажи: 'Я делаю упражнение на развитие [навык], можешь ли ты мне помочь ~X минут? Вот что мы будем делать...'")
   2. Краткое объяснение упражнения для участников
   3. План Б если откажутся` : ""}
+${isWithChild ? `- С РЕБЁНКОМ (~10-14 лет). Упражнение должно быть:
+  - Весёлым и игровым, не нравоучительным
+  - Подходящим по возрасту (не тяжёлые рабочие сценарии)
+  - Полезным и для родителя, и для ребёнка
+  - Подать как "давай поиграем в игру", а не "мне нужно потренироваться"` : ""}
 ${!isWithOthers && !isOffline ? "- Человек один с компьютером. Может использовать приложения, писать, смотреть видео, записывать себя и т.д." : ""}
 
 Правила качества:
@@ -211,7 +226,8 @@ export async function POST(request: NextRequest) {
     }
 
     const isEn = lang === "en";
-    const isWithOthers = context.includes("team") || context.includes("family");
+    const isWithOthers = context.includes("team") || context.includes("family") || context.includes("child") || context.includes("friend");
+    const isWithChild = context.includes("child");
     const isOnline = context.includes("online");
     const isOffline = context === "alone_offline";
 
@@ -238,7 +254,7 @@ export async function POST(request: NextRequest) {
     const ctxLabelObj = contextLabels[context] || contextLabels["alone_computer"];
     const ctxLabel = isEn ? ctxLabelObj.en : ctxLabelObj.ru;
 
-    const systemPrompt = buildSystemPrompt(isEn, isWithOthers, isOnline, isOffline, level);
+    const systemPrompt = buildSystemPrompt(isEn, isWithOthers, isWithChild, isOnline, isOffline, level);
     const userMessage = buildUserMessage(isEn, dimContext, timeLabel, ctxLabel);
 
     let response: string;
