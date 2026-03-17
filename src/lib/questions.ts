@@ -292,8 +292,8 @@ export const questions: Question[] = [
   {
     id: "cl_1",
     dimension: "collaboration",
-    text: "Когда кто-то на ревью критикует код, который по сути написал AI — я не воспринимаю это на свой счёт, а разбираюсь в замечании и исправляю. Это ведь моя ответственность, а не AI.",
-    textEn: "When someone criticizes AI-written code in review, I don't take it personally \u2014 I look into it and fix it. It's my responsibility, not AI's.",
+    text: "Я считаю, что код — моя ответственность, даже если его написал AI. Если на ревью находят проблему, это мой косяк, а не AI.",
+    textEn: "I consider the code my responsibility, even if AI wrote it. If a problem is found in review, it's my fault, not AI's.",
     reverse: false,
   },
   {
