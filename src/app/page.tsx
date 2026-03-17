@@ -45,33 +45,31 @@ export default function Home() {
         </Link>
       </div>
 
-      {/* How it works */}
+      {/* Three stages */}
       <div className="grid md:grid-cols-3 gap-6 mb-16">
         {[
           {
-            step: t.landingStep01,
+            icon: t.landingStep01,
             title: t.landingStep01Title,
             description: t.landingStep01Desc,
           },
           {
-            step: t.landingStep02,
+            icon: t.landingStep02,
             title: t.landingStep02Title,
             description: t.landingStep02Desc,
           },
           {
-            step: t.landingStep03,
+            icon: t.landingStep03,
             title: t.landingStep03Title,
             description: t.landingStep03Desc,
           },
         ].map((item) => (
           <div
-            key={item.step}
+            key={item.title}
             className="bg-slate-900 border border-slate-800 rounded-2xl p-6 hover:border-slate-700 transition-colors"
           >
-            <span className="text-3xl font-bold bg-gradient-to-r from-violet-500 to-indigo-500 bg-clip-text text-transparent">
-              {item.step}
-            </span>
-            <h3 className="text-lg font-semibold text-slate-100 mt-3 mb-2">
+            <span className="text-3xl mb-3 block">{item.icon}</span>
+            <h3 className="text-lg font-semibold text-slate-100 mb-2">
               {item.title}
             </h3>
             <p className="text-sm text-slate-400 leading-relaxed">
@@ -80,6 +78,10 @@ export default function Home() {
           </div>
         ))}
       </div>
+
+      <p className="text-center text-sm text-slate-500 mb-10 -mt-10">
+        {t.landingStagesNote}
+      </p>
 
       {/* Dimensions preview */}
       <div className="bg-slate-900 border border-slate-800 rounded-2xl p-6 md:p-8">

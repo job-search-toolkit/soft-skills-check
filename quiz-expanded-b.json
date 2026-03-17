@@ -73,12 +73,12 @@
     "text": "Какой основной принцип Mob Programming отличает его от Pair Programming?",
     "textEn": "What is the main principle that distinguishes Mob Programming from Pair Programming?",
     "options": [
-      { "key": "a", "text": "В мобе вся команда работает над одной задачей за одним компьютером", "textEn": "In mobbing, the whole team works on one task at one computer" },
-      { "key": "b", "text": "В мобе каждый пишет свой участок кода параллельно", "textEn": "In mobbing, each person writes their own code section in parallel" },
+      { "key": "a", "text": "В мобе каждый пишет свой участок кода параллельно", "textEn": "In mobbing, each person writes their own code section in parallel" },
+      { "key": "b", "text": "В мобе вся команда работает над одной задачей за одним компьютером", "textEn": "In mobbing, the whole team works on one task at one computer" },
       { "key": "c", "text": "Моб-программирование запрещает устное общение во время работы", "textEn": "Mob programming prohibits verbal communication during work" },
       { "key": "d", "text": "В мобе один человек пишет код, а остальные тестируют его", "textEn": "In mobbing, one person writes code while others test it" }
     ],
-    "correctAnswer": "a",
+    "correctAnswer": "b",
     "explanation": "Mob Programming — это расширение Pair Programming, где вся команда (3+ человек) работает над одной задачей на одном компьютере. Один человек — «драйвер» (печатает), остальные — «навигаторы» (направляют). Роль драйвера регулярно меняется. Это максимизирует обмен знаниями.",
     "explanationEn": "Mob Programming extends Pair Programming to the whole team (3+ people) working on one task at one computer. One person is the 'driver' (types), others are 'navigators' (direct). The driver role rotates regularly. This maximizes knowledge sharing.",
     "source": "Woody Zuill — Mob Programming",
@@ -209,12 +209,12 @@
     "text": "В Pair Programming оптимальная частота смены ролей драйвера и навигатора составляет...",
     "textEn": "In Pair Programming, the optimal frequency for switching driver and navigator roles is...",
     "options": [
-      { "key": "a", "text": "Каждые 25–30 минут или после завершения подзадачи", "textEn": "Every 25–30 minutes or after completing a subtask" },
-      { "key": "b", "text": "Один раз в день, при переходе к новой задаче", "textEn": "Once a day, when switching to a new task" },
-      { "key": "c", "text": "Только когда драйвер устал и просит передать клавиатуру", "textEn": "Only when the driver is tired and asks to pass the keyboard" },
-      { "key": "d", "text": "Роли фиксируются на весь спринт и не меняются", "textEn": "Roles are fixed for the entire sprint and don't change" }
+      { "key": "a", "text": "Один раз в день, при переходе к новой задаче", "textEn": "Once a day, when switching to a new task" },
+      { "key": "b", "text": "Только когда драйвер устал и просит передать клавиатуру", "textEn": "Only when the driver is tired and asks to pass the keyboard" },
+      { "key": "c", "text": "Роли фиксируются на весь спринт и не меняются", "textEn": "Roles are fixed for the entire sprint and don't change" },
+      { "key": "d", "text": "Каждые 25–30 минут или после завершения подзадачи", "textEn": "Every 25–30 minutes or after completing a subtask" }
     ],
-    "correctAnswer": "a",
+    "correctAnswer": "d",
     "explanation": "Рекомендуемая практика — смена ролей каждые 25–30 минут (часто совпадает с Pomodoro) или после завершения логической подзадачи. Это предотвращает утомление, поддерживает вовлечённость обоих участников и помогает каждому видеть задачу с разных уровней абстракции.",
     "explanationEn": "The recommended practice is switching roles every 25–30 minutes (often aligned with Pomodoro) or after completing a logical subtask. This prevents fatigue, keeps both participants engaged, and helps each person see the task from different abstraction levels.",
     "source": "Kent Beck — Extreme Programming Explained",
@@ -396,12 +396,12 @@
     "text": "В OKR-методологии, Key Results должны быть...",
     "textEn": "In the OKR methodology, Key Results should be...",
     "options": [
-      { "key": "a", "text": "Измеримыми числами, которые показывают прогресс к цели", "textEn": "Measurable numbers that show progress toward the goal" },
-      { "key": "b", "text": "Списком конкретных задач для выполнения за квартал", "textEn": "A list of specific tasks to complete within a quarter" },
+      { "key": "a", "text": "Списком конкретных задач для выполнения за квартал", "textEn": "A list of specific tasks to complete within a quarter" },
+      { "key": "b", "text": "Измеримыми числами, которые показывают прогресс к цели", "textEn": "Measurable numbers that show progress toward the goal" },
       { "key": "c", "text": "Вдохновляющими формулировками, которые мотивируют команду", "textEn": "Inspiring statements that motivate the team" },
       { "key": "d", "text": "Описанием процессов, которые нужно внедрить или улучшить", "textEn": "Descriptions of processes to implement or improve" }
     ],
-    "correctAnswer": "a",
+    "correctAnswer": "b",
     "explanation": "Key Results — это измеримые результаты (числа), а не задачи и не процессы. Например: «Увеличить NPS с 30 до 50» — это KR. «Провести опрос» — это задача. Objectives вдохновляют, Key Results — измеряют. Это различие — ядро OKR по Дорру.",
     "explanationEn": "Key Results are measurable outcomes (numbers), not tasks or processes. For example: 'Increase NPS from 30 to 50' is a KR. 'Conduct a survey' is a task. Objectives inspire, Key Results measure. This distinction is the core of Doerr's OKR framework.",
     "source": "John Doerr — Measure What Matters",
@@ -550,11 +550,11 @@
     "textEn": "According to the Leadership Pipeline model, the most common mistake of a new manager is...",
     "options": [
       { "key": "a", "text": "Слишком быстрое делегирование сложных задач команде", "textEn": "Delegating complex tasks to the team too quickly" },
-      { "key": "b", "text": "Чрезмерное общение и проведение слишком частых встреч", "textEn": "Over-communicating and holding too many meetings" },
-      { "key": "c", "text": "Продолжение выполнения задач исполнителя вместо управления", "textEn": "Continuing to do individual contributor work instead of managing" },
+      { "key": "b", "text": "Продолжение выполнения задач исполнителя вместо управления", "textEn": "Continuing to do individual contributor work instead of managing" },
+      { "key": "c", "text": "Чрезмерное общение и проведение слишком частых встреч", "textEn": "Over-communicating and holding too many meetings" },
       { "key": "d", "text": "Немедленное внедрение новых процессов и стандартов", "textEn": "Immediately introducing new processes and standards" }
     ],
-    "correctAnswer": "c",
+    "correctAnswer": "b",
     "explanation": "Первый переход в Leadership Pipeline — от «управляю собой» к «управляю другими». Самая частая ошибка — новый руководитель продолжает делать работу сам, потому что это привычно и даёт быстрый результат. Но его задача теперь — помогать другим быть продуктивными.",
     "explanationEn": "The first transition in the Leadership Pipeline is from 'managing self' to 'managing others.' The most common mistake is that new managers keep doing the work themselves because it's familiar and gives quick results. But their job is now helping others be productive.",
     "source": "Charan, Drotter, Noel — The Leadership Pipeline",
@@ -568,10 +568,10 @@
     "options": [
       { "key": "a", "text": "Обязать всех использовать AI с определённой даты", "textEn": "Mandate everyone to use AI from a specific date" },
       { "key": "b", "text": "Игнорировать AI и ждать, пока индустрия определится", "textEn": "Ignore AI and wait for the industry to settle" },
-      { "key": "c", "text": "Начать с пилота — добровольцы пробуют и делятся опытом", "textEn": "Start with a pilot — volunteers try it and share experience" },
-      { "key": "d", "text": "Нанять отдельного специалиста по AI для всей команды", "textEn": "Hire a dedicated AI specialist for the entire team" }
+      { "key": "c", "text": "Нанять отдельного специалиста по AI для всей команды", "textEn": "Hire a dedicated AI specialist for the entire team" },
+      { "key": "d", "text": "Начать с пилота — добровольцы пробуют и делятся опытом", "textEn": "Start with a pilot — volunteers try it and share experience" }
     ],
-    "correctAnswer": "c",
+    "correctAnswer": "d",
     "explanation": "Пилотный подход снижает сопротивление: добровольцы-энтузиасты экспериментируют, документируют лучшие практики и становятся внутренними амбассадорами. Это создаёт органическое распространение вместо директивного внедрения, которое часто вызывает сопротивление.",
     "explanationEn": "The pilot approach reduces resistance: volunteer enthusiasts experiment, document best practices, and become internal ambassadors. This creates organic adoption instead of directive implementation, which often triggers resistance.",
     "source": "Soft Skills Guide: Leadership",
@@ -873,11 +873,11 @@
     "textEn": "In 'Getting to Yes,' the principle 'Separate people from the problem' means...",
     "options": [
       { "key": "a", "text": "Игнорировать эмоции и фокусироваться только на фактах", "textEn": "Ignore emotions and focus only on facts" },
-      { "key": "b", "text": "Удалить из переговоров людей, вызывающих конфликт", "textEn": "Remove people who cause conflict from the negotiation" },
-      { "key": "c", "text": "Быть мягким с людьми и жёстким с проблемой одновременно", "textEn": "Be soft on people and hard on the problem simultaneously" },
+      { "key": "b", "text": "Быть мягким с людьми и жёстким с проблемой одновременно", "textEn": "Be soft on people and hard on the problem simultaneously" },
+      { "key": "c", "text": "Удалить из переговоров людей, вызывающих конфликт", "textEn": "Remove people who cause conflict from the negotiation" },
       { "key": "d", "text": "Решать проблемы письменно, избегая личных встреч", "textEn": "Solve problems in writing, avoiding personal meetings" }
     ],
-    "correctAnswer": "c",
+    "correctAnswer": "b",
     "explanation": "Фишер и Юри учат: атакуй проблему, а не человека. Можно жёстко отстаивать свои интересы (hard on problem) и при этом сохранять уважительные отношения (soft on people). Это не значит игнорировать эмоции — наоборот, их нужно признавать, но не позволять им подменять суть.",
     "explanationEn": "Fisher and Ury teach: attack the problem, not the person. You can firmly advocate for your interests (hard on problem) while maintaining respectful relationships (soft on people). This doesn't mean ignoring emotions — on the contrary, acknowledge them but don't let them replace substance.",
     "source": "Fisher & Ury — Getting to Yes",
@@ -993,10 +993,10 @@
     "options": [
       { "key": "a", "text": "Обе стороны хотят найти взаимовыгодное решение проблемы", "textEn": "Both sides want to find a mutually beneficial solution" },
       { "key": "b", "text": "Вопрос незначителен и не стоит потраченного времени", "textEn": "The issue is insignificant and not worth the time spent" },
-      { "key": "c", "text": "Нужно быстрое решение в кризисной ситуации и ты уверен в правоте", "textEn": "A quick decision is needed in a crisis and you are confident you're right" },
-      { "key": "d", "text": "Сохранение отношений важнее конкретного результата переговоров", "textEn": "Preserving relationships is more important than the specific outcome" }
+      { "key": "c", "text": "Сохранение отношений важнее конкретного результата переговоров", "textEn": "Preserving relationships is more important than the specific outcome" },
+      { "key": "d", "text": "Нужно быстрое решение в кризисной ситуации и ты уверен в правоте", "textEn": "A quick decision is needed in a crisis and you are confident you're right" }
     ],
-    "correctAnswer": "c",
+    "correctAnswer": "d",
     "explanation": "Competing (высокая настойчивость, низкая кооперативность) уместен в экстренных ситуациях, когда нужно быстрое решение и ты компетентен в вопросе. Также подходит для защиты принципиальных позиций. Но злоупотребление этим стилем разрушает доверие и подавляет инициативу.",
     "explanationEn": "Competing (high assertiveness, low cooperativeness) is appropriate in emergencies requiring quick decisions when you're competent on the issue. Also suitable for defending principled positions. But overusing this style destroys trust and suppresses initiative.",
     "source": "Thomas & Kilmann — TKI Conflict Mode Instrument",
@@ -1128,11 +1128,11 @@
     "textEn": "The three types of empathy are cognitive, emotional, and compassionate. Cognitive empathy is...",
     "options": [
       { "key": "a", "text": "Способность чувствовать то же, что чувствует другой человек", "textEn": "The ability to feel what another person is feeling" },
-      { "key": "b", "text": "Желание помочь человеку и облегчить его страдания", "textEn": "The desire to help a person and alleviate their suffering" },
-      { "key": "c", "text": "Способность понять, что другой думает и чувствует, интеллектуально", "textEn": "The ability to understand what another thinks and feels intellectually" },
+      { "key": "b", "text": "Способность понять, что другой думает и чувствует, интеллектуально", "textEn": "The ability to understand what another thinks and feels intellectually" },
+      { "key": "c", "text": "Желание помочь человеку и облегчить его страдания", "textEn": "The desire to help a person and alleviate their suffering" },
       { "key": "d", "text": "Автоматическое копирование эмоций окружающих людей", "textEn": "Automatic copying of the emotions of surrounding people" }
     ],
-    "correctAnswer": "c",
+    "correctAnswer": "b",
     "explanation": "Когнитивная эмпатия — интеллектуальное понимание чужой перспективы (theory of mind). Эмоциональная — ты буквально чувствуешь то же (зеркальные нейроны). Сострадательная — понимаешь, чувствуешь И хочешь помочь. Когнитивная важна для переговоров и лидерства.",
     "explanationEn": "Cognitive empathy is intellectual understanding of another's perspective (theory of mind). Emotional — you literally feel the same (mirror neurons). Compassionate — you understand, feel, AND want to help. Cognitive empathy is crucial for negotiation and leadership.",
     "source": "Daniel Goleman — Social Intelligence",
