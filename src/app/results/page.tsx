@@ -294,79 +294,90 @@ export default function ResultsPage() {
         </div>
       )}
 
-      {/* Share / Save */}
-      <div className="bg-slate-900 border border-slate-800 rounded-2xl p-6 mb-6 animate-fade-in-up">
-        <div className="flex flex-wrap gap-3 justify-center">
+      {/* What's next — sell the quiz */}
+      <div className="bg-gradient-to-br from-violet-500/5 to-indigo-500/5 border border-violet-500/20 rounded-2xl p-6 md:p-8 mb-6 animate-fade-in-up">
+        <h2 className="text-lg font-semibold text-white mb-3">
+          {lang === "ru" ? "Это пока только самооценка" : "This is just a self-assessment so far"}
+        </h2>
+        <p className="text-sm text-slate-400 leading-relaxed mb-4">
+          {lang === "ru"
+            ? "Ты рассказал, как видишь себя. Но знаешь ли ты теорию, которая стоит за этими навыками? В квизе — реальные фреймворки, модели и кейсы. Каждый вопрос с объяснением и источником."
+            : "You shared how you see yourself. But do you know the theory behind these skills? The quiz has real frameworks, models, and cases. Every question comes with an explanation and source."}
+        </p>
+        <div className="grid sm:grid-cols-3 gap-3 mb-6">
+          <div className="bg-slate-900/50 rounded-xl p-3 text-center">
+            <span className="text-2xl mb-1 block">🧠</span>
+            <span className="text-xs text-slate-400">
+              {lang === "ru" ? "Квиз на знания" : "Knowledge quiz"}
+            </span>
+          </div>
+          <div className="bg-slate-900/50 rounded-xl p-3 text-center">
+            <span className="text-2xl mb-1 block">📊</span>
+            <span className="text-xs text-slate-400">
+              {lang === "ru" ? "Gap: уверенность vs знания" : "Gap: confidence vs knowledge"}
+            </span>
+          </div>
+          <div className="bg-slate-900/50 rounded-xl p-3 text-center">
+            <span className="text-2xl mb-1 block">📝</span>
+            <span className="text-xs text-slate-400">
+              {lang === "ru" ? "Персональная домашка" : "Personal homework"}
+            </span>
+          </div>
+        </div>
+        <button
+          onClick={() => router.push("/quiz")}
+          className="w-full inline-flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-violet-600 to-indigo-600 hover:from-violet-500 hover:to-indigo-500 text-white font-semibold rounded-xl transition-all duration-200 shadow-lg shadow-violet-500/20 hover:shadow-violet-500/30 hover:scale-[1.02]"
+        >
+          {lang === "ru" ? "Проверить знания в квизе" : "Test your knowledge in the quiz"}
+          <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+          </svg>
+        </button>
+      </div>
+
+      {/* Subtle exit — not a button, just a link */}
+      <div className="text-center animate-fade-in-up">
+        <p className="text-xs text-slate-600 mb-2">
+          {lang === "ru"
+            ? "Если пока не хотите продолжать — можно сохранить предварительный результат"
+            : "If you don't want to continue yet — you can save your preliminary results"}
+        </p>
+        <div className="flex items-center justify-center gap-4">
           <button
             onClick={() => {
               const text = [
-                `Soft Skills Check — ${t.resultsShareText} ${analysis.overallScore}/5`,
+                `Soft Skills Check — ${analysis.overallScore}/5`,
                 '',
                 ...analysis.dimensionScores.map(d => `${d.name}: ${d.score}/5`),
                 '',
                 analysis.summary,
                 '',
-                `${t.resultsShareCta} https://soft-skills.chillai.space`,
+                `https://soft-skills.chillai.space`,
               ].join('\n');
               navigator.clipboard.writeText(text).then(() => {
-                const btn = document.getElementById('copy-btn');
-                if (btn) { btn.textContent = t.resultsCopied; setTimeout(() => { btn.textContent = t.resultsCopyBtn; }, 2000); }
+                const el = document.getElementById('copy-link');
+                if (el) { el.textContent = lang === "ru" ? "Скопировано!" : "Copied!"; setTimeout(() => { el.textContent = lang === "ru" ? "Скопировать отчёт" : "Copy report"; }, 2000); }
               });
             }}
-            id="copy-btn"
-            className="inline-flex items-center gap-2 px-4 py-2.5 bg-slate-800 hover:bg-slate-700 text-slate-300 text-sm font-medium rounded-xl transition-colors border border-slate-700"
+            id="copy-link"
+            className="text-xs text-slate-500 hover:text-slate-400 underline underline-offset-2 transition-colors"
           >
-            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
-            </svg>
-            {t.resultsCopyBtn}
+            {lang === "ru" ? "Скопировать отчёт" : "Copy report"}
           </button>
           <button
             onClick={() => {
-              const text = `${t.resultsShareText} ${analysis.overallScore}/5. ${t.resultsShareCta} https://soft-skills.chillai.space`;
+              const text = `${lang === "ru" ? "Мой результат" : "My result"}: ${analysis.overallScore}/5 — https://soft-skills.chillai.space`;
               if (navigator.share) {
                 navigator.share({ title: 'Soft Skills Check', text });
               } else {
-                window.open(`https://t.me/share/url?url=${encodeURIComponent('https://soft-skills.chillai.space')}&text=${encodeURIComponent(`${t.resultsShareText} ${analysis.overallScore}/5`)}`, '_blank');
+                window.open(`https://t.me/share/url?url=${encodeURIComponent('https://soft-skills.chillai.space')}&text=${encodeURIComponent(text)}`, '_blank');
               }
             }}
-            className="inline-flex items-center gap-2 px-4 py-2.5 bg-slate-800 hover:bg-slate-700 text-slate-300 text-sm font-medium rounded-xl transition-colors border border-slate-700"
+            className="text-xs text-slate-500 hover:text-slate-400 underline underline-offset-2 transition-colors"
           >
-            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z" />
-            </svg>
-            {t.resultsShareBtn}
+            {lang === "ru" ? "Поделиться" : "Share"}
           </button>
         </div>
-      </div>
-
-      {/* Next steps */}
-      <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up">
-        <button
-          onClick={() => router.push("/quiz")}
-          className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-gradient-to-r from-violet-600 to-indigo-600 hover:from-violet-500 hover:to-indigo-500 text-white font-semibold rounded-xl transition-all duration-200 shadow-lg shadow-violet-500/20"
-        >
-          {t.resultsQuizCta}
-          <svg
-            className="w-4 h-4"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M13 7l5 5m0 0l-5 5m5-5H6"
-            />
-          </svg>
-        </button>
-        <button
-          onClick={() => router.push("/recommendations")}
-          className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-slate-800 hover:bg-slate-700 text-slate-200 font-medium rounded-xl transition-colors border border-slate-700"
-        >
-          {t.resultsToRecommendations}
-        </button>
       </div>
     </div>
   );

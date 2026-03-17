@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build --no-turbopack",
+    "build": "node build.mjs",
     "start": "next start",
     "lint": "next lint",
     "build:worker": "npx opennextjs-cloudflare && npx wrangler pages deploy",
@@ -13,7 +13,7 @@
   "dependencies": {
     "@anthropic-ai/sdk": "^0.39.0",
     "@opennextjs/cloudflare": "^1.17.1",
-    "next": "^14.2.21",
+    "next": "^14.2.35",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "unpdf": "^1.4.0"
