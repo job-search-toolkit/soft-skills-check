@@ -8,13 +8,14 @@ export function getAnthropicClient(): Anthropic {
 
 export async function callClaude(
   systemPrompt: string,
-  userMessage: string
+  userMessage: string,
+  options?: { maxTokens?: number }
 ): Promise<string> {
   const anthropic = getAnthropicClient();
 
   const message = await anthropic.messages.create({
-    model: "claude-sonnet-4-20250514",
-    max_tokens: 4096,
+    model: "claude-haiku-4-5-20251001",
+    max_tokens: options?.maxTokens ?? 4096,
     system: systemPrompt,
     messages: [
       {
