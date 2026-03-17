@@ -524,14 +524,14 @@ export default function QuizPage() {
               {currentQ.source && (
                 <div className="pt-3 border-t border-slate-700/50">
                   <span className="text-xs text-slate-400">{t.quizSource}: </span>
-                  {currentQ.sourceUrl && currentQ.sourceUrl.startsWith("http") ? (
+                  {currentQ.sourceUrl ? (
                     <a
                       href={currentQ.sourceUrl}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-xs text-violet-400 hover:text-violet-300 underline underline-offset-2"
                     >
-                      {currentQ.source}
+                      {currentQ.source} ↗
                     </a>
                   ) : (
                     <span className="text-xs text-violet-400">{currentQ.source}</span>
