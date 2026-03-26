@@ -91,6 +91,15 @@ export const dimensions: DimensionInfo[] = [
     descriptionEn:
       "Estimating timelines, prioritizing tasks, saying 'no', and avoiding perfectionism traps",
   },
+  {
+    key: "management_skills",
+    name: "Управленческие навыки",
+    nameEn: "Management Skills",
+    description:
+      "Ставить задачи, контролировать результат и расставлять приоритеты — для людей и AI-агентов",
+    descriptionEn:
+      "Set tasks, control results and prioritize — for people and AI agents",
+  },
 ];
 
 export const dimensionMap: Record<DimensionKey, DimensionInfo> =
@@ -492,6 +501,43 @@ export const questions: Question[] = [
     text: "Я иногда трачу полдня на AI-эксперименты и генерацию вариантов, хотя задача была простой и её можно было закрыть за час вручную.",
     textEn: "I sometimes spend half a day on AI experiments and generating variants, when the task was simple and could have been done manually in an hour.",
     reverse: true,
+  },
+
+  // Management Skills (ms)
+  {
+    id: "ms_1",
+    dimension: "management_skills",
+    text: "Когда я ставлю задачу коллеге или AI-агенту, я чётко формулирую: ожидаемый результат, срок и критерии приёмки.",
+    textEn: "When I assign a task to a colleague or AI agent, I clearly define the expected result, deadline, and acceptance criteria.",
+    reverse: false,
+  },
+  {
+    id: "ms_2",
+    dimension: "management_skills",
+    text: "Я контролирую промежуточные результаты, а не только итог — это помогает мне вовремя заметить отклонение и скорректировать курс.",
+    textEn: "I track intermediate results, not just the final output — this helps me spot deviations early and course-correct.",
+    reverse: false,
+  },
+  {
+    id: "ms_3",
+    dimension: "management_skills",
+    text: "Мне сложно делегировать задачи — боюсь, что результат не будет соответствовать ожиданиям, поэтому предпочитаю делать сам.",
+    textEn: "I find it hard to delegate — I worry the result won't meet expectations, so I'd rather do it myself.",
+    reverse: true,
+  },
+  {
+    id: "ms_4",
+    dimension: "management_skills",
+    text: "Среди множества задач я чётко вижу, что нужно сделать первым — не трачу время на мелочи, когда висят критичные вещи.",
+    textEn: "Among many tasks, I clearly see what must be done first — I don't spend time on minor things when critical ones are pending.",
+    reverse: false,
+  },
+  {
+    id: "ms_5",
+    dimension: "management_skills",
+    text: "После завершения задачи я анализирую, что прошло хорошо, а что можно улучшить — и применяю эти выводы в следующем цикле.",
+    textEn: "After a task is done, I analyze what went well and what could improve — and apply those lessons in the next cycle.",
+    reverse: false,
   },
 ];
 

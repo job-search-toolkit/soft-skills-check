@@ -140,6 +140,11 @@ export default function Home() {
               name: t.landingDimTime,
               desc: t.landingDimTimeDesc,
             },
+            {
+              icon: "\uD83E\uDDD1\u200D\uD83D\uDCBC",
+              name: t.landingDimManagement,
+              desc: t.landingDimManagementDesc,
+            },
           ].map((dim) => (
             <div
               key={dim.name}

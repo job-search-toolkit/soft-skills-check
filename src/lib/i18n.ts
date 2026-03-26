@@ -20,7 +20,7 @@ export const ui = {
     landingStep03Desc:
       "Получи задание под себя. На 15 минут или на неделю. Один или с командой. Ты выбираешь формат.",
     landingStagesNote: "Можно остановиться на любом этапе — каждый полезен сам по себе",
-    landingDimensionsTitle: "10 направлений",
+    landingDimensionsTitle: "11 направлений",
     landingDimCritical: "Критическое мышление",
     landingDimCriticalDesc: "Не доверять AI слепо. Проверять, сомневаться, видеть ошибки",
     landingDimComm: "Коммуникация",
@@ -41,6 +41,8 @@ export const ui = {
     landingDimEIDesc: "Понимать людей, когда работа всё больше с машинами",
     landingDimTime: "Управление временем",
     landingDimTimeDesc: "Не тратить полдня на промптинг того, что можно сделать за час",
+    landingDimManagement: "Управленческие навыки",
+    landingDimManagementDesc: "Ставить задачи, контролировать результат и расставлять приоритеты — для людей и AI-агентов",
     landingFooterNote: "5-20 минут. Выбираешь темы сам. Данные остаются только у тебя.",
     landingFooterCta: "Начать",
 
@@ -269,7 +271,7 @@ export const ui = {
     landingStep03Desc:
       "Get a personalized assignment. 15 minutes or a full week. Solo or with your team. You choose the format.",
     landingStagesNote: "You can stop at any stage \u2014 each one is useful on its own",
-    landingDimensionsTitle: "10 dimensions",
+    landingDimensionsTitle: "11 dimensions",
     landingDimCritical: "Critical Thinking",
     landingDimCriticalDesc: "Don't trust AI blindly. Verify, question, spot errors",
     landingDimComm: "Communication",
@@ -290,6 +292,8 @@ export const ui = {
     landingDimEIDesc: "Understand people when work is increasingly with machines",
     landingDimTime: "Time Management",
     landingDimTimeDesc: "Don't spend half a day prompting what you could do in an hour",
+    landingDimManagement: "Management Skills",
+    landingDimManagementDesc: "Set tasks, control results and prioritize — for people and AI agents",
     landingFooterNote: "5-20 minutes. You pick the topics. Your data stays with you.",
     landingFooterCta: "Start",
 

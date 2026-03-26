@@ -17,6 +17,7 @@ const TOPIC_ICONS: Record<string, string> = {
   conflict_resolution: "\uD83E\uDDD1\u200D\u2696\uFE0F",
   emotional_intelligence: "\uD83D\uDCA1",
   time_management: "\u23F1\uFE0F",
+  management_skills: "\uD83E\uDDD1\u200D\uD83D\uDCBC",
 };
 
 export default function TopicsPage() {
