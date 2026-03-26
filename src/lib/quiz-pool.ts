@@ -7041,11 +7041,11 @@ export const quizPool: QuizQuestion[] =
     "textEn": "What are SMART criteria when setting a task?",
     "options": [
       { "key": "a", "text": "Простые, измеримые, достижимые, реалистичные, временные", "textEn": "Simple, Measurable, Achievable, Realistic, Timely" },
-      { "key": "b", "text": "Конкретные, измеримые, достижимые, релевантные, ограниченные по времени", "textEn": "Specific, Measurable, Achievable, Relevant, Time-bound" },
-      { "key": "c", "text": "Стратегические, мотивирующие, гибкие, разумные, отслеживаемые", "textEn": "Strategic, Motivating, Agile, Reasonable, Trackable" },
+      { "key": "b", "text": "Стратегические, мотивирующие, гибкие, разумные, отслеживаемые", "textEn": "Strategic, Motivating, Agile, Reasonable, Trackable" },
+      { "key": "c", "text": "Конкретные, измеримые, достижимые, релевантные, с дедлайном", "textEn": "Specific, Measurable, Achievable, Relevant, Time-bound" },
       { "key": "d", "text": "Стандартные, управляемые, автоматизированные, регулярные, тактические", "textEn": "Standard, Manageable, Automated, Regular, Tactical" }
     ],
-    "correctAnswer": "b",
+    "correctAnswer": "c",
     "explanation": "SMART — классический фреймворк постановки целей Питера Друкера: Specific (конкретная), Measurable (измеримая), Achievable (достижимая), Relevant (релевантная), Time-bound (ограниченная по времени). Работает одинаково для задач людям и AI-агентам: без конкретики и критериев приёмки исполнитель не знает, когда задача завершена.",
     "explanationEn": "SMART is Peter Drucker's classic goal-setting framework: Specific, Measurable, Achievable, Relevant, Time-bound. It works equally for tasks assigned to humans and AI agents: without specificity and acceptance criteria, the executor doesn't know when the task is done.",
     "source": "Peter Drucker — The Practice of Management (1954)",
@@ -7092,11 +7092,11 @@ export const quizPool: QuizQuestion[] =
     "textEn": "What is 'delegation' in classical management?",
     "options": [
       { "key": "a", "text": "Передача задачи с полной потерей контроля над результатом", "textEn": "Transferring a task with complete loss of control over the result" },
-      { "key": "b", "text": "Передача полномочий и ответственности за выполнение при сохранении подотчётности", "textEn": "Transferring authority and responsibility for execution while retaining accountability" },
-      { "key": "c", "text": "Разбивка задачи на части между несколькими людьми без назначения ответственного", "textEn": "Splitting a task among several people without assigning accountability" },
-      { "key": "d", "text": "Автоматизация рутинных операций с помощью скриптов", "textEn": "Automating routine operations with scripts" }
+      { "key": "b", "text": "Разбивка задачи на части между несколькими людьми без назначения ответственного", "textEn": "Splitting a task among several people without assigning accountability" },
+      { "key": "c", "text": "Передача полномочий исполнителю при сохранении итоговой ответственности", "textEn": "Transferring authority to the executor while retaining final accountability" },
+      { "key": "d", "text": "Автоматизация рутинных операций и задач с помощью готовых скриптов", "textEn": "Automating routine operations and tasks using pre-built scripts" }
     ],
-    "correctAnswer": "b",
+    "correctAnswer": "c",
     "explanation": "Делегирование — передача полномочий на выполнение задачи при сохранении итоговой подотчётности у делегирующего. Ключевое: вы передаёте ответственность за процесс, но не за результат — он всё равно на вас. Это актуально и при работе с AI-агентами: вы отвечаете за то, что агент сделал от вашего имени.",
     "explanationEn": "Delegation transfers authority to complete a task while the delegator retains final accountability. Key point: you hand over process ownership but not result ownership — that stays with you. This applies to AI agents too: you are responsible for what an agent does on your behalf.",
     "source": "Henri Fayol — General and Industrial Management (1916)",
@@ -7108,12 +7108,12 @@ export const quizPool: QuizQuestion[] =
     "text": "Модель ситуационного лидерства Херси-Бланшара предполагает, что стиль управления должен меняться в зависимости от...",
     "textEn": "The Hersey-Blanchard Situational Leadership model says the management style should change depending on...",
     "options": [
-      { "key": "a", "text": "Личных предпочтений руководителя", "textEn": "The manager's personal preferences" },
-      { "key": "b", "text": "Уровня готовности (компетентности и мотивации) исполнителя к задаче", "textEn": "The executor's readiness level (competence and motivation) for the task" },
-      { "key": "c", "text": "Размера команды и бюджета проекта", "textEn": "The team size and project budget" },
-      { "key": "d", "text": "Срочности задачи", "textEn": "The urgency of the task" }
+      { "key": "a", "text": "Уровня готовности исполнителя: его компетентности и мотивации", "textEn": "The executor's readiness level: their competence and motivation" },
+      { "key": "b", "text": "Срочности задачи и жёсткости установленных дедлайнов", "textEn": "The urgency of the task and strictness of its deadline" },
+      { "key": "c", "text": "Размера команды, опыта участников и бюджета проекта", "textEn": "The team size, members' experience, and project budget" },
+      { "key": "d", "text": "Личных предпочтений и привычного стиля управления руководителя", "textEn": "The manager's personal preferences and habitual management style" }
     ],
-    "correctAnswer": "b",
+    "correctAnswer": "a",
     "explanation": "Ситуационное лидерство (Херси и Бланшар, 1969): не существует одного правильного стиля управления — он должен подстраиваться под уровень готовности исполнителя (D1-D4: от новичка до эксперта). Для AI-агентов это тоже верно: простую модель можно контролировать мало, но новый сложный агент требует больше микроменеджмента.",
     "explanationEn": "Situational Leadership (Hersey & Blanchard, 1969): there is no single correct management style — it must adapt to the executor's readiness level (D1–D4: from novice to expert). This applies to AI agents too: a well-proven model needs little oversight, but a new complex agent requires more hands-on management.",
     "source": "Hersey & Blanchard — Management of Organizational Behavior (1969)",
@@ -7125,12 +7125,12 @@ export const quizPool: QuizQuestion[] =
     "text": "Что такое OKR (Objectives and Key Results)?",
     "textEn": "What is OKR (Objectives and Key Results)?",
     "options": [
-      { "key": "a", "text": "Метод ежедневных отчётов о выполненных задачах", "textEn": "A method of daily reports on completed tasks" },
-      { "key": "b", "text": "Фреймворк постановки амбициозных целей с измеримыми результатами, связывающий индивидуальные и командные цели", "textEn": "A framework for setting ambitious goals with measurable results, linking individual and team objectives" },
-      { "key": "c", "text": "Система штрафов за невыполнение KPI", "textEn": "A penalty system for missing KPIs" },
-      { "key": "d", "text": "Инструмент для оценки производительности раз в год", "textEn": "A tool for annual performance evaluation" }
+      { "key": "a", "text": "Подход к управлению: амбициозная цель плюс измеримые ключевые результаты", "textEn": "A goal-setting approach pairing an ambitious objective with measurable key results" },
+      { "key": "b", "text": "Методология ежедневных отчётов о статусе задач и блокерах команды", "textEn": "A methodology for daily task status reports and blocker tracking" },
+      { "key": "c", "text": "Система штрафов и бонусов за выполнение или срыв плановых KPI", "textEn": "A penalty and bonus system tied to hitting or missing planned KPIs" },
+      { "key": "d", "text": "Инструмент для ежегодной оценки производительности и ревью сотрудников", "textEn": "A tool for annual employee performance evaluation and review cycles" }
     ],
-    "correctAnswer": "b",
+    "correctAnswer": "a",
     "explanation": "OKR (Энди Гроув, Intel; popularized by Google): Objective — вдохновляющая цель («что хотим достичь»), Key Results — 2-5 измеримых результатов («как поймём, что достигли»). Квартальные циклы, прозрачность, растяжимые цели (moon shots). Google использует OKR с 1999 года. Применим для команд, AI-агентов и личного планирования.",
     "explanationEn": "OKR (Andy Grove, Intel; popularized by Google): Objective — an inspiring goal ('what we want to achieve'), Key Results — 2–5 measurable outcomes ('how we'll know we got there'). Quarterly cycles, transparency, stretch goals (moon shots). Google has used OKRs since 1999. Applicable to teams, AI agents, and personal planning.",
     "source": "John Doerr — Measure What Matters (2018)",
@@ -7159,12 +7159,12 @@ export const quizPool: QuizQuestion[] =
     "text": "Что такое «микроменеджмент» и почему он считается неэффективным?",
     "textEn": "What is 'micromanagement' and why is it considered ineffective?",
     "options": [
-      { "key": "a", "text": "Детальное планирование задач; неэффективно из-за затрат времени на планирование", "textEn": "Detailed task planning; ineffective because planning takes too long" },
-      { "key": "b", "text": "Избыточный контроль над каждым шагом исполнителя; снижает автономию, мотивацию и скорость", "textEn": "Excessive control over every step the executor takes; reduces autonomy, motivation, and speed" },
-      { "key": "c", "text": "Управление небольшими командами; неэффективно при масштабировании", "textEn": "Managing small teams; ineffective at scale" },
-      { "key": "d", "text": "Дробление задач на подзадачи; замедляет процесс", "textEn": "Breaking tasks into subtasks; slows down the process" }
+      { "key": "a", "text": "Избыточный контроль над каждым шагом исполнителя, снижающий его автономию и мотивацию", "textEn": "Excessive control over every step an executor takes, undermining their autonomy and motivation" },
+      { "key": "b", "text": "Детальное планирование задач; неэффективно из-за затрат времени на планирование", "textEn": "Detailed task planning; ineffective because planning takes too long" },
+      { "key": "c", "text": "Управление небольшими командами до пяти человек; неэффективно при масштабировании", "textEn": "Managing small teams of fewer than five people; ineffective at scale" },
+      { "key": "d", "text": "Дробление задач на мелкие подзадачи с жёстким контролем каждой", "textEn": "Breaking tasks into small subtasks with tight control over each one" }
     ],
-    "correctAnswer": "b",
+    "correctAnswer": "a",
     "explanation": "Микроменеджмент — контроль каждого шага вместо контроля результата. Снижает мотивацию, замедляет работу, не развивает самостоятельность. Исследования Gallup показывают: сотрудники с высокой автономией на 43% реже меняют работу. Для AI-агентов: избыточный контроль каждого шага агента лишает смысла делегирование — доверяй процессу, контролируй результат.",
     "explanationEn": "Micromanagement is controlling every step instead of the outcome. It reduces motivation, slows work, and prevents independence from developing. Gallup research shows employees with high autonomy are 43% less likely to change jobs. For AI agents: excessive step-by-step control defeats the purpose of delegation — trust the process, control the result.",
     "source": "Gallup — State of the American Manager (2015)",
@@ -7176,12 +7176,12 @@ export const quizPool: QuizQuestion[] =
     "text": "Что означает «span of control» (норма управляемости) в теории организаций?",
     "textEn": "What does 'span of control' mean in organizational theory?",
     "options": [
-      { "key": "a", "text": "Диапазон полномочий менеджера по найму и увольнению", "textEn": "The range of a manager's authority to hire and fire" },
-      { "key": "b", "text": "Количество подчинённых, которыми менеджер может эффективно управлять напрямую", "textEn": "The number of subordinates a manager can effectively manage directly" },
-      { "key": "c", "text": "Максимальный бюджет, которым распоряжается менеджер", "textEn": "The maximum budget a manager controls" },
-      { "key": "d", "text": "Число уровней иерархии в организации", "textEn": "The number of hierarchical levels in an organization" }
+      { "key": "a", "text": "Количество подчинённых, которыми менеджер может эффективно управлять напрямую", "textEn": "The number of subordinates a manager can effectively manage directly" },
+      { "key": "b", "text": "Широта формальных полномочий менеджера в принятии организационных решений", "textEn": "The breadth of a manager's formal authority in making organizational decisions" },
+      { "key": "c", "text": "Максимальный бюджет и ресурсы, которыми распоряжается менеджер", "textEn": "The maximum budget and resources under a manager's control" },
+      { "key": "d", "text": "Число уровней иерархии между менеджером и рядовыми сотрудниками", "textEn": "The number of hierarchical levels between a manager and front-line employees" }
     ],
-    "correctAnswer": "b",
+    "correctAnswer": "a",
     "explanation": "Норма управляемости — количество прямых подчинённых, при которых руководитель остаётся эффективным. Классически: 5-7 человек (Лютер Гьюлик). Джефф Безос использовал «правило двух пицц»: команда не должна быть больше той, которую можно накормить двумя пиццами. С AI-агентами норма растёт: один менеджер может контролировать десятки параллельных агентов через правильно выстроенные чекпоинты.",
     "explanationEn": "Span of control is the number of direct reports a manager can effectively oversee. Classically: 5–7 people (Luther Gulick). Jeff Bezos used the 'two-pizza rule': a team shouldn't be larger than what two pizzas can feed. With AI agents, the span increases: one manager can oversee dozens of parallel agents through well-designed checkpoints.",
     "source": "Luther Gulick — Papers on the Science of Administration (1937)",
@@ -7193,12 +7193,12 @@ export const quizPool: QuizQuestion[] =
     "text": "Что такое «метод критического пути» (Critical Path Method, CPM) в управлении проектами?",
     "textEn": "What is the Critical Path Method (CPM) in project management?",
     "options": [
-      { "key": "a", "text": "Метод оценки рисков по степени критичности для бизнеса", "textEn": "A method for assessing risks by their criticality to the business" },
-      { "key": "b", "text": "Техника выявления самой длинной последовательности зависимых задач, определяющей минимальное время проекта", "textEn": "A technique for identifying the longest sequence of dependent tasks that determines the project's minimum duration" },
-      { "key": "c", "text": "Расстановка приоритетов по важности задач для клиента", "textEn": "Prioritizing tasks by importance to the client" },
-      { "key": "d", "text": "Оценка загруженности команды по каждой задаче", "textEn": "Estimating team workload for each task" }
+      { "key": "a", "text": "Метод оценки рисков проекта по степени их критичности для бизнеса", "textEn": "A method for assessing project risks by their criticality to the business" },
+      { "key": "b", "text": "Расстановка задач по приоритетам исходя из их важности для конечного клиента", "textEn": "Prioritizing tasks based on their importance to the end client" },
+      { "key": "c", "text": "Техника равномерного распределения загрузки команды по всем задачам спринта", "textEn": "A technique for evenly distributing team workload across all tasks in a sprint" },
+      { "key": "d", "text": "Метод поиска наидлиннейшей цепочки зависимых задач, задающей минимальный срок проекта", "textEn": "A method for finding the longest chain of dependent tasks that sets the project's minimum duration" }
     ],
-    "correctAnswer": "b",
+    "correctAnswer": "d",
     "explanation": "CPM (разработан DuPont и Remington Rand в 1950-х): определяет критический путь — цепочку задач, задержка любой из которых задерживает весь проект. Задачи вне критического пути имеют «float» — запас времени. Практическое применение: сосредоточь ресурсы и контроль на критическом пути, остальное можно делегировать с меньшим надзором.",
     "explanationEn": "CPM (developed by DuPont and Remington Rand in the 1950s): identifies the critical path — the chain of tasks where any delay delays the entire project. Tasks off the critical path have 'float' (scheduling buffer). Practical application: focus resources and oversight on the critical path; the rest can be delegated with less supervision.",
     "source": "Critical Path Method — Project Management Institute",
@@ -7244,12 +7244,12 @@ export const quizPool: QuizQuestion[] =
     "text": "Что такое «обратная связь по модели SBI» (Situation — Behavior — Impact)?",
     "textEn": "What is the SBI (Situation — Behavior — Impact) feedback model?",
     "options": [
-      { "key": "a", "text": "Метод оценки по трём показателям: скорость, результат, инициатива", "textEn": "An evaluation method based on three metrics: speed, result, initiative" },
-      { "key": "b", "text": "Структура обратной связи: описываешь ситуацию, конкретное поведение и его влияние — без оценок личности", "textEn": "A feedback structure: describe the situation, specific behavior, and its impact — without judging the person" },
-      { "key": "c", "text": "Система бонусов, привязанная к ключевым показателям", "textEn": "A bonus system tied to key performance indicators" },
-      { "key": "d", "text": "Трёхэтапная модель онбординга новых сотрудников", "textEn": "A three-stage onboarding model for new employees" }
+      { "key": "a", "text": "Метод оценки сотрудника по трём показателям: скорость, результат, инициатива", "textEn": "An employee evaluation method based on three metrics: speed, result, and initiative" },
+      { "key": "b", "text": "Система бонусов и признания, привязанная к конкретным рабочим достижениям", "textEn": "A bonus and recognition system tied to specific work achievements" },
+      { "key": "c", "text": "Структура обратной связи: описываешь ситуацию, конкретное поведение и его влияние — без оценок личности", "textEn": "A feedback structure: describe the situation, specific behavior, and its impact — without judging the person" },
+      { "key": "d", "text": "Трёхуровневая модель разговора: стратегический, тактический и операционный уровни", "textEn": "A three-level conversation model: strategic, tactical, and operational levels" }
     ],
-    "correctAnswer": "b",
+    "correctAnswer": "c",
     "explanation": "SBI (Center for Creative Leadership): Situation (когда именно, в какой ситуации), Behavior (что конкретно было сделано — без интерпретаций), Impact (какой эффект это произвело). Пример: «На вчерашнем стендапе (S) ты перебил коллегу три раза (B) — это снизило его уверенность высказываться (I)». Так же работает при ревью AI-агентов: описывай конкретный вывод, а не «агент плохо работает».",
     "explanationEn": "SBI (Center for Creative Leadership): Situation (when and where), Behavior (what specifically happened — no interpretation), Impact (the effect it had). Example: 'In yesterday's standup (S) you interrupted your colleague three times (B) — it reduced their confidence in speaking up (I).' Works the same when reviewing AI agents: describe the specific output, not 'the agent performed badly.'",
     "source": "Center for Creative Leadership — SBI Feedback Model",
@@ -7278,12 +7278,12 @@ export const quizPool: QuizQuestion[] =
     "text": "Что такое «петля обратной связи» (feedback loop) в управлении командами и процессами?",
     "textEn": "What is a 'feedback loop' in team and process management?",
     "options": [
-      { "key": "a", "text": "Регулярные встречи для обсуждения прошлых ошибок", "textEn": "Regular meetings to discuss past mistakes" },
-      { "key": "b", "text": "Механизм, при котором результат действия влияет на следующее действие, позволяя системе самокорректироваться", "textEn": "A mechanism where the result of an action influences the next action, allowing the system to self-correct" },
-      { "key": "c", "text": "Процесс сбора отзывов клиентов о продукте", "textEn": "The process of collecting customer feedback about a product" },
-      { "key": "d", "text": "Цикл найма и увольнения сотрудников", "textEn": "The cycle of hiring and firing employees" }
+      { "key": "a", "text": "Регулярные встречи команды для обсуждения прошлых ошибок и извлечения уроков", "textEn": "Regular team meetings to discuss past mistakes and extract lessons learned" },
+      { "key": "b", "text": "Процесс сбора и обработки отзывов клиентов о продукте для его улучшения", "textEn": "The process of collecting and processing customer feedback to improve the product" },
+      { "key": "c", "text": "Механизм, при котором результат действия влияет на следующий шаг, позволяя системе самокорректироваться", "textEn": "A mechanism where the result of an action feeds into the next step, allowing the system to self-correct" },
+      { "key": "d", "text": "Цикл проверки гипотез команды по методологии Build-Measure-Learn", "textEn": "The team's hypothesis-testing cycle following the Build-Measure-Learn methodology" }
     ],
-    "correctAnswer": "b",
+    "correctAnswer": "c",
     "explanation": "Feedback loop (кибернетика, Норберт Винер): выход системы подаётся обратно на вход, чтобы скорректировать следующий шаг. Короткие петли = быстрое обучение. Пример: daily standup — короткая петля для команды; ретроспектива — длинная. Для AI-агентов: чем короче петля проверки вывода, тем быстрее вы обнаруживаете отклонение и корректируете промпт или инструкцию.",
     "explanationEn": "Feedback loop (cybernetics, Norbert Wiener): system output is fed back as input to correct the next step. Shorter loops = faster learning. Examples: a daily standup is a short loop for a team; a retrospective is a longer loop. For AI agents: the shorter the output-review loop, the faster you detect deviation and correct the prompt or instruction.",
     "source": "Norbert Wiener — Cybernetics (1948)",
@@ -7295,12 +7295,12 @@ export const quizPool: QuizQuestion[] =
     "text": "Что описывает «принцип Питера» (Peter Principle)?",
     "textEn": "What does the 'Peter Principle' describe?",
     "options": [
-      { "key": "a", "text": "Лучшие специалисты уходят к конкурентам", "textEn": "The best specialists leave for competitors" },
-      { "key": "b", "text": "Сотрудников повышают до уровня их некомпетентности", "textEn": "Employees are promoted to their level of incompetence" },
-      { "key": "c", "text": "Производительность падает при превышении оптимального размера команды", "textEn": "Productivity drops when team size exceeds the optimum" },
-      { "key": "d", "text": "Работа занимает столько времени, сколько ей отведено", "textEn": "Work takes as long as the time allocated for it" }
+      { "key": "a", "text": "Лучшие специалисты рано или поздно уходят к конкурентам, предлагающим больше", "textEn": "The best specialists eventually leave for competitors offering better conditions" },
+      { "key": "b", "text": "Производительность резко падает при превышении оптимального размера команды", "textEn": "Productivity drops sharply when team size exceeds its optimum" },
+      { "key": "c", "text": "Работа расширяется, чтобы заполнить всё отведённое для неё время", "textEn": "Work expands so as to fill the time available for its completion" },
+      { "key": "d", "text": "Сотрудников повышают до уровня их некомпетентности", "textEn": "Employees are promoted to their level of incompetence" }
     ],
-    "correctAnswer": "b",
+    "correctAnswer": "d",
     "explanation": "Принцип Питера (Лоренс Питер, 1969): в иерархии каждый сотрудник в конечном итоге повышается до позиции, где он некомпетентен — и там и остаётся. Причина: критерии повышения (хорошая работа на текущей позиции) не гарантируют успех на следующей. Вывод для менеджера: перед повышением оценивай компетентность в новой роли, а не только результаты в текущей.",
     "explanationEn": "The Peter Principle (Laurence Peter, 1969): in a hierarchy, every employee eventually rises to their level of incompetence — and stays there. Reason: promotion criteria (doing well in the current role) don't guarantee success in the next. Takeaway for managers: before promoting, assess competence in the new role, not just results in the current one.",
     "source": "Laurence J. Peter — The Peter Principle (1969)",
@@ -7329,12 +7329,12 @@ export const quizPool: QuizQuestion[] =
     "text": "Что такое «эффект кобры» в управлении метриками?",
     "textEn": "What is the 'cobra effect' in metrics management?",
     "options": [
-      { "key": "a", "text": "Команда резко ускоряется перед дедлайном", "textEn": "The team speeds up sharply before a deadline" },
-      { "key": "b", "text": "Стимул, введённый для решения проблемы, ухудшает её из-за изменения поведения исполнителей", "textEn": "An incentive introduced to solve a problem makes it worse because executors change their behavior" },
-      { "key": "c", "text": "Агрессивная конкуренция внутри команды за KPI", "textEn": "Aggressive competition within a team over KPIs" },
-      { "key": "d", "text": "Накопление технического долга при давлении сроков", "textEn": "Accumulation of technical debt under deadline pressure" }
+      { "key": "a", "text": "Команда резко ускоряется перед дедлайном, накапливая технический долг", "textEn": "The team speeds up before a deadline, accumulating technical debt" },
+      { "key": "b", "text": "Агрессивная внутренняя конкуренция за KPI, разрушающая командную работу", "textEn": "Aggressive internal competition over KPIs that undermines teamwork" },
+      { "key": "c", "text": "Постепенная деградация метрик из-за накопленного технического долга", "textEn": "Gradual metric degradation caused by accumulated technical debt" },
+      { "key": "d", "text": "Стимул, введённый для решения проблемы, ухудшает её из-за изменения поведения исполнителей", "textEn": "An incentive introduced to solve a problem makes it worse because executors change their behavior" }
     ],
-    "correctAnswer": "b",
+    "correctAnswer": "d",
     "explanation": "«Эффект кобры»: в колониальной Индии британцы платили за каждую мёртвую кобру — индийцы начали разводить кобр. Метрика стала целью, а не индикатором. Современный аналог (закон Гудхарта): «Когда мера становится целью, она перестаёт быть хорошей мерой». Пример: KPI по числу строк кода → раздутый код. При управлении AI-агентами: следи, чтобы агент оптимизировал настоящую цель, а не прокси-метрику.",
     "explanationEn": "'Cobra effect': in colonial India, the British paid for dead cobras — locals started breeding cobras. The metric became the goal, not an indicator. Modern equivalent (Goodhart's Law): 'When a measure becomes a target, it ceases to be a good measure.' Example: KPI on lines of code → bloated code. When managing AI agents: ensure the agent optimizes the real goal, not a proxy metric.",
     "source": "Goodhart's Law / Cobra Effect",
@@ -7346,12 +7346,12 @@ export const quizPool: QuizQuestion[] =
     "text": "Что означает понятие «психологическая безопасность» в контексте команды (по Эми Эдмондсон)?",
     "textEn": "What does 'psychological safety' mean in a team context (per Amy Edmondson)?",
     "options": [
-      { "key": "a", "text": "Отсутствие стрессовых ситуаций и конфликтов в команде", "textEn": "Absence of stressful situations and conflicts in the team" },
-      { "key": "b", "text": "Уверенность, что можно говорить, задавать вопросы и признавать ошибки без страха наказания", "textEn": "Confidence that one can speak up, ask questions, and admit mistakes without fear of punishment" },
-      { "key": "c", "text": "Физическая безопасность рабочего места", "textEn": "Physical safety of the workplace" },
-      { "key": "d", "text": "Гарантия занятости и стабильного дохода", "textEn": "Job security and stable income" }
+      { "key": "a", "text": "Отсутствие разногласий и конфликтов — атмосфера согласия в команде", "textEn": "Absence of disagreements and conflicts — an atmosphere of consensus in the team" },
+      { "key": "b", "text": "Гарантия занятости, стабильного дохода и предсказуемого карьерного роста", "textEn": "Job security, stable income, and predictable career advancement" },
+      { "key": "c", "text": "Защищённость от критики и неудобных обсуждений на рабочих встречах", "textEn": "Protection from criticism and uncomfortable discussions during work meetings" },
+      { "key": "d", "text": "Уверенность, что можно говорить, задавать вопросы и признавать ошибки без страха наказания", "textEn": "Confidence that one can speak up, ask questions, and admit mistakes without fear of punishment" }
     ],
-    "correctAnswer": "b",
+    "correctAnswer": "d",
     "explanation": "Эми Эдмондсон (Harvard Business School, 1999) показала, что психологическая безопасность — главный предиктор эффективности команды. Google Project Aristotle (2016) подтвердил: она важнее состава команды и компетентности. В командах с высокой психологической безопасностью больше инноваций, быстрее обнаруживаются ошибки. Для менеджера: реакция на ошибки подчинённых формирует культуру.",
     "explanationEn": "Amy Edmondson (Harvard Business School, 1999) showed that psychological safety is the strongest predictor of team effectiveness. Google's Project Aristotle (2016) confirmed: it matters more than team composition or competence. Teams with high psychological safety innovate more and surface errors faster. For managers: how you react to subordinates' mistakes shapes the culture.",
     "source": "Amy Edmondson — Psychological Safety and Learning Behavior in Work Teams (1999)",
@@ -7363,10 +7363,10 @@ export const quizPool: QuizQuestion[] =
     "text": "Что такое «управление заинтересованными сторонами» (stakeholder management) и почему оно критично?",
     "textEn": "What is 'stakeholder management' and why is it critical?",
     "options": [
-      { "key": "a", "text": "Управление акционерами публичной компании", "textEn": "Managing shareholders of a public company" },
-      { "key": "b", "text": "Выявление людей и групп, на которых влияет проект, и управление их ожиданиями и вовлечённостью", "textEn": "Identifying people and groups affected by a project, and managing their expectations and engagement" },
-      { "key": "c", "text": "Управление клиентской базой и продажами", "textEn": "Managing the customer base and sales" },
-      { "key": "d", "text": "Распределение задач между участниками проекта", "textEn": "Distributing tasks among project participants" }
+      { "key": "a", "text": "Управление акционерами и инвесторами публичной или частной компании", "textEn": "Managing shareholders and investors of a public or private company" },
+      { "key": "b", "text": "Выявление всех, кого затрагивает проект, и управление их ожиданиями", "textEn": "Identifying everyone affected by a project and managing their expectations" },
+      { "key": "c", "text": "Управление клиентской базой, продажами и маркетинговыми активностями", "textEn": "Managing the customer base, sales pipeline, and marketing activities" },
+      { "key": "d", "text": "Распределение задач и ролей между всеми участниками проектной команды", "textEn": "Distributing tasks and roles among all members of the project team" }
     ],
     "correctAnswer": "b",
     "explanation": "Stakeholder management (PMBOK): стейкхолдер — любой, кто влияет на проект или находится под его влиянием. Ключевые шаги: 1) выявить всех стейкхолдеров; 2) понять их интересы и уровень влияния; 3) выбрать стратегию коммуникации для каждого. Проекты проваливаются не из-за технических ошибок, а из-за неучтённых стейкхолдеров. В AI-эпоху стейкхолдеры включают регуляторов, пользователей данных и этические комитеты.",
