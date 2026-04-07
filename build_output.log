@@ -1,0 +1,32 @@
+  [1m[38;2;173;127;168m▲ Next.js 14.2.35[39m[22m
+
+ [37m[1m [22m[39m Creating an optimized production build ...
+[31mFailed to compile.
+[39m
+./src/app/guide/page.tsx
+[31m[1mModule not found[22m[39m: Can't resolve '[32m@/lib/LangContext[39m'
+
+https://nextjs.org/docs/messages/module-not-found
+
+./src/app/homework/page.tsx
+[31m[1mModule not found[22m[39m: Can't resolve '[32m@/lib/LangContext[39m'
+
+https://nextjs.org/docs/messages/module-not-found
+
+./src/app/homework/page.tsx
+[31m[1mModule not found[22m[39m: Can't resolve '[32m@/lib/i18n[39m'
+
+https://nextjs.org/docs/messages/module-not-found
+
+./src/app/homework/page.tsx
+[31m[1mModule not found[22m[39m: Can't resolve '[32m@/lib/questions[39m'
+
+https://nextjs.org/docs/messages/module-not-found
+
+./src/app/homework/page.tsx
+[31m[1mModule not found[22m[39m: Can't resolve '[32m@/lib/quiz-questions[39m'
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+> Build failed because of webpack errors

@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     description:
       "Технические навыки уже не отличают — отличают человеческие. 10 тем, AI-анализ, план роста. Open source.",
     type: "website",
-    url: "https://soft-skills.chillai.space",
+    url: "https://soft-skills.transformerinstitute.org",
     locale: "ru_RU",
   },
   twitter: {

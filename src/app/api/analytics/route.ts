@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { Redis } from "@upstash/redis";
 
 interface DimensionTotal {
   sum: number;
@@ -17,17 +18,12 @@ const EMPTY_STATS: AnalyticsStats = {
   overallTotal: { sum: 0, count: 0 },
 };
 
-interface KVStore {
-  get(key: string): Promise<string | null>;
-  put(key: string, value: string): Promise<void>;
-}
-
-async function getKV(): Promise<KVStore | null> {
+function getRedis(): Redis | null {
   try {
-    const { getCloudflareContext } = await import("@opennextjs/cloudflare");
-    const { env } = await getCloudflareContext({ async: true });
-    const kv = (env as Record<string, unknown>).ANALYTICS as KVStore | undefined;
-    return kv ?? null;
+    if (!process.env.UPSTASH_REDIS_REST_URL || !process.env.UPSTASH_REDIS_REST_TOKEN) {
+      return null;
+    }
+    return Redis.fromEnv();
   } catch {
     return null;
   }
@@ -35,8 +31,8 @@ async function getKV(): Promise<KVStore | null> {
 
 export async function POST(request: Request) {
   try {
-    const kv = await getKV();
-    if (!kv) {
+    const redis = getRedis();
+    if (!redis) {
       // Gracefully degrade — analytics not available (e.g. local dev)
       return NextResponse.json({ ok: true });
     }
@@ -46,13 +42,12 @@ export async function POST(request: Request) {
     // Handle question/quiz ratings
     if (body.type === "question_ratings" || body.type === "quiz_ratings") {
       const ratingsKey = body.type === "question_ratings" ? "q_ratings" : "quiz_ratings";
-      const existing = await kv.get(ratingsKey);
-      const allRatings: Record<string, Record<string, number>> = existing ? JSON.parse(existing) : {};
+      const allRatings: Record<string, Record<string, number>> = await redis.get(ratingsKey) || {};
       for (const [qId, rating] of Object.entries(body.ratings as Record<string, string>)) {
         if (!allRatings[qId]) allRatings[qId] = {};
         allRatings[qId][rating] = (allRatings[qId][rating] || 0) + 1;
       }
-      await kv.put(ratingsKey, JSON.stringify(allRatings));
+      await redis.set(ratingsKey, allRatings);
       return NextResponse.json({ ok: true });
     }
 
@@ -69,8 +64,7 @@ export async function POST(request: Request) {
     }
 
     // Read existing stats
-    const raw = await kv.get("stats");
-    const stats: AnalyticsStats = raw ? JSON.parse(raw) : { ...EMPTY_STATS };
+    const stats: AnalyticsStats = await redis.get("stats") || { ...EMPTY_STATS };
 
     // Increment totals
     stats.totalCompleted += 1;
@@ -86,7 +80,7 @@ export async function POST(request: Request) {
     }
 
     // Write back
-    await kv.put("stats", JSON.stringify(stats));
+    await redis.set("stats", stats);
 
     return NextResponse.json({ ok: true });
   } catch (error) {
@@ -97,13 +91,12 @@ export async function POST(request: Request) {
 
 export async function GET() {
   try {
-    const kv = await getKV();
-    if (!kv) {
+    const redis = getRedis();
+    if (!redis) {
       return NextResponse.json({ error: "Analytics not available" }, { status: 503 });
     }
 
-    const raw = await kv.get("stats");
-    const stats: AnalyticsStats = raw ? JSON.parse(raw) : { ...EMPTY_STATS };
+    const stats: AnalyticsStats = await redis.get("stats") || { ...EMPTY_STATS };
 
     // Calculate averages
     const averages: Record<string, number> = {};

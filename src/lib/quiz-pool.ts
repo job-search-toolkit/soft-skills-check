@@ -29,6 +29,11 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "Успех зависит исключительно от мотивации",
         "textEn": "Success depends exclusively on motivation"
+      },
+      {
+        "key": "e",
+        "text": "Достаточно визуализировать успех по методу НЛП, чтобы мозг сформировал нужные нейронные связи",
+        "textEn": "It is enough to visualize success using NLP techniques so the brain forms the right neural pathways"
       }
     ],
     "correctAnswer": "b",
@@ -62,13 +67,18 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "Reinforcement (Закрепление)",
         "textEn": "Reinforcement"
+      },
+      {
+        "key": "e",
+        "text": "Action (Действие) — немедленное внедрение нового поведения на практике",
+        "textEn": "Action — immediate implementation of the new behavior in practice"
       }
     ],
     "correctAnswer": "b",
     "explanation": "ADKAR — модель Prosci для управления изменениями на уровне индивида. Порядок: Awareness (осознание необходимости) → Desire (желание участвовать) → Knowledge (знание, как меняться) → Ability (способность применять) → Reinforcement (закрепление). Ключевой инсайт: мало знать, что AI полезен (Awareness) — нужно ещё и ХОТЕТЬ его использовать (Desire).",
     "explanationEn": "ADKAR is Prosci's model for managing individual-level change. The order: Awareness (knowing change is needed) → Desire (wanting to participate) → Knowledge (knowing how to change) → Ability (ability to apply) → Reinforcement (sustaining the change). Key insight: knowing AI is useful (Awareness) isn't enough — you also need to WANT to use it (Desire).",
     "source": "ADKAR Model (Prosci)",
-    "sourceUrl": "https://www.prosci.com/methodology/adkar"
+    "sourceUrl": "https://en.wikipedia.org/wiki/ADKAR"
   },
   {
     "id": "ad_q04",
@@ -95,6 +105,11 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "Прочитать все руководства и туториалы, прежде чем начать использовать",
         "textEn": "Read all guides and tutorials before starting to use it"
+      },
+      {
+        "key": "e",
+        "text": "Запустить A/B-тест по методу Lean Startup — одна команда на старом инструменте, другая на новом",
+        "textEn": "Run a Lean Startup A/B test — one team on the old tool, another on the new one"
       }
     ],
     "correctAnswer": "c",
@@ -128,6 +143,11 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "Равномерно глубокие знания в 2-3 областях",
         "textEn": "Equally deep knowledge in 2-3 areas"
+      },
+      {
+        "key": "e",
+        "text": "Глубокая экспертиза в одной области + вторая равноценная экспертиза — так называемый π-shaped специалист",
+        "textEn": "Deep expertise in one area plus a second equal expertise — the so-called pi-shaped specialist"
       }
     ],
     "correctAnswer": "c",
@@ -161,6 +181,11 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "«Ты лучше всех в команде справляешься с задачами»",
         "textEn": "'You handle tasks better than anyone else on the team'"
+      },
+      {
+        "key": "e",
+        "text": "«Ты применил метод Канбан для планирования задач — это очень зрело!»",
+        "textEn": "'You applied the Kanban method for planning your tasks — that is very mature of you!'"
       }
     ],
     "correctAnswer": "b",
@@ -194,6 +219,11 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "Депрессия — человек теряет мотивацию и энергию",
         "textEn": "Depression — the person loses motivation and energy levels"
+      },
+      {
+        "key": "e",
+        "text": "Торг — человек пытается выторговать компромисс и частичные уступки у руководства",
+        "textEn": "Bargaining — the person tries to negotiate compromises and partial concessions from management"
       }
     ],
     "correctAnswer": "d",
@@ -227,6 +257,11 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "Results agility — умение достигать результата в новых условиях",
         "textEn": "Results agility — ability to deliver results in new conditions"
+      },
+      {
+        "key": "e",
+        "text": "Self-awareness agility — способность рефлексировать и понимать свои эмоциональные реакции на изменения",
+        "textEn": "Self-awareness agility — the ability to reflect and understand your emotional reactions to change"
       }
     ],
     "correctAnswer": "c",
@@ -260,6 +295,11 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "Сужение зоны комфорта — это миф, она только растёт всегда",
         "textEn": "Comfort zone shrinking is a myth as it only ever expands"
+      },
+      {
+        "key": "e",
+        "text": "Комфортная зона сужается по закону Йеркса-Додсона из-за постепенного снижения оптимального уровня стресса",
+        "textEn": "The comfort zone shrinks according to the Yerkes-Dodson law due to gradual decline in optimal stress levels"
       }
     ],
     "correctAnswer": "a",
@@ -293,6 +333,11 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "I-shaped — это руководитель, а T-shaped — исполнитель в команде",
         "textEn": "I-shaped is a manager while T-shaped is an executor on the team"
+      },
+      {
+        "key": "e",
+        "text": "I-shaped специалист использует модель ADKAR для фокусировки на одном этапе изменений за раз",
+        "textEn": "An I-shaped specialist uses the ADKAR model to focus on one stage of change at a time"
       }
     ],
     "correctAnswer": "a",
@@ -326,6 +371,11 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "70% опыт на работе, 20% от других людей, 10% формальное обучение",
         "textEn": "70% on-the-job experience, 20% from others, 10% formal training"
+      },
+      {
+        "key": "e",
+        "text": "70% менторинг, 20% коучинг, 10% самообучение — по модели Киркпатрика",
+        "textEn": "70% mentoring, 20% coaching, 10% self-study — according to Kirkpatrick's model"
       }
     ],
     "correctAnswer": "d",
@@ -359,6 +409,11 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "Целенаправленная работа над слабыми местами с обратной связью",
         "textEn": "Targeted work on weak areas combined with structured feedback"
+      },
+      {
+        "key": "e",
+        "text": "Практика по принципу 10 000 часов Малкольма Гладуэлла — количество повторений важнее качества",
+        "textEn": "Practice following Malcolm Gladwell's 10,000 hours rule — quantity of repetitions matters more than quality"
       }
     ],
     "correctAnswer": "d",
@@ -392,6 +447,11 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "Заменить сопротивляющихся сотрудников новыми кандидатами сразу",
         "textEn": "Replace resistant employees with new candidates right away fast"
+      },
+      {
+        "key": "e",
+        "text": "Провести ретроспективу по Scrum-фреймворку для обсуждения эмоций в формате Sprint Review",
+        "textEn": "Conduct a Scrum retrospective to discuss emotions in a Sprint Review format"
       }
     ],
     "correctAnswer": "c",
@@ -425,6 +485,11 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "Потому что позитивное мышление и growth mindset — одно и то же",
         "textEn": "Because positive thinking and growth mindset are the exact same thing"
+      },
+      {
+        "key": "e",
+        "text": "Потому что нужно также применять аффирмации и визуализацию по методу Луизы Хей для закрепления установки",
+        "textEn": "Because you also need to apply affirmations and visualization using Louise Hay's method to reinforce the mindset"
       }
     ],
     "correctAnswer": "a",
@@ -458,6 +523,11 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "Отпустить устаревшие модели мышления и освоить новые подходы",
         "textEn": "Let go of outdated mental models and master new approaches"
+      },
+      {
+        "key": "e",
+        "text": "Пройти полный цикл Колба (опыт → рефлексия → концептуализация → эксперимент) для каждого нового навыка",
+        "textEn": "Complete the full Kolb cycle (experience, reflection, conceptualization, experiment) for each new skill"
       }
     ],
     "correctAnswer": "d",
@@ -491,6 +561,11 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "Он имеет множество сертификатов и дипломов различных программ обучения",
         "textEn": "They hold many certificates and diplomas from various training programs"
+      },
+      {
+        "key": "e",
+        "text": "Они показывают высокие результаты по тесту Майерс-Бриггс на шкале восприятия (P вместо J)",
+        "textEn": "They score high on the Myers-Briggs Perceiving scale (P instead of J) in personality assessments"
       }
     ],
     "correctAnswer": "c",
@@ -524,6 +599,11 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "Быстрое восстановление до прежнего уровня после стрессового события",
         "textEn": "Rapid recovery to the previous level after a stressful life event"
+      },
+      {
+        "key": "e",
+        "text": "Способность прогнозировать будущие кризисы с помощью SWOT-анализа и заранее готовить план действий",
+        "textEn": "Ability to forecast future crises using SWOT analysis and prepare an action plan in advance"
       }
     ],
     "correctAnswer": "b",
@@ -557,6 +637,11 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "Ждать, пока работодатель обяжет перейти на новый инструмент",
         "textEn": "Wait until the employer mandates a transition to the new tools"
+      },
+      {
+        "key": "e",
+        "text": "Использовать OKR для постановки целей по освоению каждого нового инструмента на квартал",
+        "textEn": "Use OKR to set quarterly goals for mastering each new tool"
       }
     ],
     "correctAnswer": "c",
@@ -590,6 +675,11 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "Настойчивость и готовность учиться на ошибках непрерывно",
         "textEn": "Persistence and willingness to continuously learn from mistakes"
+      },
+      {
+        "key": "e",
+        "text": "Уровень эмоционального интеллекта (EQ) по модели Гоулмана как основа долгосрочного успеха",
+        "textEn": "Emotional intelligence (EQ) level according to Goleman's model as the foundation for long-term success"
       }
     ],
     "correctAnswer": "d",
@@ -623,6 +713,11 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "T-shaped могут связать AI с бизнес-задачами и потребностями людей",
         "textEn": "T-shaped can connect AI with business goals and human user needs"
+      },
+      {
+        "key": "e",
+        "text": "T-shaped специалисты лучше пишут промпты, потому что модель Мейера-Бриггса отнесла их к интуитивным типам",
+        "textEn": "T-shaped specialists write better prompts because the Myers-Briggs model classifies them as intuitive types"
       }
     ],
     "correctAnswer": "d",
@@ -656,13 +751,18 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "Без него невозможно начать изменения",
         "textEn": "Without it, changes can't begin"
+      },
+      {
+        "key": "e",
+        "text": "Reinforcement — это этап, на котором проводятся ретроспективы по Agile-фреймворку для оценки изменений",
+        "textEn": "Reinforcement is the stage where Agile retrospectives are conducted to evaluate the changes"
       }
     ],
     "correctAnswer": "a",
     "explanation": "Reinforcement — последний этап ADKAR, и его часто пропускают. Без целенаправленного закрепления люди скатываются к старым привычкам. Знакомо? Ты попробовал AI-инструмент, было круто, но через неделю вернулся к ручному кодированию, потому что «так привычнее». Закрепление включает: празднование успехов, метрики, поддержку, устранение барьеров.",
     "explanationEn": "Reinforcement is ADKAR's last stage, and it's often skipped. Without deliberate reinforcement, people slide back to old habits. Sound familiar? You tried an AI tool, it was great, but a week later you returned to manual coding because 'it's more comfortable'. Reinforcement includes: celebrating wins, metrics, support, removing barriers.",
     "source": "ADKAR Model (Prosci)",
-    "sourceUrl": "https://www.prosci.com/methodology/adkar"
+    "sourceUrl": "https://en.wikipedia.org/wiki/ADKAR"
   },
   {
     "id": "cl_q02",
@@ -689,13 +789,18 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "Похвалу на публике и критику наедине",
         "textEn": "Praise in public and criticism in private"
+      },
+      {
+        "key": "e",
+        "text": "Демонстрация эмпатии и избежание любой конфронтации по принципу Роджерса",
+        "textEn": "Demonstrating empathy and avoiding any confrontation following Carl Rogers' principle"
       }
     ],
     "correctAnswer": "a",
     "explanation": "Radical Candor строится на двух осях: Care Personally (личная забота) и Challenge Directly (прямой вызов). Когда ты искренне заботишься о человеке И при этом говоришь ему правду прямо — это и есть Radical Candor. Без заботы прямота превращается в агрессию (Obnoxious Aggression), а без прямоты забота — в вредную мягкость (Ruinous Empathy).",
     "explanationEn": "Radical Candor is built on two axes: Care Personally and Challenge Directly. When you genuinely care about someone AND tell them the truth directly — that's Radical Candor. Without caring, directness becomes Obnoxious Aggression; without directness, caring becomes Ruinous Empathy.",
     "source": "Kim Scott — Radical Candor",
-    "sourceUrl": "https://www.radicalcandor.com/"
+    "sourceUrl": "https://en.wikipedia.org/wiki/Radical_Candor"
   },
   {
     "id": "cl_q03",
@@ -722,6 +827,11 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "Forming → Norming → Storming → Performing",
         "textEn": "Forming → Norming → Storming → Performing"
+      },
+      {
+        "key": "e",
+        "text": "Forming → Norming → Storming → Performing — по модифицированной версии Белбина",
+        "textEn": "Forming, Norming, Storming, Performing — according to Belbin's modified version"
       }
     ],
     "correctAnswer": "b",
@@ -755,13 +865,18 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "Участники просят помощь, не боясь показаться некомпетентными",
         "textEn": "Members ask for help without fear of looking incompetent"
+      },
+      {
+        "key": "e",
+        "text": "Команда использует метод Дельфи для анонимного голосования по всем спорным вопросам",
+        "textEn": "The team uses the Delphi method for anonymous voting on all controversial issues"
       }
     ],
     "correctAnswer": "c",
     "explanation": "Психологическая безопасность — это не про консенсус или отсутствие разногласий. Это про то, что можно свободно высказываться, признавать ошибки и просить о помощи. Решения при этом могут приниматься любым способом — важно, чтобы каждый мог честно высказать своё мнение.",
     "explanationEn": "Psychological safety isn't about consensus or absence of disagreement. It's about freedom to speak up, admit mistakes, and ask for help. Decisions can be made any way — what matters is that everyone can honestly share their opinion.",
     "source": "Amy Edmondson — The Fearless Organization",
-    "sourceUrl": "https://fearlessorganization.com/"
+    "sourceUrl": "https://en.wikipedia.org/wiki/Psychological_safety"
   },
   {
     "id": "cl_q08",
@@ -788,6 +903,11 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "Использовать AI только для личных проектов, а для командных писать всё вручную",
         "textEn": "Use AI only for personal projects and write everything manually for team projects"
+      },
+      {
+        "key": "e",
+        "text": "Использовать AI только для рутинных задач и никогда для ключевой бизнес-логики проекта",
+        "textEn": "Use AI only for routine tasks and never for key business logic of the project"
       }
     ],
     "correctAnswer": "b",
@@ -821,6 +941,11 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "Несёт конечную ответственность за принятие решения",
         "textEn": "Bears ultimate responsibility for the decision"
+      },
+      {
+        "key": "e",
+        "text": "Выполняет функцию фасилитатора — ведёт процесс, не принимая содержательных решений",
+        "textEn": "Performs the facilitator function — guides the process without making substantive decisions"
       }
     ],
     "correctAnswer": "d",
@@ -854,6 +979,11 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "Чёткое распределение ролей и обязанностей",
         "textEn": "Clear distribution of roles and responsibilities"
+      },
+      {
+        "key": "e",
+        "text": "Наличие ведущего с высоким EQ по модели Гоулмана для управления групповой динамикой",
+        "textEn": "Having a leader with high EQ according to Goleman's model for managing group dynamics"
       }
     ],
     "correctAnswer": "b",
@@ -887,6 +1017,11 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "В мобе один человек пишет код, а остальные тестируют его",
         "textEn": "In mobbing, one person writes code while others test it"
+      },
+      {
+        "key": "e",
+        "text": "В моб-программировании код проходит обязательный code review через pull request перед мержем",
+        "textEn": "In mob programming code goes through mandatory code review via pull request before merging"
       }
     ],
     "correctAnswer": "b",
@@ -920,6 +1055,11 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "Участники команды копируют поведение самого авторитетного коллеги",
         "textEn": "Team members copy the behavior of the most authoritative colleague"
+      },
+      {
+        "key": "e",
+        "text": "Руководитель применяет директивный стиль по модели Херси-Бланшара для контроля пассивности",
+        "textEn": "The manager applies directive style from the Hersey-Blanchard model to control passivity"
       }
     ],
     "correctAnswer": "a",
@@ -953,6 +1093,11 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "Каждые 25–30 минут или после завершения подзадачи",
         "textEn": "Every 25–30 minutes or after completing a subtask"
+      },
+      {
+        "key": "e",
+        "text": "Раз в спринт, во время Sprint Review, чтобы совпадать с Scrum-церемониями",
+        "textEn": "Once per sprint, during Sprint Review, to coincide with Scrum ceremonies"
       }
     ],
     "correctAnswer": "d",
@@ -986,6 +1131,11 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "Ввести анонимную систему отчётности о проблемах",
         "textEn": "Introduce an anonymous problem reporting system"
+      },
+      {
+        "key": "e",
+        "text": "Применить модель Белбина для распределения командных ролей и выявления «исполнителей»",
+        "textEn": "Apply Belbin's model to distribute team roles and identify 'implementers'"
       }
     ],
     "correctAnswer": "c",
@@ -1019,6 +1169,11 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "Идея должна пройти через чужие руки — драйвер только печатает",
         "textEn": "An idea must go through someone else's hands — the driver only types"
+      },
+      {
+        "key": "e",
+        "text": "Все участники используют TDD (Test-Driven Development) и пишут тесты перед кодом",
+        "textEn": "All participants use TDD (Test-Driven Development) and write tests before code"
       }
     ],
     "correctAnswer": "d",
@@ -1052,6 +1207,11 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "Sustaining — поддержание высокой эффективности команды",
         "textEn": "Sustaining — maintaining the team's high performance"
+      },
+      {
+        "key": "e",
+        "text": "Restarting — перезапуск команды с нуля после достижения цели для нового проекта",
+        "textEn": "Restarting — restarting the team from scratch after achieving the goal for a new project"
       }
     ],
     "correctAnswer": "c",
@@ -1085,6 +1245,11 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "15–20 человек для покрытия всех необходимых ролей",
         "textEn": "15–20 people to cover all necessary roles"
+      },
+      {
+        "key": "e",
+        "text": "7 ± 2 человека — по принципу Миллера об ограничениях рабочей памяти группы",
+        "textEn": "7 plus or minus 2 people — following Miller's principle about working memory limitations of a group"
       }
     ],
     "correctAnswer": "c",
@@ -1118,13 +1283,18 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "Radical Candor (радикальная откровенность)",
         "textEn": "Radical Candor"
+      },
+      {
+        "key": "e",
+        "text": "Passive Aggression — молчаливый саботаж через формальное согласие без реальных действий",
+        "textEn": "Passive Aggression — silent sabotage through formal agreement without real action"
       }
     ],
     "correctAnswer": "c",
     "explanation": "Ruinous Empathy — самая распространённая ловушка. Ты искренне заботишься о человеке, но из-за этого боишься сказать ему правду. В итоге человек не получает обратную связь, не растёт, а проблемы копятся. Ким Скотт считает это самой опасной из четырёх зон.",
     "explanationEn": "Ruinous Empathy is the most common trap. You genuinely care about the person, but that makes you afraid to tell them the truth. The person doesn't get feedback, doesn't grow, and problems accumulate. Kim Scott considers this the most dangerous of the four quadrants.",
     "source": "Kim Scott — Radical Candor",
-    "sourceUrl": "https://www.radicalcandor.com/"
+    "sourceUrl": "https://en.wikipedia.org/wiki/Radical_Candor"
   },
   {
     "id": "cl_q06",
@@ -1151,6 +1321,11 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "Performing",
         "textEn": "Performing"
+      },
+      {
+        "key": "e",
+        "text": "Norming — когда команда вырабатывает общие нормы и правила после первоначального знакомства",
+        "textEn": "Norming — when the team develops shared norms and rules after initial acquaintance"
       }
     ],
     "correctAnswer": "b",
@@ -1184,13 +1359,18 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "Избегают сложных проектов, чтобы не провалиться",
         "textEn": "Avoid complex projects to prevent failure"
+      },
+      {
+        "key": "e",
+        "text": "Принимают решения быстрее, потому что используют метод Дельфи для анонимного консенсуса",
+        "textEn": "Make decisions faster because they use the Delphi method for anonymous consensus"
       }
     ],
     "correctAnswer": "b",
     "explanation": "Парадокс Эдмондсон: команды с высокой психологической безопасностью выглядят так, будто делают больше ошибок, но на самом деле они просто больше о них сообщают. Это позволяет быстрее находить и исправлять проблемы, что в итоге повышает общее качество.",
     "explanationEn": "Edmondson's paradox: teams with high psychological safety appear to make more errors, but they actually just report more. This allows faster problem detection and resolution, ultimately improving overall quality.",
     "source": "Amy Edmondson — The Fearless Organization",
-    "sourceUrl": "https://fearlessorganization.com/"
+    "sourceUrl": "https://en.wikipedia.org/wiki/Psychological_safety"
   },
   {
     "id": "cl_q12",
@@ -1217,6 +1397,11 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "Нет смысла ревьюить тщательно — AI обычно пишет корректный код",
         "textEn": "No point in thorough review — AI usually writes correct code"
+      },
+      {
+        "key": "e",
+        "text": "Объём комментариев и документации — AI обычно не генерирует достаточно JSDoc-комментариев",
+        "textEn": "Volume of comments and documentation — AI usually doesn't generate enough JSDoc comments"
       }
     ],
     "correctAnswer": "b",
@@ -1250,6 +1435,11 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "Команда работает на пике эффективности и автономности",
         "textEn": "The team works at peak efficiency and autonomy"
+      },
+      {
+        "key": "e",
+        "text": "Команда переходит от конфликтов к пиковой производительности без промежуточных этапов",
+        "textEn": "The team transitions from conflicts to peak performance without intermediate stages"
       }
     ],
     "correctAnswer": "c",
@@ -1283,13 +1473,18 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "Ты заботишься о человеке, но боишься сказать правду",
         "textEn": "You care about the person but are afraid to tell the truth"
+      },
+      {
+        "key": "e",
+        "text": "Вы избегаете обратной связи и ведёте себя пассивно — это Manipulative Insincerity",
+        "textEn": "You avoid feedback and behave passively — this is Manipulative Insincerity"
       }
     ],
     "correctAnswer": "c",
     "explanation": "Obnoxious Aggression — это прямота без заботы. Когда ты высказываешь критику жёстко, без уважения к чувствам человека. Может казаться «честностью», но на деле это просто грубость. Люди перестают слушать и начинают защищаться.",
     "explanationEn": "Obnoxious Aggression is directness without caring. When you deliver criticism harshly, without respect for the person's feelings. It may seem like 'honesty,' but it's really just rudeness. People stop listening and start defending.",
     "source": "Kim Scott — Radical Candor",
-    "sourceUrl": "https://www.radicalcandor.com/"
+    "sourceUrl": "https://en.wikipedia.org/wiki/Radical_Candor"
   },
   {
     "id": "cl_b01",
@@ -1316,6 +1511,11 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "Performing — команда работает максимально эффективно",
         "textEn": "Performing — the team operates at peak efficiency"
+      },
+      {
+        "key": "e",
+        "text": "Performing — на этапе высокой производительности возникают конфликты из-за конкуренции за ресурсы",
+        "textEn": "Performing — at the high-performance stage conflicts arise due to competition for resources"
       }
     ],
     "correctAnswer": "b",
@@ -1349,6 +1549,11 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "Начать с вопроса, чтобы вовлечь читателя",
         "textEn": "Start with a question to engage the reader"
+      },
+      {
+        "key": "e",
+        "text": "Начать с эмоционального крючка по методу сторителлинга Нэнси Дуарте, затем перейти к фактам",
+        "textEn": "Start with an emotional hook using Nancy Duarte's storytelling method, then move to facts"
       }
     ],
     "correctAnswer": "b",
@@ -1382,6 +1587,11 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "Summary, Thesis, Argument, Resolution",
         "textEn": "Summary, Thesis, Argument, Resolution"
+      },
+      {
+        "key": "e",
+        "text": "Strategy, Timeline, Action, Review — фреймворк для стратегического планирования коммуникации",
+        "textEn": "Strategy, Timeline, Action, Review — a framework for strategic communication planning"
       }
     ],
     "correctAnswer": "b",
@@ -1415,6 +1625,11 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "Просьбы (Requests)",
         "textEn": "Requests"
+      },
+      {
+        "key": "e",
+        "text": "Эмпатия — способность почувствовать и отзеркалить эмоции собеседника по модели Роджерса",
+        "textEn": "Empathy — the ability to feel and mirror the other person's emotions following Rogers' model"
       }
     ],
     "correctAnswer": "b",
@@ -1448,6 +1663,11 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "Быстрая генерация нескольких вариантов ответа",
         "textEn": "Quickly generating several answer variants"
+      },
+      {
+        "key": "e",
+        "text": "Использование температуры модели выше 0.9 для генерации более креативных ответов",
+        "textEn": "Using model temperature above 0.9 to generate more creative and diverse responses"
       }
     ],
     "correctAnswer": "b",
@@ -1481,6 +1701,11 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "аргументы подкреплены количественными данными и графиками",
         "textEn": "arguments are backed by quantitative data and visual charts"
+      },
+      {
+        "key": "e",
+        "text": "Аргументы располагаются по методу Сократа — от наименее спорного к наиболее спорному",
+        "textEn": "Arguments are arranged using the Socratic method — from least controversial to most controversial"
       }
     ],
     "correctAnswer": "c",
@@ -1514,6 +1739,11 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "«Можешь ли ты отправить отчёт к пятнице до конца дня?»",
         "textEn": "'Could you send the report by Friday end of the business day?'"
+      },
+      {
+        "key": "e",
+        "text": "«Было бы здорово, если бы отчёт был готов в разумные сроки, когда у тебя будет время»",
+        "textEn": "'It would be great if the report were ready within a reasonable time, whenever you have time'"
       }
     ],
     "correctAnswer": "d",
@@ -1547,6 +1777,11 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "Начинать с определения всех использованных терминов",
         "textEn": "Start with defining all technical terms that are being used"
+      },
+      {
+        "key": "e",
+        "text": "Начать с метода «5 почему» (5 Whys) Тайити Оно для выявления корневой причины проблемы",
+        "textEn": "Start with Taiichi Ohno's '5 Whys' method to identify the root cause of the problem"
       }
     ],
     "correctAnswer": "a",
@@ -1580,6 +1815,11 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "Использовать модель только для негативной обратной связи",
         "textEn": "Using the model only for giving negative feedback to people"
+      },
+      {
+        "key": "e",
+        "text": "Описывать влияние (Impact) через KPI и метрики вместо субъективных ощущений",
+        "textEn": "Describing Impact through KPIs and metrics rather than subjective feelings"
       }
     ],
     "correctAnswer": "c",
@@ -1613,6 +1853,11 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "Указание формата ускоряет генерацию ответа моделью в разы",
         "textEn": "Specifying format significantly speeds up the model's generation"
+      },
+      {
+        "key": "e",
+        "text": "Модели обучены по методу RLHF предпочитать структурированные ответы, поэтому формат ускоряет инференс",
+        "textEn": "Models are trained with RLHF to prefer structured answers, so format specification speeds up inference"
       }
     ],
     "correctAnswer": "b",
@@ -1646,6 +1891,11 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "Структура для введения: контекст, затем проблема, затем ответ",
         "textEn": "Structure for introduction: context first, problem next, then answer"
+      },
+      {
+        "key": "e",
+        "text": "Фреймворк для построения Customer Journey Map — путь клиента от проблемы к решению",
+        "textEn": "A framework for building a Customer Journey Map — the customer's path from problem to solution"
       }
     ],
     "correctAnswer": "d",
@@ -1679,6 +1929,11 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "Открытые вопросы, начинающиеся с «как» «что» или «почему»",
         "textEn": "Open-ended questions starting with 'how' 'what' or 'why' words"
+      },
+      {
+        "key": "e",
+        "text": "Рефлексивные вопросы по методу Карла Роджерса, повторяющие слова собеседника для подтверждения",
+        "textEn": "Reflective questions following Carl Rogers' method, repeating the speaker's words for confirmation"
       }
     ],
     "correctAnswer": "d",
@@ -1712,6 +1967,11 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "Потребности — понимание глубинной причины своих эмоций",
         "textEn": "Needs — understanding the deep root cause behind your emotions"
+      },
+      {
+        "key": "e",
+        "text": "Чувства — определить свои эмоции по колесу эмоций Плутчика с точностью до оттенка",
+        "textEn": "Feelings — identifying your emotions on Plutchik's emotion wheel with exact shade precision"
       }
     ],
     "correctAnswer": "b",
@@ -1745,6 +2005,11 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "Хороший промпт написан на английском языке вместо русского",
         "textEn": "A good prompt is written in English language instead of Russian"
+      },
+      {
+        "key": "e",
+        "text": "Хороший промпт использует системное мышление Питера Сенге для формулировки контекста задачи",
+        "textEn": "A good prompt uses Peter Senge's systems thinking to formulate the task context"
       }
     ],
     "correctAnswer": "c",
@@ -1778,6 +2043,11 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "При разрешении конфликтов между участниками рабочей команды",
         "textEn": "When resolving conflicts between members of a working team"
+      },
+      {
+        "key": "e",
+        "text": "При проведении ретроспектив по Scrum для структурирования обсуждения прошедшего спринта",
+        "textEn": "When conducting Scrum retrospectives to structure discussion of the past sprint"
       }
     ],
     "correctAnswer": "c",
@@ -1811,6 +2081,11 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "Соответствие стандартам McKinsey по количеству слайдов в деке",
         "textEn": "Compliance with McKinsey standards for slide deck size rules"
+      },
+      {
+        "key": "e",
+        "text": "Когнитивная нагрузка по принципу Свеллера — снижение побочной нагрузки при восприятии информации",
+        "textEn": "Sweller's cognitive load principle — reducing extraneous load during information perception"
       }
     ],
     "correctAnswer": "c",
@@ -1844,6 +2119,11 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "Физическая усталость от длительного разговора без перерыва",
         "textEn": "Physical fatigue from a lengthy conversation without any breaks"
+      },
+      {
+        "key": "e",
+        "text": "Эффект первичности — мозг фиксируется на первой фразе и игнорирует остальные аргументы",
+        "textEn": "Primacy effect — the brain fixates on the first phrase and ignores the remaining arguments"
       }
     ],
     "correctAnswer": "b",
@@ -1877,6 +2157,11 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "SBI лучше, потому что фокусируется на фактах, а не на эмоциях",
         "textEn": "SBI is better because it focuses on actual facts not on emotions"
+      },
+      {
+        "key": "e",
+        "text": "Модель COIN (Context-Observation-Impact-Next) заменила обе как более современная и универсальная",
+        "textEn": "The COIN model (Context-Observation-Impact-Next) replaced both as more modern and universal"
       }
     ],
     "correctAnswer": "d",
@@ -1910,6 +2195,11 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "Больше наблюдать за поведением других людей в офисе",
         "textEn": "Observe the behavior of other people in the office more often"
+      },
+      {
+        "key": "e",
+        "text": "Вести дневник рефлексии для переноса скрытых знаний в зону неизвестного по Юнгу",
+        "textEn": "Keep a reflection journal to transfer hidden knowledge into the unknown area following Jung"
       }
     ],
     "correctAnswer": "b",
@@ -1943,6 +2233,11 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "Использование нескольких моделей для одной и той же самой задачи",
         "textEn": "Using several different models for one and the same single task"
+      },
+      {
+        "key": "e",
+        "text": "Разбиение запроса на серию коротких промптов по методу chain-of-thought для пошагового рассуждения",
+        "textEn": "Breaking the query into a series of short prompts using chain-of-thought for step-by-step reasoning"
       }
     ],
     "correctAnswer": "c",
@@ -1976,6 +2271,11 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "Говорить быстрее, чтобы уместить больше информации за время",
         "textEn": "Speaking faster to fit more information within the allotted time"
+      },
+      {
+        "key": "e",
+        "text": "Адаптировать уровень детализации по модели Фейнмана — объяснять как пятилетнему ребёнку",
+        "textEn": "Adapting detail level per the Feynman model — explaining as if to a five-year-old child"
       }
     ],
     "correctAnswer": "b",
@@ -2009,13 +2309,18 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "Соперничество (Competing)",
         "textEn": "Competing"
+      },
+      {
+        "key": "e",
+        "text": "Интегрирование — нахождение третьего пути через синергию обеих позиций по методу де Боно",
+        "textEn": "Integrating — finding a third way through synergy of both positions using de Bono's method"
       }
     ],
     "correctAnswer": "b",
     "explanation": "Collaborating (сотрудничество) — единственный стиль, который одновременно высоко ассертивен (ты отстаиваешь свои интересы) и высоко кооперативен (ты учитываешь интересы другой стороны). Цель — найти решение, которое полностью удовлетворяет обе стороны. Компромисс — посередине обеих осей.",
     "explanationEn": "Collaborating is the only style that is both highly assertive (you advocate for your interests) and highly cooperative (you consider the other side's interests). The goal is a solution that fully satisfies both parties. Compromising sits in the middle of both axes.",
     "source": "Thomas-Kilmann Conflict Mode Instrument",
-    "sourceUrl": "https://kilmanndiagnostics.com/overview-thomas-kilmann-conflict-mode-instrument-tki/"
+    "sourceUrl": "https://en.wikipedia.org/wiki/Thomas%E2%80%93Kilmann_Conflict_Mode_Instrument"
   },
   {
     "id": "cr_q02",
@@ -2042,13 +2347,18 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "Факт → Интерпретация → Эмоция → Требование",
         "textEn": "Fact → Interpretation → Emotion → Demand"
+      },
+      {
+        "key": "e",
+        "text": "Эмпатия → Рефлексия → Потребность → Договорённость (по методу Карла Роджерса)",
+        "textEn": "Empathy, Reflection, Need, Agreement (according to Carl Rogers' method)"
       }
     ],
     "correctAnswer": "a",
     "explanation": "NVC: Observation (наблюдение без оценки) → Feeling (какие чувства это вызывает) → Need (какая потребность за этим стоит) → Request (конкретная просьба, не требование). Ключевое отличие от варианта D: NVC разделяет наблюдение и интерпретацию, а просьба — это НЕ требование.",
     "explanationEn": "NVC: Observation (without evaluation) → Feeling (what emotions arise) → Need (what need is behind it) → Request (specific request, not a demand). Key difference from option D: NVC separates observation from interpretation, and a request is NOT a demand.",
     "source": "Marshall Rosenberg — Nonviolent Communication",
-    "sourceUrl": "https://www.nonviolentcommunication.com/"
+    "sourceUrl": "https://en.wikipedia.org/wiki/Nonviolent_Communication"
   },
   {
     "id": "cr_q14",
@@ -2075,13 +2385,18 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "Тот, у кого больше данных, имеет больше прав в переговорах",
         "textEn": "Whoever has more data has more negotiating rights"
+      },
+      {
+        "key": "e",
+        "text": "Критерии должны быть согласованы до начала переговоров и зафиксированы в письменном протоколе",
+        "textEn": "Criteria must be agreed upon before negotiations start and documented in a written protocol"
       }
     ],
     "correctAnswer": "b",
     "explanation": "Объективные критерии — это независимые стандарты, на которые могут опереться обе стороны: рыночные цены, экспертные оценки, бенчмарки, legal precedents. Это убирает «кто кого пережмёт» из переговоров и переводит дискуссию в русло «что справедливо по объективным меркам».",
     "explanationEn": "Objective criteria are independent standards both sides can rely on: market prices, expert assessments, benchmarks, legal precedents. This removes 'who can pressure whom' from negotiations and shifts the discussion to 'what's fair by objective standards.'",
     "source": "Roger Fisher, William Ury — Getting to Yes",
-    "sourceUrl": "https://www.pon.harvard.edu/daily/negotiation-skills-daily/principled-negotiation-focus-interests-702/"
+    "sourceUrl": "https://en.wikipedia.org/wiki/Principled_negotiation"
   },
   {
     "id": "cr_b01",
@@ -2108,6 +2423,11 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "Уходом от конфликта и откладыванием решения на потом",
         "textEn": "Avoiding the conflict and postponing the resolution"
+      },
+      {
+        "key": "e",
+        "text": "Достижение паритета через последовательные раунды взаимных уступок в рамках ZOPA",
+        "textEn": "Achieving parity through sequential rounds of mutual concessions within the ZOPA"
       }
     ],
     "correctAnswer": "b",
@@ -2141,6 +2461,11 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "Используются жёсткие дедлайны для давления на оппонента",
         "textEn": "Hard deadlines are used to pressure the opponent"
+      },
+      {
+        "key": "e",
+        "text": "Стратегия Win-Win по Кови — обе стороны получают всё, что хотят, без компромиссов",
+        "textEn": "Win-Win strategy per Covey — both sides get everything they want without compromise"
       }
     ],
     "correctAnswer": "a",
@@ -2174,6 +2499,11 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "Спасатель принимает все решения без консультации с командой",
         "textEn": "The Rescuer makes all decisions without consulting the team"
+      },
+      {
+        "key": "e",
+        "text": "Использовать технику активного слушания Карла Роджерса — безусловное позитивное принятие",
+        "textEn": "Use Carl Rogers' active listening technique — unconditional positive regard"
       }
     ],
     "correctAnswer": "a",
@@ -2207,6 +2537,11 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "Эмоции сильны — участники чувствуют напряжение",
         "textEn": "Emotions are strong — participants feel tension"
+      },
+      {
+        "key": "e",
+        "text": "Техника «мозгового штурма» по Осборну для совместной генерации альтернативных решений",
+        "textEn": "Osborn's brainstorming technique for jointly generating alternative solutions"
       }
     ],
     "correctAnswer": "c",
@@ -2240,6 +2575,11 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "Объяснить, почему его реакция несоразмерна ситуации",
         "textEn": "Explain why their reaction is disproportionate to the situation"
+      },
+      {
+        "key": "e",
+        "text": "Нарративная медиация — создание совместной истории конфликта через призму каждого участника",
+        "textEn": "Narrative mediation — creating a shared story of the conflict through each participant's lens"
       }
     ],
     "correctAnswer": "c",
@@ -2273,6 +2613,11 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "Наказывает сторону, которая ведёт себя неконструктивно",
         "textEn": "Penalizes the party that behaves unconstructively"
+      },
+      {
+        "key": "e",
+        "text": "Подготовить BATNA и объявить её другой стороне в начале переговоров как рычаг давления",
+        "textEn": "Prepare your BATNA and announce it to the other side at the start of negotiations as a pressure lever"
       }
     ],
     "correctAnswer": "c",
@@ -2306,13 +2651,18 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "Средней ассертивностью и средней кооперативностью",
         "textEn": "Medium assertiveness and medium cooperativeness"
+      },
+      {
+        "key": "e",
+        "text": "Применить модель Томаса-Килманна и выбрать стиль «соперничество» для установления авторитета",
+        "textEn": "Apply the Thomas-Kilmann model and choose the 'competing' style to establish authority"
       }
     ],
     "correctAnswer": "c",
     "explanation": "Avoiding — оба параметра на минимуме: ты не отстаиваешь свои интересы и не помогаешь другой стороне. По сути, ты выходишь из конфликта. Иногда это уместно (когда вопрос несущественный или нужно время остыть), но как основная стратегия — приводит к накоплению проблем.",
     "explanationEn": "Avoiding puts both parameters at minimum: you don't advocate for your interests and don't help the other side. You essentially withdraw from the conflict. Sometimes appropriate (trivial issues, need time to cool down), but as a primary strategy, it leads to accumulated problems.",
     "source": "Thomas-Kilmann Conflict Mode Instrument",
-    "sourceUrl": "https://kilmanndiagnostics.com/overview-thomas-kilmann-conflict-mode-instrument-tki/"
+    "sourceUrl": "https://en.wikipedia.org/wiki/Thomas%E2%80%93Kilmann_Conflict_Mode_Instrument"
   },
   {
     "id": "cr_q06",
@@ -2339,13 +2689,18 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "Разницы нет — это синонимы в NVC",
         "textEn": "There's no difference — they're synonyms in NVC"
+      },
+      {
+        "key": "e",
+        "text": "Провести анонимное голосование по методу Дельфи для демократического принятия решения",
+        "textEn": "Conduct anonymous voting using the Delphi method for democratic decision-making"
       }
     ],
     "correctAnswer": "b",
     "explanation": "Розенберг подчёркивает: наблюдение = конкретный факт. «Ты опоздал на 15 минут на стендап» — наблюдение. «Ты всегда опаздываешь» — оценка (обобщение). «Тебе всё равно на команду» — оценка (интерпретация). Смешивание наблюдения с оценкой вызывает у собеседника защитную реакцию.",
     "explanationEn": "Rosenberg emphasizes: observation = specific fact. 'You were 15 minutes late to standup' — observation. 'You're always late' — evaluation (generalization). 'You don't care about the team' — evaluation (interpretation). Mixing observation with evaluation triggers defensiveness.",
     "source": "Marshall Rosenberg — Nonviolent Communication",
-    "sourceUrl": "https://www.nonviolentcommunication.com/"
+    "sourceUrl": "https://en.wikipedia.org/wiki/Nonviolent_Communication"
   },
   {
     "id": "cr_q08",
@@ -2372,13 +2727,18 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "Тебе нужно время подумать и ты не готов к решению",
         "textEn": "You need time to think and aren't ready to decide"
+      },
+      {
+        "key": "e",
+        "text": "Организовать сессию по методу «Шести шляп мышления» де Боно для многостороннего анализа",
+        "textEn": "Organize a session using de Bono's 'Six Thinking Hats' method for multi-perspective analysis"
       }
     ],
     "correctAnswer": "b",
     "explanation": "Accommodating — низкая ассертивность + высокая кооперативность. Ты уступаешь. Это уместно, когда вопрос для тебя не принципиален, но важен для другой стороны, или когда сохранение отношений важнее выигрыша в конкретном вопросе. Злоупотребление этим стилем ведёт к потере уважения.",
     "explanationEn": "Accommodating is low assertiveness + high cooperativeness. You yield. It's appropriate when the issue isn't critical to you but matters to the other side, or when preserving the relationship outweighs winning the specific issue. Overusing this style leads to loss of respect.",
     "source": "Thomas-Kilmann Conflict Mode Instrument",
-    "sourceUrl": "https://kilmanndiagnostics.com/overview-thomas-kilmann-conflict-mode-instrument-tki/"
+    "sourceUrl": "https://en.wikipedia.org/wiki/Thomas%E2%80%93Kilmann_Conflict_Mode_Instrument"
   },
   {
     "id": "cr_q13",
@@ -2405,13 +2765,18 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "Просьба формулируется в вопросительной форме, а требование — в утвердительной",
         "textEn": "A request is phrased as a question, a demand as a statement"
+      },
+      {
+        "key": "e",
+        "text": "Использовать матрицу Эйзенхауэра для приоритизации: конфликт — это срочное, но не важное",
+        "textEn": "Use the Eisenhower Matrix for prioritization: conflict is urgent but not important"
       }
     ],
     "correctAnswer": "b",
     "explanation": "По Розенбергу, ключевое отличие: если собеседник отказывает и ты реагируешь наказанием, осуждением или манипуляцией — это было требование, даже если звучало вежливо. Настоящая просьба предполагает искреннюю готовность услышать «нет» и обсудить альтернативы.",
     "explanationEn": "According to Rosenberg, the key distinction: if the person refuses and you respond with punishment, judgment, or manipulation — it was a demand, even if it sounded polite. A true request implies genuine willingness to hear 'no' and discuss alternatives.",
     "source": "Marshall Rosenberg — Nonviolent Communication",
-    "sourceUrl": "https://www.nonviolentcommunication.com/"
+    "sourceUrl": "https://en.wikipedia.org/wiki/Nonviolent_Communication"
   },
   {
     "id": "cr_b02",
@@ -2438,6 +2803,11 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "Описать наблюдение без оценки и интерпретации",
         "textEn": "Describe an observation without evaluation or interpretation"
+      },
+      {
+        "key": "e",
+        "text": "Рефрейминг по Вацлавику — изменение контекста восприятия конфликта через переформулировку позиций",
+        "textEn": "Watzlawick's reframing — changing the perception context of the conflict by reformulating positions"
       }
     ],
     "correctAnswer": "d",
@@ -2471,6 +2841,11 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "Привлечения внешнего медиатора для решения конфликта",
         "textEn": "Engaging an external mediator to resolve the conflict"
+      },
+      {
+        "key": "e",
+        "text": "Метод Дельфи — анонимный сбор мнений экспертов для достижения консенсуса без прямой конфронтации",
+        "textEn": "The Delphi method — anonymous collection of expert opinions to reach consensus without direct confrontation"
       }
     ],
     "correctAnswer": "b",
@@ -2504,6 +2879,11 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "Чувство можно измерить по шкале, а оценку — нельзя",
         "textEn": "A feeling can be measured on a scale, an evaluation cannot"
+      },
+      {
+        "key": "e",
+        "text": "Проведение 360-градусной оценки всех участников конфликта для объективной картины",
+        "textEn": "Conducting 360-degree evaluation of all conflict participants for an objective picture"
       }
     ],
     "correctAnswer": "b",
@@ -2537,6 +2917,11 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "Компромиссная позиция между твоей и чужой позицией",
         "textEn": "A compromise position between your and their position"
+      },
+      {
+        "key": "e",
+        "text": "Применить спиральную динамику Грейвза для определения уровня развития каждого участника",
+        "textEn": "Apply Graves' Spiral Dynamics to determine the developmental level of each participant"
       }
     ],
     "correctAnswer": "c",
@@ -2570,6 +2955,11 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "Ты уверен в своей позиции и хочешь настоять на ней",
         "textEn": "You are confident in your position and want to insist on it"
+      },
+      {
+        "key": "e",
+        "text": "Назначить сертифицированного Scrum Master в качестве медиатора для фасилитации конфликта",
+        "textEn": "Appoint a certified Scrum Master as a mediator to facilitate the conflict"
       }
     ],
     "correctAnswer": "a",
@@ -2603,6 +2993,11 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "Жертва, Преследователь и Спасатель",
         "textEn": "Victim, Persecutor, and Rescuer"
+      },
+      {
+        "key": "e",
+        "text": "Использовать DISC-профилирование для определения коммуникативного стиля каждой стороны конфликта",
+        "textEn": "Use DISC profiling to determine the communication style of each side in the conflict"
       }
     ],
     "correctAnswer": "d",
@@ -2636,6 +3031,11 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "Решать проблемы письменно, избегая личных встреч",
         "textEn": "Solve problems in writing, avoiding personal meetings"
+      },
+      {
+        "key": "e",
+        "text": "Провести ретроспективу по модели «морская звезда» (Starfish) для анализа конфликтных паттернов",
+        "textEn": "Conduct a Starfish retrospective to analyze conflict patterns in the team"
       }
     ],
     "correctAnswer": "b",
@@ -2669,13 +3069,18 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "Оценка (Evaluate)",
         "textEn": "Evaluate"
+      },
+      {
+        "key": "e",
+        "text": "Принцип бритвы Оккама — самое простое объяснение всегда является самым верным",
+        "textEn": "Occam's Razor principle — the simplest explanation is always the most correct one"
       }
     ],
     "correctAnswer": "c",
     "explanation": "В пересмотренной таксономии Блума (2001) уровень «Создание» (Create) стоит на вершине пирамиды. Порядок снизу вверх: Запоминание → Понимание → Применение → Анализ → Оценка → Создание. Создание требует синтеза знаний для производства чего-то нового — это самый сложный когнитивный процесс.",
     "explanationEn": "In the revised Bloom's Taxonomy (2001), 'Create' sits at the top of the pyramid. The order from bottom to top is: Remember → Understand → Apply → Analyze → Evaluate → Create. Creating requires synthesizing knowledge to produce something new — the most complex cognitive process.",
     "source": "Bloom's Revised Taxonomy (Anderson & Krathwohl, 2001)",
-    "sourceUrl": "https://www.celt.iastate.edu/instructional-strategies/effective-teaching-practices/revised-blooms-taxonomy/"
+    "sourceUrl": "https://en.wikipedia.org/wiki/Bloom%27s_taxonomy"
   },
   {
     "id": "ct_q02",
@@ -2702,6 +3107,11 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "Осознают свою некомпетентность и активно ищут обратную связь",
         "textEn": "Recognize their incompetence and actively seek feedback"
+      },
+      {
+        "key": "e",
+        "text": "Проверить интуитивное ощущение по методу «тонких срезов» Малкольма Гладуэлла (Blink)",
+        "textEn": "Test intuitive feelings using Malcolm Gladwell's 'thin-slicing' method from Blink"
       }
     ],
     "correctAnswer": "b",
@@ -2735,6 +3145,11 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "Проверить, что код компилируется без ошибок",
         "textEn": "Check that the code compiles without errors"
+      },
+      {
+        "key": "e",
+        "text": "Анализ по матрице BCG — оценить перспективность каждой альтернативы как «звезду» или «собаку»",
+        "textEn": "BCG matrix analysis — evaluate each alternative's potential as a 'star' or a 'dog'"
       }
     ],
     "correctAnswer": "c",
@@ -2768,6 +3183,11 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "Ты отвергаешь все AI-предложения, потому что не доверяешь технологиям",
         "textEn": "You reject all AI suggestions because you don't trust technology"
+      },
+      {
+        "key": "e",
+        "text": "Проведение анализа по модели Портера для выявления скрытых конкурентных сил на рынке",
+        "textEn": "Conducting analysis using Porter's model to identify hidden competitive market forces"
       }
     ],
     "correctAnswer": "b",
@@ -2801,6 +3221,11 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "Разработчики запрещают моделям доступ к реальным источникам",
         "textEn": "Developers prohibit models from accessing any real data sources"
+      },
+      {
+        "key": "e",
+        "text": "Индукция — от конкретных наблюдений к общим закономерностям через статистический вывод",
+        "textEn": "Induction — from specific observations to general patterns through statistical inference"
       }
     ],
     "correctAnswer": "a",
@@ -2834,6 +3259,11 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "«Это работает, потому что мы проверили на ста пользователях»",
         "textEn": "'This works because we tested it on one hundred users'"
+      },
+      {
+        "key": "e",
+        "text": "Предвзятость подтверждения (confirmation bias) — мы ищем информацию, которая подтверждает наше мнение",
+        "textEn": "Confirmation bias — we search for information that confirms our existing opinion"
       }
     ],
     "correctAnswer": "b",
@@ -2867,6 +3297,11 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "Задать открытый вопрос без подсказок нужного ответа",
         "textEn": "Ask an open question without hinting at the desired answer"
+      },
+      {
+        "key": "e",
+        "text": "Метод «мозгового штурма» Осборна — генерация максимального количества идей без критики",
+        "textEn": "Osborn's brainstorming method — generating the maximum number of ideas without criticism"
       }
     ],
     "correctAnswer": "d",
@@ -2900,6 +3335,11 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "боимся рисковать из-за страха потерять имеющееся",
         "textEn": "fear taking risks because of potential loss of what we have"
+      },
+      {
+        "key": "e",
+        "text": "Дивергентное мышление по Гилфорду — генерация множества нестандартных решений одновременно",
+        "textEn": "Guilford's divergent thinking — generating many unconventional solutions simultaneously"
       }
     ],
     "correctAnswer": "c",
@@ -2933,6 +3373,11 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "«Судьба каждого человека предопределена заранее»",
         "textEn": "'The fate of every person is predetermined in advance'"
+      },
+      {
+        "key": "e",
+        "text": "Визуализировать данные по методу Эдварда Тафти для наглядного представления скрытых паттернов",
+        "textEn": "Visualize data using Edward Tufte's method for clear representation of hidden patterns"
       }
     ],
     "correctAnswer": "c",
@@ -2966,6 +3411,11 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "Эффект ретроспекции (hindsight bias)",
         "textEn": "Hindsight bias (knew-it-all-along effect)"
+      },
+      {
+        "key": "e",
+        "text": "Использовать DMAIC-цикл из Six Sigma для систематического устранения корневой причины",
+        "textEn": "Use the DMAIC cycle from Six Sigma to systematically eliminate the root cause"
       }
     ],
     "correctAnswer": "d",
@@ -2999,6 +3449,11 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "Выбор первого решения и отказ рассматривать альтернативы",
         "textEn": "Choosing the first solution and refusing to consider others"
+      },
+      {
+        "key": "e",
+        "text": "Фрейминг — способ подачи информации определяет восприятие, как показал Канеман в теории перспектив",
+        "textEn": "Framing — the way information is presented determines perception, as Kahneman showed in prospect theory"
       }
     ],
     "correctAnswer": "c",
@@ -3032,6 +3487,11 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "Увеличить визуальную привлекательность графика данных",
         "textEn": "Increase the visual attractiveness of the data chart made"
+      },
+      {
+        "key": "e",
+        "text": "Теория ограничений Голдратта — находить и устранять ключевое «узкое место» в системе",
+        "textEn": "Goldratt's Theory of Constraints — find and eliminate the key bottleneck in the system"
       }
     ],
     "correctAnswer": "a",
@@ -3065,6 +3525,11 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "избегаем начинать новые проекты из-за страха потерь",
         "textEn": "avoid starting new projects due to the fear of losing"
+      },
+      {
+        "key": "e",
+        "text": "Оценить по шкале достоверности Ликерта от 1 до 5 и принять аргументы с оценкой выше 3",
+        "textEn": "Rate on a Likert credibility scale from 1 to 5 and accept arguments scoring above 3"
       }
     ],
     "correctAnswer": "c",
@@ -3098,6 +3563,11 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "Между ними нет разницы — это синонимы для одного и того же навыка",
         "textEn": "There is no difference between them — they are synonyms for same skill"
+      },
+      {
+        "key": "e",
+        "text": "Применить SWOT-анализ для выявления сильных и слабых сторон каждой позиции в дискуссии",
+        "textEn": "Apply SWOT analysis to identify strengths and weaknesses of each position in the discussion"
       }
     ],
     "correctAnswer": "a",
@@ -3131,6 +3601,11 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "Анализ успешных кейсов конкурентов и их точное копирование",
         "textEn": "Analyzing successful competitor cases and copying them exactly"
+      },
+      {
+        "key": "e",
+        "text": "Метод Дельфи — собрать анонимные мнения экспертов и использовать медиану как истину",
+        "textEn": "The Delphi method — collect anonymous expert opinions and use the median as the truth"
       }
     ],
     "correctAnswer": "b",
@@ -3164,6 +3639,11 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "Проверить, на какие первичные источники и данные он ссылается",
         "textEn": "Verify what primary sources and actual data it references used"
+      },
+      {
+        "key": "e",
+        "text": "Задать модели «контрольные вопросы» из методологии Six Sigma для валидации каждого шага рассуждений",
+        "textEn": "Ask the model 'control questions' from the Six Sigma methodology to validate each reasoning step"
       }
     ],
     "correctAnswer": "d",
@@ -3197,6 +3677,11 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "того, КАК подана информация, а не только что в ней сказано",
         "textEn": "HOW information is presented rather than just what it contains"
+      },
+      {
+        "key": "e",
+        "text": "Использовать анализ Парето (80/20) для определения наиболее вероятных причин ошибки",
+        "textEn": "Use Pareto analysis (80/20) to determine the most likely causes of the error"
       }
     ],
     "correctAnswer": "d",
@@ -3230,6 +3715,11 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "Общепринятая практика в индустрии, которой следуют все компании",
         "textEn": "Industry-standard practice that all major companies currently follow"
+      },
+      {
+        "key": "e",
+        "text": "Задать модели промпт с температурой 0 для получения максимально детерминированного ответа",
+        "textEn": "Give the model a prompt with temperature 0 to get the most deterministic response"
       }
     ],
     "correctAnswer": "d",
@@ -3263,6 +3753,11 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "участники работают удалённо и редко общаются друг с другом",
         "textEn": "members work remotely and rarely communicate with each other"
+      },
+      {
+        "key": "e",
+        "text": "Применить бритву Оккама — выбрать объяснение с наименьшим количеством допущений как истинное",
+        "textEn": "Apply Occam's Razor — choose the explanation with the fewest assumptions as the true one"
       }
     ],
     "correctAnswer": "a",
@@ -3296,6 +3791,11 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "«Модель ответила быстро или долго обрабатывала мой запрос?»",
         "textEn": "'Did the model respond quickly or take long processing my query?'"
+      },
+      {
+        "key": "e",
+        "text": "Использовать матрицу Ансоффа для стратегической оценки новизны рынка и продукта",
+        "textEn": "Use the Ansoff Matrix for strategic assessment of market and product novelty"
       }
     ],
     "correctAnswer": "a",
@@ -3329,13 +3829,18 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "Страх (Fear)",
         "textEn": "Fear"
+      },
+      {
+        "key": "e",
+        "text": "Провести 360-градусную оценку по компетенциям Ломингера для объективного замера EQ",
+        "textEn": "Conduct a 360-degree assessment using Lominger competencies for objective EQ measurement"
       }
     ],
     "correctAnswer": "c",
     "explanation": "6 базовых эмоций Экмана: Happiness (радость), Sadness (грусть), Fear (страх), Anger (гнев), Surprise (удивление), Disgust (отвращение). Гордость — сложная социальная эмоция, которая не распознаётся универсально по выражению лица во всех культурах.",
     "explanationEn": "Ekman's 6 basic emotions: Happiness, Sadness, Fear, Anger, Surprise, Disgust. Pride is a complex social emotion that is not universally recognized by facial expression across all cultures.",
     "source": "Paul Ekman — Basic Emotions",
-    "sourceUrl": "https://www.paulekman.com/universal-emotions/"
+    "sourceUrl": "https://en.wikipedia.org/wiki/Paul_Ekman"
   },
   {
     "id": "ei_q05",
@@ -3362,6 +3867,11 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "Конфликты с коллегами и руководством",
         "textEn": "Conflicts with colleagues and management"
+      },
+      {
+        "key": "e",
+        "text": "Техника «якорения» из НЛП — привязать спокойное состояние к физическому жесту для мгновенного доступа",
+        "textEn": "NLP 'anchoring' technique — tie a calm state to a physical gesture for instant access"
       }
     ],
     "correctAnswer": "b",
@@ -3395,13 +3905,18 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "Делишься своими эмоциями с окружающими слишком активно",
         "textEn": "Share your emotions with others too actively"
+      },
+      {
+        "key": "e",
+        "text": "Пройти тест DISC для определения своего коммуникативного профиля и адаптации стиля общения",
+        "textEn": "Take the DISC test to determine your communication profile and adapt your interaction style"
       }
     ],
     "correctAnswer": "b",
     "explanation": "Bottling — одна из двух нездоровых стратегий по Дэвид (вторая — brooding/зацикливание). Ты «закупориваешь» эмоции: игнорируешь их, отталкиваешь, убеждаешь себя «это не важно». Краткосрочно помогает, долгосрочно ведёт к стрессу, выгоранию и эмоциональным взрывам.",
     "explanationEn": "Bottling is one of two unhealthy strategies according to David (the other is brooding). You 'bottle up' emotions: ignore them, push them away, tell yourself 'it doesn't matter.' It helps short-term but leads to stress, burnout, and emotional outbursts long-term.",
     "source": "Susan David — Emotional Agility",
-    "sourceUrl": "https://www.susandavid.com/book"
+    "sourceUrl": "/guide#emotional-intelligence"
   },
   {
     "id": "ei_q12",
@@ -3428,6 +3943,11 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "Motivation — покажи, что AI увеличит его зарплату",
         "textEn": "Motivation — show them AI will increase their salary"
+      },
+      {
+        "key": "e",
+        "text": "Вести дневник благодарности по методу позитивной психологии Селигмана для повышения EQ",
+        "textEn": "Keep a gratitude journal following Seligman's positive psychology method to increase EQ"
       }
     ],
     "correctAnswer": "b",
@@ -3461,13 +3981,18 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "Motivation — без мотивации не будешь развивать EQ",
         "textEn": "Motivation — without it you won't develop EQ"
+      },
+      {
+        "key": "e",
+        "text": "Пройти сертификацию по эмоциональному коучингу и получить аккредитацию ICF для системной работы с эмоциями",
+        "textEn": "Get certified in emotional coaching with ICF accreditation for systematic emotional work"
       }
     ],
     "correctAnswer": "c",
     "explanation": "Self-awareness — основа всей модели. Ты не можешь регулировать эмоции, которые не осознаёшь (Self-regulation). Ты не можешь понять других, если не понимаешь себя (Empathy). Все остальные компоненты строятся на фундаменте самопонимания. Без него — ты управляешь вслепую.",
     "explanationEn": "Self-awareness is the foundation of the entire model. You can't regulate emotions you don't recognize (Self-regulation). You can't understand others if you don't understand yourself (Empathy). All other components are built on self-understanding. Without it, you're managing blind.",
     "source": "Daniel Goleman — Emotional Intelligence",
-    "sourceUrl": "https://www.danielgoleman.info/daniel-goleman-how-emotionally-intelligent-are-you/"
+    "sourceUrl": "https://en.wikipedia.org/wiki/Emotional_intelligencedaniel-goleman-how-emotionally-intelligent-are-you/"
   },
   {
     "id": "ei_b04",
@@ -3494,6 +4019,11 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "Предпочтение социального взаимодействия одиночеству",
         "textEn": "Preference for social interaction over solitude"
+      },
+      {
+        "key": "e",
+        "text": "Определить свой архетип по Юнгу, чтобы понять бессознательные паттерны эмоционального реагирования",
+        "textEn": "Identify your Jungian archetype to understand unconscious patterns of emotional response"
       }
     ],
     "correctAnswer": "a",
@@ -3527,6 +4057,11 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "Игнорирование позитивных аспектов и фокус на негативных",
         "textEn": "Ignoring positive aspects and focusing on negative ones"
+      },
+      {
+        "key": "e",
+        "text": "Практиковать технику «свободных ассоциаций» Фрейда для доступа к подавленным эмоциям",
+        "textEn": "Practice Freud's free association technique to access suppressed emotions"
       }
     ],
     "correctAnswer": "b",
@@ -3560,6 +4095,11 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "Конфликты с коллегами, переработки и низкая зарплата",
         "textEn": "Conflicts with colleagues, overwork, and low salary"
+      },
+      {
+        "key": "e",
+        "text": "Использовать трансактный анализ Берна для определения эго-состояния (Родитель, Взрослый, Ребёнок)",
+        "textEn": "Use Berne's transactional analysis to determine the ego state (Parent, Adult, Child)"
       }
     ],
     "correctAnswer": "c",
@@ -3593,6 +4133,11 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "Автоматическое копирование эмоций окружающих людей",
         "textEn": "Automatic copying of the emotions of surrounding people"
+      },
+      {
+        "key": "e",
+        "text": "Применять спиральную динамику Грейвза для определения уровня эмоционального развития команды",
+        "textEn": "Apply Graves' Spiral Dynamics to determine the team's emotional development level"
       }
     ],
     "correctAnswer": "b",
@@ -3626,6 +4171,11 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "Практика позитивного мышления и аффирмаций каждое утро",
         "textEn": "A practice of positive thinking and morning affirmations"
+      },
+      {
+        "key": "e",
+        "text": "Техника аутогенной тренировки Шульца для достижения глубокой мышечной релаксации",
+        "textEn": "Schultz's autogenic training technique for achieving deep muscle relaxation"
       }
     ],
     "correctAnswer": "b",
@@ -3659,6 +4209,11 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "Творческий потенциал и генерацию инновационных идей",
         "textEn": "Creative potential and generation of innovative ideas"
+      },
+      {
+        "key": "e",
+        "text": "Способность к эмпатии и управлению межличностными отношениями в коллективе",
+        "textEn": "The ability for empathy and managing interpersonal relationships in a team"
       }
     ],
     "correctAnswer": "b",
@@ -3692,6 +4247,11 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "Использование устаревших технологий и медленного оборудования",
         "textEn": "Using outdated technology and slow equipment"
+      },
+      {
+        "key": "e",
+        "text": "Отсутствие программы mindfulness-тренировок по методу Кабат-Зинна в организации",
+        "textEn": "Lack of a Kabat-Zinn mindfulness training program in the organization"
       }
     ],
     "correctAnswer": "a",
@@ -3725,6 +4285,11 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "Переключаться на работу чтобы не чувствовать неприятные эмоции",
         "textEn": "Switching to work to avoid feeling unpleasant emotions"
+      },
+      {
+        "key": "e",
+        "text": "Применять технику «рефрейминга» из НЛП для моментальной замены негативной эмоции на позитивную",
+        "textEn": "Apply the NLP 'reframing' technique to instantly replace a negative emotion with a positive one"
       }
     ],
     "correctAnswer": "b",
@@ -3758,13 +4323,18 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "Уйти из ситуации, которая вызывает негативные эмоции",
         "textEn": "Walking away from a situation that causes negative emotions"
+      },
+      {
+        "key": "e",
+        "text": "Идентифицировать свой тип личности по MBTI, чтобы понять паттерн реагирования на стресс",
+        "textEn": "Identify your personality type using MBTI to understand your stress response pattern"
       }
     ],
     "correctAnswer": "b",
     "explanation": "Walking Your Why — третий шаг: принимать решения на основе своих ценностей, а не текущих эмоций. Ты злишься на коллегу? Твоя ценность — уважение. Значит, ты выберешь уважительный разговор, а не выплеск злости. Эмоции информируют, но не управляют — управляют ценности.",
     "explanationEn": "Walking Your Why is the third step: making decisions based on your values, not current emotions. Angry at a colleague? Your value is respect. So you choose a respectful conversation, not an angry outburst. Emotions inform but don't control — values do.",
     "source": "Susan David — Emotional Agility",
-    "sourceUrl": "https://www.susandavid.com/book"
+    "sourceUrl": "/guide#emotional-intelligence"
   },
   {
     "id": "ei_b01",
@@ -3791,6 +4361,11 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "Motivation — внутренний драйв к достижению целей",
         "textEn": "Motivation — internal drive to achieve goals"
+      },
+      {
+        "key": "e",
+        "text": "Эмпатия — способность чувствовать эмоции других и разделять их переживания на глубоком уровне",
+        "textEn": "Empathy — the ability to feel others' emotions and share their experiences on a deep level"
       }
     ],
     "correctAnswer": "c",
@@ -3824,6 +4399,11 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "Эмоциональная реакция опережает рациональное мышление",
         "textEn": "The emotional reaction outpaces rational thinking"
+      },
+      {
+        "key": "e",
+        "text": "Префронтальная кора активирует «режим потока» по Чиксентмихайи для мгновенного анализа угроз",
+        "textEn": "The prefrontal cortex activates Csikszentmihalyi's 'flow state' for instant threat analysis"
       }
     ],
     "correctAnswer": "d",
@@ -3857,6 +4437,11 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "Анализировать причину каждой эмоции до принятия решений",
         "textEn": "Analyze the cause of every emotion before making decisions"
+      },
+      {
+        "key": "e",
+        "text": "Перенаправить эмоции в продуктивное русло по технике сублимации из психоанализа Фрейда",
+        "textEn": "Redirect emotions into productive channels using the sublimation technique from Freudian psychoanalysis"
       }
     ],
     "correctAnswer": "c",
@@ -3890,6 +4475,11 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "Считывать эмоции других людей по мимике и языку тела",
         "textEn": "Read other people's emotions through facial expressions and body language"
+      },
+      {
+        "key": "e",
+        "text": "Контролировать свои эмоции с помощью когнитивно-поведенческих техник Бека для предотвращения искажений",
+        "textEn": "Control your emotions using Beck's cognitive-behavioral techniques to prevent distortions"
       }
     ],
     "correctAnswer": "a",
@@ -3923,6 +4513,11 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "Обесценивание позитивных событий как случайных и незначимых",
         "textEn": "Dismissing positive events as random and insignificant"
+      },
+      {
+        "key": "e",
+        "text": "Проецирование своих негативных качеств на других людей по защитному механизму Фрейда",
+        "textEn": "Projecting your negative qualities onto others according to Freud's defense mechanism"
       }
     ],
     "correctAnswer": "a",
@@ -3956,6 +4551,11 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "Включает не только понимание, но и стремление помочь",
         "textEn": "Includes not only understanding but also a drive to help"
+      },
+      {
+        "key": "e",
+        "text": "Работает только при наличии безопасной привязанности по теории Боулби у обоих участников",
+        "textEn": "Only works when both participants have secure attachment according to Bowlby's theory"
       }
     ],
     "correctAnswer": "d",
@@ -3989,13 +4589,18 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "Вдохновлять команду яркой визией будущего",
         "textEn": "Inspire the team with a bold vision of the future"
+      },
+      {
+        "key": "e",
+        "text": "Развивать эмоциональный интеллект команды по модели Гоулмана через тренинги по эмпатии",
+        "textEn": "Develop the team's emotional intelligence using Goleman's model through empathy training"
       }
     ],
     "correctAnswer": "b",
     "explanation": "Servant Leadership переворачивает пирамиду: лидер не наверху, а внизу. Его задача — устранять препятствия, обеспечивать ресурсы и создавать условия, в которых каждый участник может расти и эффективно работать. Лидер обслуживает команду, а не наоборот.",
     "explanationEn": "Servant Leadership flips the pyramid: the leader is at the bottom, not the top. Their job is to remove obstacles, provide resources, and create conditions where everyone can grow and work effectively. The leader serves the team, not the other way around.",
     "source": "Robert Greenleaf — Servant Leadership",
-    "sourceUrl": "https://www.greenleaf.org/what-is-servant-leadership/"
+    "sourceUrl": "https://en.wikipedia.org/wiki/Servant_leadership"
   },
   {
     "id": "ld_q04",
@@ -4022,13 +4627,18 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "When — когда они планируют достичь результата",
         "textEn": "When — when they plan to achieve the result"
+      },
+      {
+        "key": "e",
+        "text": "Results — какие результаты уже достигнуты и чем они отличаются от конкурентов",
+        "textEn": "Results — what results have already been achieved and how they differ from competitors"
       }
     ],
     "correctAnswer": "c",
     "explanation": "Золотой круг Синека: Why → How → What. Большинство людей и компаний коммуницируют снаружи внутрь (What → Why), но вдохновляющие лидеры начинают с Why — с цели, убеждения, причины существования. Люди покупают не то, что ты делаешь, а то, почему ты это делаешь.",
     "explanationEn": "Sinek's Golden Circle: Why → How → What. Most people and companies communicate from outside in (What → Why), but inspiring leaders start with Why — purpose, belief, reason for existing. People don't buy what you do, they buy why you do it.",
     "source": "Simon Sinek — Start With Why",
-    "sourceUrl": "https://simonsinek.com/books/start-with-why/"
+    "sourceUrl": "https://en.wikipedia.org/wiki/Start_with_Why"
   },
   {
     "id": "ld_q05",
@@ -4055,6 +4665,11 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "Coaching — объяснять и обучать, параллельно поддерживая мотивацию",
         "textEn": "Coaching — explain and teach while maintaining motivation"
+      },
+      {
+        "key": "e",
+        "text": "Коучинг — задавать вопросы по модели GROW, чтобы новичок сам нашёл ответы через рефлексию",
+        "textEn": "Coaching — ask questions using the GROW model so the newcomer finds answers through reflection"
       }
     ],
     "correctAnswer": "c",
@@ -4088,6 +4703,11 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "Оценивать всех только по конечному результату, а не по скорости",
         "textEn": "Evaluate everyone only by final output, not speed"
+      },
+      {
+        "key": "e",
+        "text": "Внедрить OKR по методологии Джона Дорра для всей команды с метриками использования AI",
+        "textEn": "Implement OKR using John Doerr's methodology for the whole team with AI usage metrics"
       }
     ],
     "correctAnswer": "b",
@@ -4121,6 +4741,11 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "Средней компетенцией и непредсказуемой мотивацией",
         "textEn": "Medium competence and unpredictable motivation"
+      },
+      {
+        "key": "e",
+        "text": "Средняя компетенция и высокая мотивация — сотрудник хочет расти и готов к самостоятельности",
+        "textEn": "Medium competence and high motivation — the employee wants to grow and is ready for autonomy"
       }
     ],
     "correctAnswer": "a",
@@ -4154,6 +4779,11 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "Устанавливать правила и следить за их соблюдением",
         "textEn": "Establish rules and ensure they are followed"
+      },
+      {
+        "key": "e",
+        "text": "Мотивировать через трансформационное лидерство — вдохновлять на выход за рамки личных интересов",
+        "textEn": "Motivate through transformational leadership — inspire people to go beyond personal interests"
       }
     ],
     "correctAnswer": "c",
@@ -4187,6 +4817,11 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "Описанием процессов, которые нужно внедрить или улучшить",
         "textEn": "Descriptions of processes to implement or improve"
+      },
+      {
+        "key": "e",
+        "text": "Описание конкретных инициатив и проектов, которые нужно запустить в течение квартала",
+        "textEn": "Descriptions of specific initiatives and projects to launch during the quarter"
       }
     ],
     "correctAnswer": "b",
@@ -4220,6 +4855,11 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "Оно требует строгой иерархии и чёткой субординации",
         "textEn": "It requires strict hierarchy and clear subordination"
+      },
+      {
+        "key": "e",
+        "text": "Оно фокусируется на делегировании полномочий по матрице RACI для распределения ответственности",
+        "textEn": "It focuses on delegating authority using the RACI matrix to distribute responsibility"
       }
     ],
     "correctAnswer": "b",
@@ -4253,6 +4893,11 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "Предлагает своё мнение, но решение принимает сотрудник",
         "textEn": "Offers their opinion, but the employee makes the decision"
+      },
+      {
+        "key": "e",
+        "text": "Делегирует задачу и полностью отстраняется, предоставляя сотруднику полную автономию",
+        "textEn": "Delegates the task and completely steps back, giving the employee full autonomy"
       }
     ],
     "correctAnswer": "d",
@@ -4286,6 +4931,11 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "Переходы между уровнями лидерства и навыки для каждого",
         "textEn": "Transitions between leadership levels and skills for each"
+      },
+      {
+        "key": "e",
+        "text": "Методологию 360-градусной обратной связи для оценки лидерских компетенций на каждом уровне",
+        "textEn": "A 360-degree feedback methodology for assessing leadership competencies at each level"
       }
     ],
     "correctAnswer": "d",
@@ -4319,6 +4969,11 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "Consulted принимает финальное решение, Informed — нет",
         "textEn": "Consulted makes the final decision, Informed does not"
+      },
+      {
+        "key": "e",
+        "text": "Consulted выполняет задачу совместно с Responsible, а Informed принимает итоговое решение",
+        "textEn": "Consulted performs the task together with Responsible, while Informed makes the final decision"
       }
     ],
     "correctAnswer": "a",
@@ -4352,13 +5007,18 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "Foresight — предсказание, какие AI-инструменты будут популярны",
         "textEn": "Foresight — predicting which AI tools will be popular"
+      },
+      {
+        "key": "e",
+        "text": "Commitment to growth — вложение в обучение каждого члена команды по индивидуальному OKR",
+        "textEn": "Commitment to growth — investing in training each team member through individual OKR"
       }
     ],
     "correctAnswer": "a",
     "explanation": "Empathy — ключ к управлению переходом на AI. Одни разработчики в восторге от AI, другие чувствуют угрозу своей профессиональной идентичности. Лидер-слуга понимает эти различия и создаёт безопасное пространство для обучения, а не давит на принудительное внедрение.",
     "explanationEn": "Empathy is key to managing the AI transition. Some developers are excited about AI, others feel their professional identity is threatened. A servant leader understands these differences and creates a safe space for learning rather than forcing adoption.",
     "source": "Robert Greenleaf — Servant Leadership",
-    "sourceUrl": "https://www.greenleaf.org/what-is-servant-leadership/"
+    "sourceUrl": "https://en.wikipedia.org/wiki/Servant_leadership"
   },
   {
     "id": "ld_q13",
@@ -4385,13 +5045,18 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "Их продукты дороже, что создаёт восприятие премиальности (How Much)",
         "textEn": "Their products are more expensive, creating a premium perception (How Much)"
+      },
+      {
+        "key": "e",
+        "text": "Их маркетинговая стратегия использует модель AIDA для создания эмоциональной привязанности (How)",
+        "textEn": "Their marketing strategy uses the AIDA model to create emotional attachment (How)"
       }
     ],
     "correctAnswer": "b",
     "explanation": "Apple's Why: «Мы верим в то, что нужно бросать вызов статус-кво. Мы верим в то, что нужно думать иначе.» How: они делают продукты, которые прекрасно спроектированы и просты в использовании. What: они делают компьютеры. Но именно Why объясняет, почему у Apple есть фанаты, а не просто клиенты.",
     "explanationEn": "Apple's Why: 'We believe in challenging the status quo. We believe in thinking differently.' How: they make beautifully designed, easy-to-use products. What: they make computers. But it's the Why that explains why Apple has fans, not just customers.",
     "source": "Simon Sinek — Start With Why",
-    "sourceUrl": "https://simonsinek.com/books/start-with-why/"
+    "sourceUrl": "https://en.wikipedia.org/wiki/Start_with_Why"
   },
   {
     "id": "ld_q15",
@@ -4418,13 +5083,18 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "Кто наш клиент → Что ему нужно → Как мы это дадим",
         "textEn": "Who is our client → What they need → How we'll deliver"
+      },
+      {
+        "key": "e",
+        "text": "Who is our user → What Job-to-be-Done → How to deliver value — по JTBD Кристенсена",
+        "textEn": "Who is our user, then What Job-to-be-Done, then How to deliver value — following Christensen's JTBD"
       }
     ],
     "correctAnswer": "b",
     "explanation": "Золотой круг: Why → How → What. Начни с цели и убеждения (Why), затем объясни уникальный подход (How), и только потом — конкретный продукт (What). Это порядок, который вдохновляет и создаёт лояльность. Обратный порядок (What → Why) — информирует, но не мотивирует.",
     "explanationEn": "The Golden Circle: Why → How → What. Start with purpose and belief (Why), then explain the unique approach (How), and only then — the specific product (What). This order inspires and creates loyalty. The reverse (What → Why) informs but doesn't motivate.",
     "source": "Simon Sinek — Start With Why",
-    "sourceUrl": "https://simonsinek.com/books/start-with-why/"
+    "sourceUrl": "https://en.wikipedia.org/wiki/Start_with_Why"
   },
   {
     "id": "ld_b03",
@@ -4451,6 +5121,11 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "Презентации данных и метрик успеха (Results)",
         "textEn": "Presentation of data and success metrics (Results)"
+      },
+      {
+        "key": "e",
+        "text": "Демонстрация результатов и метрик успеха (Evidence) для убеждения аудитории фактами",
+        "textEn": "Demonstration of results and success metrics (Evidence) to convince the audience with facts"
       }
     ],
     "correctAnswer": "c",
@@ -4484,6 +5159,11 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "Много руководства, но минимум эмоциональной поддержки",
         "textEn": "High direction but minimal emotional support"
+      },
+      {
+        "key": "e",
+        "text": "Минимальное руководство и высокая поддержка — фокус на мотивации, а не на инструкциях",
+        "textEn": "Minimal direction and high support — focus on motivation rather than instructions"
       }
     ],
     "correctAnswer": "a",
@@ -4517,6 +5197,11 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "Заменить все ручные code review на AI-проверки",
         "textEn": "Replace all manual code reviews with AI checks"
+      },
+      {
+        "key": "e",
+        "text": "Внедрить AI Code Review как обязательный этап CI/CD-пайплайна вместо ручных ревью",
+        "textEn": "Implement AI Code Review as a mandatory CI/CD pipeline stage instead of manual reviews"
       }
     ],
     "correctAnswer": "a",
@@ -4550,6 +5235,11 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "90–95% — почти полное выполнение с минимальным отклонением",
         "textEn": "90–95% — near complete fulfillment with minimal deviation"
+      },
+      {
+        "key": "e",
+        "text": "100% — если stretched goal не достигнут полностью, нужно пересмотреть OKR-процесс по Дорру",
+        "textEn": "100% — if a stretched goal is not fully achieved, the OKR process needs revision per Doerr"
       }
     ],
     "correctAnswer": "c",
@@ -4583,6 +5273,11 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "Agree — лидер и команда решают совместно",
         "textEn": "Agree — the leader and team decide together"
+      },
+      {
+        "key": "e",
+        "text": "Consult — лидер спрашивает мнение команды и затем принимает решение самостоятельно",
+        "textEn": "Consult — the leader asks the team's opinion and then makes the decision independently"
       }
     ],
     "correctAnswer": "a",
@@ -4616,6 +5311,11 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "Росту и развитию людей в своей команде",
         "textEn": "The growth and development of people on their team"
+      },
+      {
+        "key": "e",
+        "text": "Количество реализованных OKR за квартал и процент выполнения ключевых результатов",
+        "textEn": "The number of OKRs achieved per quarter and the percentage of key results completed"
       }
     ],
     "correctAnswer": "d",
@@ -4649,6 +5349,11 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "Продемонстрировать свой статус окружающим",
         "textEn": "Demonstrate their status to others"
+      },
+      {
+        "key": "e",
+        "text": "Максимизировать свою потребительскую ценность по модели ценностного предложения Остервальдера",
+        "textEn": "Maximize their consumer value using Osterwalder's value proposition canvas model"
       }
     ],
     "correctAnswer": "b",
@@ -4682,6 +5387,11 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "Определение проблемы (Define)",
         "textEn": "Define"
+      },
+      {
+        "key": "e",
+        "text": "Define — формулировка проблемы через призму бизнес-модели по канвасу Остервальдера",
+        "textEn": "Define — formulating the problem through the lens of Osterwalder's business model canvas"
       }
     ],
     "correctAnswer": "c",
@@ -4715,6 +5425,11 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "Быть бесплатным для привлечения первых пользователей",
         "textEn": "Be free to attract first users"
+      },
+      {
+        "key": "e",
+        "text": "Пройти полный цикл Build-Measure-Learn и только потом показывать продукт пользователям",
+        "textEn": "Complete the full Build-Measure-Learn cycle and only then show the product to users"
       }
     ],
     "correctAnswer": "c",
@@ -4748,6 +5463,11 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "AI-продукты не требуют тестирования на реальных пользователях",
         "textEn": "AI products don't require testing with any real actual users"
+      },
+      {
+        "key": "e",
+        "text": "AI-продукты не нуждаются в MVP, потому что можно сразу использовать pretrained модель из коробки",
+        "textEn": "AI products don't need an MVP because you can immediately use a pretrained model out of the box"
       }
     ],
     "correctAnswer": "c",
@@ -4781,6 +5501,11 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "Любые количественные метрики в отличие от качественных",
         "textEn": "Any quantitative metrics as opposed to qualitative assessments"
+      },
+      {
+        "key": "e",
+        "text": "Метрики, рассчитанные по модели Unit Economics для оценки прибыльности каждого клиента",
+        "textEn": "Metrics calculated using the Unit Economics model for assessing profitability of each customer"
       }
     ],
     "correctAnswer": "c",
@@ -4814,6 +5539,11 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "Она указывает дедлайн и приоритет данной конкретной задачи",
         "textEn": "It specifies the deadline and priority for this specific task"
+      },
+      {
+        "key": "e",
+        "text": "Он задаёт Definition of Done для команды разработки по Scrum-методологии",
+        "textEn": "It sets the Definition of Done for the development team following Scrum methodology"
       }
     ],
     "correctAnswer": "a",
@@ -4847,6 +5577,11 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "Принцип изоляции переменных для определения причины эффекта",
         "textEn": "Principle of isolating variables to determine the cause of effect"
+      },
+      {
+        "key": "e",
+        "text": "Принцип рандомизации из методологии RCT — участники должны быть слепы к тестируемому варианту",
+        "textEn": "The randomization principle from RCT methodology — participants must be blinded to the variant"
       }
     ],
     "correctAnswer": "d",
@@ -4880,6 +5615,11 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "Они постепенно становятся базовыми ожидаемыми функциями",
         "textEn": "They gradually become basic expected features over the years"
+      },
+      {
+        "key": "e",
+        "text": "Они трансформируются в «обратные Delighters» — их отсутствие вызывает раздражение, но наличие не замечают",
+        "textEn": "They transform into 'reverse Delighters' — their absence causes frustration, but presence goes unnoticed"
       }
     ],
     "correctAnswer": "d",
@@ -4913,6 +5653,11 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "Сделать скучную утреннюю поездку на работу приятнее",
         "textEn": "Make the boring morning commute to work more enjoyable"
+      },
+      {
+        "key": "e",
+        "text": "Утолить жажду натуральным молочным продуктом без консервантов — осознанный выбор здорового питания",
+        "textEn": "Quench thirst with a natural dairy product without preservatives — a conscious healthy eating choice"
       }
     ],
     "correctAnswer": "d",
@@ -4946,6 +5691,11 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "Define — это выбор целевой аудитории из множества сегментов",
         "textEn": "Define is choosing a target audience from multiple market segments"
+      },
+      {
+        "key": "e",
+        "text": "Define создаёт карту эмпатии (Empathy Map) для визуализации эмоций и мыслей пользователя",
+        "textEn": "Define creates an Empathy Map to visualize the user's emotions and thoughts"
       }
     ],
     "correctAnswer": "b",
@@ -4979,6 +5729,11 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "Потому что только некоммерческие организации используют NSM метрику",
         "textEn": "Because only nonprofit organizations use the NSM metric today"
+      },
+      {
+        "key": "e",
+        "text": "Потому что выручка — метрика тщеславия (vanity metric) по определению Эрика Риса",
+        "textEn": "Because revenue is a vanity metric by Eric Ries' definition"
       }
     ],
     "correctAnswer": "b",
@@ -5012,6 +5767,11 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "Критерии оценки эффективности продукта после запуска на рынке",
         "textEn": "Criteria for evaluating product effectiveness after market launch"
+      },
+      {
+        "key": "e",
+        "text": "Требования к MVP, сформулированные через User Story по формату «Как... я хочу... чтобы...»",
+        "textEn": "MVP requirements formulated through User Stories in the 'As a... I want... so that...' format"
       }
     ],
     "correctAnswer": "c",
@@ -5045,6 +5805,11 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "MVP, который имитирует автоматизацию вручную за кулисами",
         "textEn": "MVP that simulates automation manually behind the scenes"
+      },
+      {
+        "key": "e",
+        "text": "MVP, построенный по канвасу бизнес-модели Остервальдера с минимальным набором ценностных предложений",
+        "textEn": "An MVP built using Osterwalder's business model canvas with a minimal set of value propositions"
       }
     ],
     "correctAnswer": "d",
@@ -5078,6 +5843,11 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "Разница только в приоритете — обе категории обязательны к релизу",
         "textEn": "The difference is only in priority — both categories must ship"
+      },
+      {
+        "key": "e",
+        "text": "Must have определяется через OKR — ключевые результаты с весом выше 0.7 автоматически становятся Must",
+        "textEn": "Must have is determined through OKR — key results with weight above 0.7 automatically become Must"
       }
     ],
     "correctAnswer": "c",
@@ -5111,6 +5881,11 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "Бандитский тест (multi-armed bandit optimization)",
         "textEn": "Bandit test (multi-armed bandit optimization algorithm)"
+      },
+      {
+        "key": "e",
+        "text": "Cohort analysis — сравнение когорт пользователей, привлечённых в разные периоды времени",
+        "textEn": "Cohort analysis — comparing user cohorts acquired during different time periods"
       }
     ],
     "correctAnswer": "b",
@@ -5144,6 +5919,11 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "«Как менеджер, я хочу получать AI-прогнозы с указанием их достоверности»",
         "textEn": "'As a manager, I want AI predictions showing their confidence level'"
+      },
+      {
+        "key": "e",
+        "text": "«Как разработчик, я хочу использовать GPT-4, потому что это самая мощная модель на рынке»",
+        "textEn": "'As a developer, I want to use GPT-4, because it is the most powerful model on the market'"
       }
     ],
     "correctAnswer": "d",
@@ -5177,6 +5957,11 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "маркетинговые расходы на привлечение пользователей конкурентов",
         "textEn": "marketing expenses for attracting users away from competitors"
+      },
+      {
+        "key": "e",
+        "text": "Стоимость привлечения нового клиента (CAC) в сравнении с пожизненной ценностью (LTV) при смене продукта",
+        "textEn": "Customer acquisition cost (CAC) compared to lifetime value (LTV) when switching products"
       }
     ],
     "correctAnswer": "b",
@@ -5210,6 +5995,11 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "Провести A/B тест с функцией и без неё на группе пользователей",
         "textEn": "Run an A/B test with and without the feature on a user group"
+      },
+      {
+        "key": "e",
+        "text": "Провести конкурентный анализ по модели Портера — если фича есть у конкурентов, она must-be",
+        "textEn": "Conduct competitive analysis using Porter's model — if competitors have the feature, it's must-be"
       }
     ],
     "correctAnswer": "c",
@@ -5243,6 +6033,11 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "Потому что AI всегда дороже традиционного программного обеспечения",
         "textEn": "Because AI is always more expensive than traditional software is"
+      },
+      {
+        "key": "e",
+        "text": "Потому что AI-продукты требуют сертификации по ISO 27001 перед выходом на рынок",
+        "textEn": "Because AI products require ISO 27001 certification before going to market"
       }
     ],
     "correctAnswer": "c",
@@ -5276,6 +6071,11 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "Оба метода применимы только к физическим продуктам и товарам",
         "textEn": "Both methods apply only to physical products and tangible goods"
+      },
+      {
+        "key": "e",
+        "text": "Оба метода используют канвас бизнес-модели Остервальдера как основной инструмент для генерации гипотез",
+        "textEn": "Both methods use Osterwalder's business model canvas as the main tool for hypothesis generation"
       }
     ],
     "correctAnswer": "a",
@@ -5309,6 +6109,11 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "60 минут работы, 10 минут перерыв",
         "textEn": "60 minutes work, 10 minutes break"
+      },
+      {
+        "key": "e",
+        "text": "30 минут работы, 10 минут перерыва — по модифицированной технике Марко Дорино",
+        "textEn": "30 minutes work, 10 minutes break — following Marco Dorino's modified technique"
       }
     ],
     "correctAnswer": "b",
@@ -5342,6 +6147,11 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "Начать с 21 дня подряд без перерывов",
         "textEn": "Start with 21 consecutive days without breaks"
+      },
+      {
+        "key": "e",
+        "text": "Использовать систему наград и наказаний по бихевиористской модели Скиннера для формирования привычки",
+        "textEn": "Use a reward and punishment system following Skinner's behaviorist model to form the habit"
       }
     ],
     "correctAnswer": "b",
@@ -5375,6 +6185,11 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "Отложить в папку «когда-нибудь»",
         "textEn": "Put it in the 'someday' folder"
+      },
+      {
+        "key": "e",
+        "text": "Записать в Inbox и вернуться к ней во время еженедельного обзора по методологии GTD",
+        "textEn": "Write it in the Inbox and return to it during the weekly review per GTD methodology"
       }
     ],
     "correctAnswer": "c",
@@ -5408,6 +6223,11 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "Отменить или удалить",
         "textEn": "Cancelled or eliminated"
+      },
+      {
+        "key": "e",
+        "text": "Запланированы на конкретное время в квадранте II матрицы Эйзенхауэра как инвестиция в будущее",
+        "textEn": "Scheduled at a specific time in Quadrant II of the Eisenhower Matrix as an investment in the future"
       }
     ],
     "correctAnswer": "c",
@@ -5441,6 +6261,11 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "Любая задача занимает минимум в два раза дольше, чем ожидалось",
         "textEn": "Any task takes at least twice as long as expected"
+      },
+      {
+        "key": "e",
+        "text": "Каждая задача требует на 20% больше времени, чем первоначальная оценка — по закону Хофштадтера",
+        "textEn": "Every task takes 20% longer than the initial estimate — according to Hofstadter's Law"
       }
     ],
     "correctAnswer": "a",
@@ -5474,6 +6299,11 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "80% проектов завершаются успешно, 20% — нет",
         "textEn": "80% of projects succeed, 20% don't"
+      },
+      {
+        "key": "e",
+        "text": "80% времени нужно проводить в состоянии «глубокой работы» по Ньюпорту, 20% — на мелкие задачи",
+        "textEn": "80% of time should be spent in Newport's 'deep work' state, 20% on small tasks"
       }
     ],
     "correctAnswer": "b",
@@ -5507,6 +6337,11 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "все задачи по определению должны быть выполнены срочно",
         "textEn": "all tasks by definition should be completed as urgently as possible"
+      },
+      {
+        "key": "e",
+        "text": "Без временных рамок задача автоматически попадает в квадрант IV матрицы Эйзенхауэра",
+        "textEn": "Without a time frame the task automatically falls into Quadrant IV of the Eisenhower Matrix"
       }
     ],
     "correctAnswer": "b",
@@ -5540,6 +6375,11 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "Конфликты между членами команды по приоритетам и срокам",
         "textEn": "Conflicts between team members over priorities and deadlines"
+      },
+      {
+        "key": "e",
+        "text": "Проблему накопления «технического долга» в системе управления задачами по аналогии с Agile",
+        "textEn": "The accumulation of 'technical debt' in the task management system by analogy with Agile"
       }
     ],
     "correctAnswer": "b",
@@ -5573,6 +6413,11 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "1% улучшение ежедневно даёт 37-кратный рост за год",
         "textEn": "A daily 1% improvement yields 37x growth over one full year"
+      },
+      {
+        "key": "e",
+        "text": "Малые привычки работают по закону Парето — 20% усилий дают 80% результата в формировании привычек",
+        "textEn": "Small habits work by the Pareto law — 20% of effort gives 80% of results in habit formation"
       }
     ],
     "correctAnswer": "d",
@@ -5606,6 +6451,11 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "Он автоматически определяет оптимальное время для задачи",
         "textEn": "It automatically determines the optimal time needed for a task"
+      },
+      {
+        "key": "e",
+        "text": "Применить Scrum-спринт с фиксированным объёмом задач для AI, чтобы ограничить scope creep",
+        "textEn": "Apply a Scrum sprint with a fixed task volume for AI to limit scope creep"
       }
     ],
     "correctAnswer": "a",
@@ -5639,6 +6489,11 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "Все три направлены на снижение когнитивной нагрузки при работе",
         "textEn": "All three aim to reduce cognitive load during the work process"
+      },
+      {
+        "key": "e",
+        "text": "Все три были разработаны в Японии для оптимизации производственных процессов на заводах Toyota",
+        "textEn": "All three were developed in Japan for optimizing manufacturing processes at Toyota factories"
       }
     ],
     "correctAnswer": "d",
@@ -5672,6 +6527,11 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "количество ошибок пропорционально количеству строк кода",
         "textEn": "number of errors is proportional to the number of code lines"
+      },
+      {
+        "key": "e",
+        "text": "Продуктивность растёт пропорционально количеству часов — чем больше работаешь, тем больше сделаешь",
+        "textEn": "Productivity grows proportionally to hours — the more you work, the more you accomplish"
       }
     ],
     "correctAnswer": "a",
@@ -5705,6 +6565,11 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "Для пересмотра списка задач и выбора следующей задачи к работе",
         "textEn": "To review the task list and select the next task to work on"
+      },
+      {
+        "key": "e",
+        "text": "Потому что после 4 помодоро наступает «ультрадианный ритм» по 90-минутному циклу Клейтмана",
+        "textEn": "Because after 4 pomodoros the 'ultradian rhythm' kicks in per Kleitman's 90-minute cycle"
       }
     ],
     "correctAnswer": "c",
@@ -5738,6 +6603,11 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "Цветная маркировка карточек по типу задачи на доске учёта",
         "textEn": "Color coding of cards by task type on the tracking board used"
+      },
+      {
+        "key": "e",
+        "text": "Ежедневные стендапы по Scrum, где каждый участник сообщает о блокерах и прогрессе",
+        "textEn": "Daily Scrum standups where each participant reports on blockers and progress"
       }
     ],
     "correctAnswer": "c",
@@ -5771,6 +6641,11 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "Попросить AI принять решение за тебя и следовать его рекомендации",
         "textEn": "Ask AI to make the decision for you and follow its recommendation"
+      },
+      {
+        "key": "e",
+        "text": "Использовать Design Thinking — провести сессию эмпатии и прототипирования перед принятием решения",
+        "textEn": "Use Design Thinking — conduct an empathy and prototyping session before making a decision"
       }
     ],
     "correctAnswer": "b",
@@ -5804,6 +6679,11 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "только при работе в больших командах из-за координации людей",
         "textEn": "only when working in large teams due to people coordination needs"
+      },
+      {
+        "key": "e",
+        "text": "Только если задача является инновационной — для рутинных задач закон Хофштадтера не применяется",
+        "textEn": "Only if the task is innovative — for routine tasks Hofstadter's Law does not apply"
       }
     ],
     "correctAnswer": "b",
@@ -5837,6 +6717,11 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "этот критерий нужен только для отчётности перед руководством",
         "textEn": "this criterion is needed only for reporting purposes to management"
+      },
+      {
+        "key": "e",
+        "text": "Амбициозные «stretch goals» по OKR-методологии всегда эффективнее реалистичных целей для мотивации",
+        "textEn": "Ambitious stretch goals following OKR methodology are always more effective than realistic goals for motivation"
       }
     ],
     "correctAnswer": "a",
@@ -5870,6 +6755,11 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "AI не может работать без Kanban-доски для отслеживания задач",
         "textEn": "AI cannot work without a Kanban board for tracking all its tasks"
+      },
+      {
+        "key": "e",
+        "text": "AI автоматически приоритизирует задачи по матрице Эйзенхауэра и распределяет их по спринтам",
+        "textEn": "AI automatically prioritizes tasks using the Eisenhower Matrix and distributes them across sprints"
       }
     ],
     "correctAnswer": "b",
@@ -5903,6 +6793,11 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "Количество помодоро не связано со сложностью выполняемой задачи",
         "textEn": "Number of pomodoros is not related to task complexity at all"
+      },
+      {
+        "key": "e",
+        "text": "1 помодоро достаточно, если предварительно провести «ментальную разминку» по методу Тони Бьюзена",
+        "textEn": "1 pomodoro is sufficient if you first do a 'mental warm-up' using Tony Buzan's method"
       }
     ],
     "correctAnswer": "b",
@@ -5936,6 +6831,11 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "Time-bound — нет дедлайна и работа тянется бесконечно долго",
         "textEn": "Time-bound — no deadline and work stretches on indefinitely"
+      },
+      {
+        "key": "e",
+        "text": "Time-bound — AI работает без ограничений по времени, что нарушает закон Паркинсона",
+        "textEn": "Time-bound — AI works without time limits, which violates Parkinson's Law"
       }
     ],
     "correctAnswer": "a",
@@ -5969,6 +6869,11 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "Параллельная работа над задачами снижает общую производительность",
         "textEn": "Parallel work on tasks reduces overall productivity"
+      },
+      {
+        "key": "e",
+        "text": "Задачи занимают ровно столько времени, сколько указано в Sprint Planning по Scrum-фреймворку",
+        "textEn": "Tasks take exactly as much time as specified in Sprint Planning per the Scrum framework"
       }
     ],
     "correctAnswer": "b",
@@ -6002,6 +6907,11 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "95%",
         "textEn": "95%"
+      },
+      {
+        "key": "e",
+        "text": "60% — по закону убывающей предельной полезности из микроэкономики",
+        "textEn": "60% — according to the law of diminishing marginal utility from microeconomics"
       }
     ],
     "correctAnswer": "c",
@@ -6035,6 +6945,11 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "Ни важные, ни срочные — чтобы «расчистить» список",
         "textEn": "Neither important nor urgent — to 'clear' the list"
+      },
+      {
+        "key": "e",
+        "text": "Важные и не срочные — стратегические инвестиции по методу OKR для долгосрочного роста",
+        "textEn": "Important and not urgent — strategic investments per the OKR method for long-term growth"
       }
     ],
     "correctAnswer": "b",
@@ -6068,6 +6983,11 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "Что ты лучше знаешь — AI-промптинг или сам язык программирования",
         "textEn": "What you know better — AI prompting or the programming language itself"
+      },
+      {
+        "key": "e",
+        "text": "Всегда использовать AI для задач со сложностью выше медианного Story Point в бэклоге",
+        "textEn": "Always use AI for tasks with complexity above the median Story Point in the backlog"
       }
     ],
     "correctAnswer": "b",
@@ -6101,13 +7021,18 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "Работа, результаты которой не видны руководству",
         "textEn": "Work whose results aren't visible to management"
+      },
+      {
+        "key": "e",
+        "text": "Работа, которая не создаёт ценности по lean-методологии и подлежит устранению из процесса",
+        "textEn": "Work that doesn't create value per lean methodology and should be eliminated from the process"
       }
     ],
     "correctAnswer": "b",
     "explanation": "Shallow Work — логистические, когнитивно не требовательные задачи, которые часто выполняются в состоянии рассеянного внимания. Это не «плохая» работа — она необходима (почта, чаты, планирование). Но Ньюпорт предупреждает: если не контролировать, Shallow Work вытеснит Deep Work полностью.",
     "explanationEn": "Shallow Work is logistical, cognitively undemanding tasks often performed in a state of distracted attention. It's not 'bad' work — it's necessary (email, chats, scheduling). But Newport warns: if not controlled, Shallow Work will completely crowd out Deep Work.",
     "source": "Cal Newport — Deep Work",
-    "sourceUrl": "https://www.calnewport.com/books/deep-work/"
+    "sourceUrl": "https://en.wikipedia.org/wiki/Deep_Work"
   },
   {
     "id": "tm_b02",
@@ -6134,6 +7059,11 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "Многозадачность снижает продуктивность на сорок процентов",
         "textEn": "Multitasking reduces productivity by forty percent"
+      },
+      {
+        "key": "e",
+        "text": "Каждая задача занимает столько времени, сколько Story Points ей присвоено на Planning Poker",
+        "textEn": "Every task takes as much time as the Story Points assigned to it during Planning Poker"
       }
     ],
     "correctAnswer": "b",
@@ -6167,6 +7097,11 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "80% результатов приходят из 20% усилий и задач",
         "textEn": "80% of results come from 20% of efforts and tasks"
+      },
+      {
+        "key": "e",
+        "text": "20% задач нужно делегировать, а 80% выполнять самостоятельно для контроля качества",
+        "textEn": "20% of tasks should be delegated, while 80% should be done personally for quality control"
       }
     ],
     "correctAnswer": "d",
@@ -6200,6 +7135,11 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "90 минут работы, затем 20 минут перерыва",
         "textEn": "90 minutes of work, then a 20-minute break"
+      },
+      {
+        "key": "e",
+        "text": "50 минут работы, затем 10-минутный перерыв — по академическому расписанию лекций",
+        "textEn": "50 minutes of work, then a 10-minute break — following the academic lecture schedule"
       }
     ],
     "correctAnswer": "a",
@@ -6233,6 +7173,11 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "Все встречи нужно проводить только по утрам для эффективности",
         "textEn": "All meetings should be held only in the mornings for efficiency"
+      },
+      {
+        "key": "e",
+        "text": "Все сотрудники должны работать по единому графику Pomodoro для синхронизации перерывов",
+        "textEn": "All employees should work on a unified Pomodoro schedule to synchronize their breaks"
       }
     ],
     "correctAnswer": "b",
@@ -6266,6 +7211,11 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "Каждое прерывание добавляет 23 минуты к времени задачи",
         "textEn": "Each interruption adds 23 minutes to the task time"
+      },
+      {
+        "key": "e",
+        "text": "Задачи занимают ровно столько, сколько оценено через Planning Poker по Scrum-методологии",
+        "textEn": "Tasks take exactly as long as estimated through Planning Poker per the Scrum methodology"
       }
     ],
     "correctAnswer": "a",
@@ -6299,6 +7249,11 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "Откладывать сложные задачи в пользу лёгких и приятных",
         "textEn": "Postpone difficult tasks in favor of easy and pleasant ones"
+      },
+      {
+        "key": "e",
+        "text": "Переоценивать важность задачи по матрице Эйзенхауэра, перемещая её в более приоритетный квадрант",
+        "textEn": "Overestimate a task's importance on the Eisenhower Matrix, moving it to a higher priority quadrant"
       }
     ],
     "correctAnswer": "a",
@@ -6332,6 +7287,11 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "Внешние стимулы (дедлайн, бонус) мотивируют к действию",
         "textEn": "External stimuli (deadline, bonus) motivate action"
+      },
+      {
+        "key": "e",
+        "text": "Задача настолько проста, что не требует никаких усилий и выполняется автоматически без участия сознания",
+        "textEn": "The task is so simple it requires no effort and is performed automatically without conscious involvement"
       }
     ],
     "correctAnswer": "c",
@@ -6365,6 +7325,11 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "Квадрант 4 — не срочные и не важные задачи (отвлечения)",
         "textEn": "Quadrant 4 — not urgent and not important tasks (distractions)"
+      },
+      {
+        "key": "e",
+        "text": "Квадрант 1 — срочные и важные задачи, потому что их немедленное выполнение даёт максимальный ROI",
+        "textEn": "Quadrant 1 — urgent and important tasks, because their immediate completion gives maximum ROI"
       }
     ],
     "correctAnswer": "b",
@@ -6398,6 +7363,11 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "Устанавливаешь таймер и работаешь пока он не зазвонит",
         "textEn": "Set a timer and work until it rings"
+      },
+      {
+        "key": "e",
+        "text": "Группируете похожие задачи в «батчи» и выполняете их одну за другой в едином потоке",
+        "textEn": "Group similar tasks into batches and execute them one after another in a single flow"
       }
     ],
     "correctAnswer": "c",
@@ -6431,6 +7401,11 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "Зависимость от постоянной проверки уведомлений и мессенджеров",
         "textEn": "Dependency on constantly checking notifications and messengers"
+      },
+      {
+        "key": "e",
+        "text": "Ментальная усталость от длительной концентрации на одной задаче без перерывов по Помодоро",
+        "textEn": "Mental fatigue from prolonged concentration on one task without Pomodoro breaks"
       }
     ],
     "correctAnswer": "a",
@@ -6464,6 +7439,11 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "Удалять из списка",
         "textEn": "Deleting from the list"
+      },
+      {
+        "key": "e",
+        "text": "Выполнить немедленно, пока они срочные — по принципу «сначала съешь лягушку» Брайана Трейси",
+        "textEn": "Do immediately while they're urgent — following Brian Tracy's 'eat that frog first' principle"
       }
     ],
     "correctAnswer": "b",
@@ -6497,6 +7477,11 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "Отложить задачу на завтра — утром свежая голова найдёт решение",
         "textEn": "Postpone to tomorrow — a fresh mind will find the solution"
+      },
+      {
+        "key": "e",
+        "text": "Попросить AI самостоятельно оценить свой результат по шкале от 1 до 10 и продолжить до оценки 9+",
+        "textEn": "Ask AI to self-evaluate its result on a 1-10 scale and continue until it rates itself 9+"
       }
     ],
     "correctAnswer": "b",
@@ -6530,6 +7515,11 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "Удалить из списка дел — они не стоят внимания",
         "textEn": "Delete from the to-do list — they're not worth attention"
+      },
+      {
+        "key": "e",
+        "text": "Запланировать на конкретное время в календаре как блок глубокой работы по методу Ньюпорта",
+        "textEn": "Schedule at a specific time in the calendar as a deep work block following Newport's method"
       }
     ],
     "correctAnswer": "c",
@@ -6563,6 +7553,11 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "Командную работу над сложными техническими проблемами",
         "textEn": "Team work on complex technical problems"
+      },
+      {
+        "key": "e",
+        "text": "Любая работа, которая длится более 4 часов подряд без переключения на другие задачи",
+        "textEn": "Any work that lasts more than 4 hours continuously without switching to other tasks"
       }
     ],
     "correctAnswer": "b",
@@ -6596,6 +7591,11 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "10–12 часов при достаточной мотивации и интересе к теме",
         "textEn": "10–12 hours with sufficient motivation and interest in the topic"
+      },
+      {
+        "key": "e",
+        "text": "8 часов при использовании техники Помодоро с перерывами каждые 25 минут в течение дня",
+        "textEn": "8 hours when using the Pomodoro technique with breaks every 25 minutes throughout the day"
       }
     ],
     "correctAnswer": "a",
@@ -6629,6 +7629,11 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "Все три требуют ежедневного ведения журнала",
         "textEn": "All three require daily journaling"
+      },
+      {
+        "key": "e",
+        "text": "Все три основаны на принципе 10 000 часов Гладуэлла — мастерство через многократное повторение",
+        "textEn": "All three are based on Gladwell's 10,000 hours principle — mastery through extensive repetition"
       }
     ],
     "correctAnswer": "b",
@@ -6662,6 +7667,11 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "Все три запрещают использовать интуицию",
         "textEn": "All three prohibit using intuition"
+      },
+      {
+        "key": "e",
+        "text": "Все три используют матрицу SWOT для структурированного анализа сильных и слабых сторон",
+        "textEn": "All three use the SWOT matrix for structured analysis of strengths and weaknesses"
       }
     ],
     "correctAnswer": "b",
@@ -6695,6 +7705,11 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "Все три созданы компанией McKinsey",
         "textEn": "All three were created by McKinsey"
+      },
+      {
+        "key": "e",
+        "text": "Все три используют принцип MECE из McKinsey для исчерпывающего покрытия темы без пересечений",
+        "textEn": "All three use the McKinsey MECE principle for exhaustive coverage of the topic without overlaps"
       }
     ],
     "correctAnswer": "c",
@@ -6728,13 +7743,18 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "Все три измеряются тестом IQ",
         "textEn": "All three are measured by IQ tests"
+      },
+      {
+        "key": "e",
+        "text": "Все три измеряются тестом MBTI и коррелируют с интровертным типом личности",
+        "textEn": "All three are measured by the MBTI test and correlate with the introverted personality type"
       }
     ],
     "correctAnswer": "b",
     "explanation": "Самосознание — замечаешь свои эмоции. Эмпатия — замечаешь чужие. Саморегуляция — замечаешь и управляешь. Всё начинается с одного навыка: способности заметить, что происходит эмоционально, прежде чем реагировать автоматически.",
     "explanationEn": "Self-awareness — you notice your emotions. Empathy — you notice others'. Self-regulation — you notice and manage. It all starts with one skill: the ability to notice what's happening emotionally before reacting automatically.",
     "source": "Daniel Goleman — Emotional Intelligence",
-    "sourceUrl": "https://www.danielgoleman.info/"
+    "sourceUrl": "https://en.wikipedia.org/wiki/Emotional_intelligence"
   },
   {
     "id": "ld_unite_01",
@@ -6761,6 +7781,11 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "Все три были разработаны военными",
         "textEn": "All three were developed by the military"
+      },
+      {
+        "key": "e",
+        "text": "Все три основаны на модели компетенций Ломингера и измеряются через 360-градусную обратную связь",
+        "textEn": "All three are based on Lominger's competency model and measured through 360-degree feedback"
       }
     ],
     "correctAnswer": "b",
@@ -6794,6 +7819,11 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "Все три запрещают использовать слово 'нет'",
         "textEn": "All three prohibit using the word 'no'"
+      },
+      {
+        "key": "e",
+        "text": "Все три используют модель Томаса-Килманна как базовый фреймворк для выбора стиля реагирования",
+        "textEn": "All three use the Thomas-Kilmann model as the base framework for choosing a response style"
       }
     ],
     "correctAnswer": "b",
@@ -6827,13 +7857,18 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "Дивергенция, конвергенция, итерация",
         "textEn": "Divergence, convergence, iteration"
+      },
+      {
+        "key": "e",
+        "text": "Анализ, Синтез, Оценка — три верхних уровня таксономии Блума для креативного мышления",
+        "textEn": "Analysis, Synthesis, Evaluation — the three upper levels of Bloom's taxonomy for creative thinking"
       }
     ],
     "correctAnswer": "b",
     "explanation": "Фергюсон показал, что вся креативность — это ремикс: сначала копируешь (учишься на чужом), потом трансформируешь (адаптируешь), потом комбинируешь (создаёшь новое из существующего). Это применимо и к работе с AI: берёшь выход, трансформируешь, комбинируешь со своим опытом.",
     "explanationEn": "Ferguson showed that all creativity is a remix: first you copy (learn from others), then transform (adapt), then combine (create something new from existing parts). This applies to AI work too: take the output, transform it, combine with your experience.",
     "source": "Kirby Ferguson — Everything is a Remix",
-    "sourceUrl": "https://www.everythingisaremix.info/"
+    "sourceUrl": "/guide#product-thinking"
   },
   {
     "id": "ad_creativity_q02",
@@ -6860,13 +7895,18 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "Великие художники не нуждаются в обучении",
         "textEn": "Great artists don't need training"
+      },
+      {
+        "key": "e",
+        "text": "Великие художники используют Design Thinking для системной генерации инноваций в своей работе",
+        "textEn": "Great artists use Design Thinking for systematic innovation generation in their work"
       }
     ],
     "correctAnswer": "b",
     "explanation": "«Steal» здесь означает не плагиат, а глубокое усвоение. Копировщик воспроизводит форму, не понимая суть. «Вор» понимает принцип и делает его частью своего стиля. В AI-эпоху: не копируй промпты — пойми, почему они работают, и создай свои.",
     "explanationEn": "'Steal' here means not plagiarism but deep absorption. A copier reproduces form without understanding essence. A 'thief' understands the principle and makes it part of their style. In the AI era: don't copy prompts — understand why they work and create your own.",
     "source": "Austin Kleon — Steal Like an Artist",
-    "sourceUrl": "https://austinkleon.com/steal/"
+    "sourceUrl": "https://en.wikipedia.org/wiki/Steal_Like_an_Artist"
   },
   {
     "id": "ad_creativity_q03",
@@ -6893,6 +7933,11 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "Оба доказывают, что нужно 10,000 часов практики",
         "textEn": "Both prove you need 10,000 hours of practice"
+      },
+      {
+        "key": "e",
+        "text": "Оба доказывают, что для творчества необходимо достичь состояния «потока» по Чиксентмихайи",
+        "textEn": "Both prove that creativity requires reaching Csikszentmihalyi's 'flow' state"
       }
     ],
     "correctAnswer": "b",
@@ -6926,13 +7971,18 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "Потому что инвесторы требуют анализ конкурентов",
         "textEn": "Because investors require competitive analysis"
+      },
+      {
+        "key": "e",
+        "text": "Потому что по модели Blue Ocean Strategy конкуренты действуют в «красном океане» и их не стоит изучать",
+        "textEn": "Because under the Blue Ocean Strategy model competitors operate in a 'red ocean' and shouldn't be studied"
       }
     ],
     "correctAnswer": "b",
     "explanation": "Пользователи формируют привычки на основе существующих продуктов. Они ожидают корзину в правом верхнем углу, свайп для удаления, pull-to-refresh. Знание этих паттернов и осознанный выбор — следовать им или нарушать — это Copy → Transform, а не слепое копирование.",
     "explanationEn": "Users form habits based on existing products. They expect a cart in the top-right corner, swipe to delete, pull-to-refresh. Knowing these patterns and consciously choosing to follow or break them is Copy → Transform, not blind copying.",
     "source": "Kirby Ferguson — Everything is a Remix",
-    "sourceUrl": "https://www.everythingisaremix.info/"
+    "sourceUrl": "/guide#product-thinking"
   },
   {
     "id": "cl_ww_q01",
@@ -6959,13 +8009,18 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "Разницы нет — зависит от отрасли",
         "textEn": "No difference — depends on the industry"
+      },
+      {
+        "key": "e",
+        "text": "Матчеры — те, кто строго ведёт баланс по принципу взаимности из теории социального обмена Хоманса",
+        "textEn": "Matchers — those who strictly keep balance following the reciprocity principle from Homans' social exchange theory"
       }
     ],
     "correctAnswer": "c",
     "explanation": "Грант показал, что givers занимают и нижние, и верхние строчки. Но «умные givers» (которые помогают стратегически, не в ущерб себе) стабильно обгоняют takers и matchers. Ключ: помогать, но не быть тряпкой.",
     "explanationEn": "Grant showed that givers occupy both bottom and top positions. But 'smart givers' (who help strategically, not at their own expense) consistently outperform takers and matchers. Key: help, but don't be a doormat.",
     "source": "Adam Grant — Give and Take",
-    "sourceUrl": "https://adamgrant.net/book/give-and-take/"
+    "sourceUrl": "https://en.wikipedia.org/wiki/Give_and_Take_(book)"
   },
   {
     "id": "cl_ww_q02",
@@ -6992,6 +8047,11 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "Win-Lose работает только в спорте",
         "textEn": "Win-Lose only works in sports"
+      },
+      {
+        "key": "e",
+        "text": "Win-Lose эффективнее в краткосрочной перспективе по теории игр Нэша — стратегия доминирования",
+        "textEn": "Win-Lose is more effective short-term per Nash's game theory — dominant strategy approach"
       }
     ],
     "correctAnswer": "a",
@@ -7025,6 +8085,11 @@ export const quizPool: QuizQuestion[] =
         "key": "d",
         "text": "Все три запрещают говорить «нет»",
         "textEn": "All three prohibit saying 'no'"
+      },
+      {
+        "key": "e",
+        "text": "Все три основаны на теории справедливости Ролза — принципе максимина для защиты слабейшей стороны",
+        "textEn": "All three are based on Rawls' theory of justice — the maximin principle for protecting the weaker side"
       }
     ],
     "correctAnswer": "b",

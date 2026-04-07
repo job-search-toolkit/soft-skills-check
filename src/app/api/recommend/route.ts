@@ -3,10 +3,11 @@ import { callClaude } from "@/lib/anthropic";
 import { dimensionMap } from "@/lib/questions";
 import { AnalysisResult, DeepDiveAnswer, RecommendationResult } from "@/types/assessment";
 
+export const runtime = 'edge';
 
 export async function POST(request: NextRequest) {
   try {
-    if (!process.env.OPENAI_API_KEY && !process.env.ANTHROPIC_API_KEY) {
+    if (!process.env.OPENAI_API_KEY && !process.env.ANTHROPIC_API_KEY && !process.env.GEMINI_API_KEY) {
       return NextResponse.json(
         { error: "API key not configured" },
         { status: 500 }

@@ -13,6 +13,8 @@ import { dimensionMap } from "@/lib/questions";
 import { useLang } from "@/lib/LangContext";
 import { ui } from "@/lib/i18n";
 import { DimensionKey } from "@/types/assessment";
+import { getSkillLabel, getProfileRarity } from "@/lib/skill-labels";
+import ShareCard from "@/components/ShareCard";
 
 interface BenchmarkData {
   totalCompleted: number;
@@ -170,6 +172,14 @@ export default function ResultsPage() {
 
   if (!analysis) return null;
 
+  // Skill label
+  const skillLabel = getSkillLabel(analysis.dimensionScores, lang);
+  const profileRarity = getProfileRarity(analysis.dimensionScores);
+  const topDimNames = [...analysis.dimensionScores]
+    .sort((a, b) => b.score - a.score)
+    .slice(0, 3)
+    .map((d) => d.dimension);
+
   // Determine test mode
   const testMode = (typeof window !== "undefined" && sessionStorage.getItem("test_mode")) || "express";
 
@@ -240,6 +250,20 @@ export default function ResultsPage() {
             </p>
           </div>
         </div>
+      </div>
+
+      {/* Skill label card */}
+      <div className="mb-6 animate-fade-in-up">
+        <h2 className="text-lg font-semibold text-white mb-4 text-center">
+          {t.yourProfileType}
+        </h2>
+        <ShareCard
+          label={skillLabel}
+          rarity={profileRarity}
+          overallScore={analysis.overallScore}
+          dimensionScores={analysis.dimensionScores}
+          topDimensions={topDimNames}
+        />
       </div>
 
       {/* Radar chart */}
@@ -483,7 +507,7 @@ export default function ResultsPage() {
                 '',
                 analysis.summary,
                 '',
-                `https://soft-skills.chillai.space`,
+                `https://soft-skills.transformerinstitute.org`,
               ].join('\n');
               navigator.clipboard.writeText(text).then(() => {
                 const el = document.getElementById('copy-link');
@@ -498,11 +522,11 @@ export default function ResultsPage() {
           <span className="text-slate-700">·</span>
           <button
             onClick={() => {
-              const text = `${analysis.overallScore}/5 — https://soft-skills.chillai.space`;
+              const text = `${analysis.overallScore}/5 — https://soft-skills.transformerinstitute.org`;
               if (navigator.share) {
                 navigator.share({ title: 'Soft Skills Check', text });
               } else {
-                window.open(`https://t.me/share/url?url=${encodeURIComponent('https://soft-skills.chillai.space')}&text=${encodeURIComponent(text)}`, '_blank');
+                window.open(`https://t.me/share/url?url=${encodeURIComponent('https://soft-skills.transformerinstitute.org')}&text=${encodeURIComponent(text)}`, '_blank');
               }
             }}
             className="text-xs text-slate-600 hover:text-slate-400 underline underline-offset-2 transition-colors"
